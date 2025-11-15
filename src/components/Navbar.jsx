@@ -139,9 +139,12 @@ export default function Navbar(){
 
             <NavLink to="/contact" onClick={closeMobileMenu}>Contact Us</NavLink>
             <NavLink to="/careers" onClick={closeMobileMenu}>Careers</NavLink>
+            
+            {/* Mobile CTA - only visible in hamburger menu */}
+            <Link to="/products" className="btn cta mobile-cta" onClick={closeMobileMenu}>Explore Products</Link>
           </nav>
 
-          {/* right: single CTA */}
+          {/* right: single CTA - desktop only */}
           <Link to="/products" className="btn cta desktop-cta">Explore Products</Link>
 
           {/* hamburger */}

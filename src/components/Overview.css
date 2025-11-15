@@ -205,75 +205,22 @@
 @media (max-width: 768px){
   .overview{
     padding: 56px 0;
+    min-height: auto;
   }
   .overview .container{
-    justify-content: flex-start;
-    align-items: flex-start;
+    justify-content: center;
+    align-items: center;
+    padding-left: 20px;
+    padding-right: 20px;
   }
   .overview-content{
     width: 90%;
-    max-width: 500px;
+    max-width: 400px;
     min-height: auto;
-    gap: 16px;
-    padding: 32px;
-    border-radius: 20px;
-    margin: 0;
-  }
-  .overview-tag{
-    font-size: 10.43px;
-    line-height: 21.9px;
-    letter-spacing: 0.27em;
-    font-weight: 500;
-    padding: 6px 12px;
-    margin-bottom: 0;
-  }
-  .overview-star{
-    font-size: 11px;
-  }
-  .overview-heading{
-    font-size: 32px;
-    margin-bottom: 16px;
-    line-height: 100%;
-    letter-spacing: -0.04em;
-    font-weight: 600;
-  }
-  .overview-logo{
-    margin-bottom: 16px;
-  }
-  .overview-logo img{
-    height: 40px;
-  }
-  .overview-text{
-    font-size: 16px;
-    line-height: 120%;
-    letter-spacing: -0.02em;
-    font-weight: 400;
-  }
-  .overview-btn{
-    padding: 10px 20px;
-    font-size: 14.61px;
-    line-height: 23.5px;
-    letter-spacing: -0.2px;
-    font-weight: 400;
-  }
-}
-
-@media (max-width: 480px){
-  .overview{
-    padding: 48px 0;
-  }
-  .overview .container{
-    justify-content: flex-start;
-    align-items: flex-start;
-  }
-  .overview-content{
-    width: calc(100% - 32px);
-    max-width: 100%;
-    min-height: auto;
-    gap: 14px;
-    padding: 24px;
-    border-radius: 16px;
-    margin: 0;
+    gap: 10px;
+    padding: 20px;
+    border-radius: 18px;
+    margin: 0 auto;
   }
   .overview-tag{
     font-size: 9.5px;
@@ -281,19 +228,20 @@
     letter-spacing: 0.27em;
     font-weight: 500;
     padding: 5px 10px;
+    margin-bottom: 0;
   }
   .overview-star{
     font-size: 10px;
   }
   .overview-heading{
     font-size: 28px;
-    margin-bottom: 14px;
+    margin-bottom: 10px;
     line-height: 100%;
     letter-spacing: -0.04em;
     font-weight: 600;
   }
   .overview-logo{
-    margin-bottom: 14px;
+    margin-bottom: 10px;
   }
   .overview-logo img{
     height: 36px;
@@ -305,10 +253,113 @@
     font-weight: 400;
   }
   .overview-btn{
-    padding: 10px 18px;
+    padding: 9px 18px;
     font-size: 13.5px;
     line-height: 21px;
     letter-spacing: -0.2px;
     font-weight: 400;
+  }
+}
+
+@media (max-width: 480px){
+  .overview{
+    padding: 48px 0;
+    min-height: auto;
+  }
+  .overview .container{
+    justify-content: center;
+    align-items: center;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .overview-content{
+    width: 85%;
+    max-width: 350px;
+    min-height: auto;
+    gap: 8px;
+    padding: 16px;
+    border-radius: 14px;
+    margin: 0 auto;
+  }
+  .overview-tag{
+    font-size: 9px;
+    line-height: 18px;
+    letter-spacing: 0.27em;
+    font-weight: 500;
+    padding: 4px 8px;
+  }
+  .overview-star{
+    font-size: 9px;
+  }
+  .overview-heading{
+    font-size: 24px;
+    margin-bottom: 8px;
+    line-height: 100%;
+    letter-spacing: -0.04em;
+    font-weight: 600;
+  }
+  .overview-logo{
+    margin-bottom: 8px;
+  }
+  .overview-logo img{
+    height: 32px;
+  }
+  .overview-text{
+    font-size: 14px;
+    line-height: 130%;
+    letter-spacing: -0.02em;
+    font-weight: 400;
+  }
+  .overview-btn{
+    padding: 8px 16px;
+    font-size: 12.5px;
+    line-height: 20px;
+    letter-spacing: -0.2px;
+    font-weight: 400;
+  }
+}
+
+@media (max-width: 375px){
+  .overview{
+    padding: 40px 0;
+    min-height: auto;
+  }
+  .overview .container{
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  .overview-content{
+    width: 80%;
+    max-width: 300px;
+    padding: 14px;
+    gap: 8px;
+    border-radius: 12px;
+  }
+  .overview-tag{
+    font-size: 8.5px;
+    line-height: 16px;
+    padding: 4px 8px;
+  }
+  .overview-star{
+    font-size: 8.5px;
+  }
+  .overview-heading{
+    font-size: 22px;
+    margin-bottom: 10px;
+  }
+  .overview-logo{
+    margin-bottom: 10px;
+  }
+  .overview-logo img{
+    height: 28px;
+  }
+  .overview-text{
+    font-size: 13px;
+    line-height: 130%;
+  }
+  .overview-btn{
+    padding: 8px 14px;
+    font-size: 12px;
+    line-height: 18px;
   }
 }

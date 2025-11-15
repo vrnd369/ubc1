@@ -318,14 +318,14 @@
   }
   .brands-carousel-cards{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     gap: 24px;
     padding-right: 0;
-    min-width: auto;
+    min-width: fit-content;
   }
   .brand-carousel-card{
-    width: 100%;
-    min-width: auto;
+    width: 600px;
+    min-width: 600px;
     height: 316px;
     grid-template-columns: 280px 1fr;
     padding: 24px;
@@ -346,13 +346,13 @@
   }
   .brands-carousel-cards{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     padding-right: 0;
-    min-width: auto;
+    min-width: fit-content;
   }
   .brand-carousel-card{
-    width: 100%;
-    min-width: auto;
+    width: 550px;
+    min-width: 550px;
     height: 292px;
     grid-template-columns: 260px 1fr;
     gap: 24px;
@@ -367,12 +367,15 @@
   }
 }
 
+/* ---------- Mobile Responsive (768px and below) ---------- */
 @media (max-width: 768px){
   .brands-carousel-section{
-    padding: 64px 0;
+    padding: 56px 0;
+    overflow-x: hidden;
+    overflow-y: visible;
   }
   .brands-carousel-header{
-    margin-bottom: 40px;
+    margin-bottom: 36px;
     gap: 24px;
   }
   .brands-carousel-tag{
@@ -381,6 +384,8 @@
     font-weight: 500;
     line-height: 21px;
     letter-spacing: 0.27em;
+    padding: 7px 13px;
+    margin-bottom: 24px;
   }
   .brands-carousel-text h2{
     font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
@@ -388,6 +393,7 @@
     line-height: 100%;
     font-weight: 600;
     letter-spacing: -0.04em;
+    margin-bottom: 14px;
   }
   
   .brands-carousel-text h2 .our-word{
@@ -406,97 +412,115 @@
     color: rgba(246, 247, 249, 0.8);
   }
   .brands-carousel-cards-wrapper{
+    width: 100%;
+    position: relative;
+    left: auto;
+    right: auto;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 20px;
     padding-right: 20px;
   }
   .brands-carousel-cards{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     gap: 24px;
-    padding-right: 0;
-    min-width: auto;
+    padding-right: 20px;
+    min-width: fit-content;
   }
   .brand-carousel-card{
-    width: 100%;
-    min-width: auto;
-    height: 243px;
-    grid-template-columns: 200px 1fr;
-    padding: 24px;
-    gap: 20px;
+    width: calc(100vw - 60px);
+    min-width: calc(100vw - 60px);
+    max-width: 500px;
+    height: auto;
+    min-height: 180px;
+    grid-template-columns: 140px 1fr;
+    padding: 16px;
+    gap: 14px;
+    flex-shrink: 0;
+    overflow: visible;
   }
   .brand-carousel-logo-area{
     flex-direction: column;
     justify-content: flex-start;
     align-self: flex-start;
-    gap: 16px;
+    gap: 10px;
     padding-top: 0;
   }
   .brand-carousel-logo{
-    width: 200px;
-    height: 200px;
+    width: 140px;
+    height: 140px;
     flex-shrink: 0;
     background: #F3F4F6;
     align-items: flex-start;
-    padding: 16px 20px 20px 20px;
+    padding: 10px 12px 12px 12px;
     margin-top: 0;
   }
   .brand-carousel-name{
     text-align: center;
     align-self: center;
+    font-size: 16px;
   }
   .brand-carousel-content{
     align-items: flex-start;
     text-align: left;
+    gap: 8px;
+    overflow: visible;
   }
   .brand-carousel-content p + .brand-carousel-btn[data-button-color="#4CAF50"],
   .brand-carousel-content p + .brand-carousel-btn[data-button-color="#FFC107"]{
-    margin-top: 12px;
+    margin-top: 8px;
   }
   .brand-carousel-content .brand-carousel-tag{
     font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
-    font-size: 10px;
+    font-size: 9px;
     font-weight: 500;
-    line-height: 21px;
+    line-height: 18px;
     letter-spacing: 0.27em;
     color: #171717;
     text-align: left;
     align-self: flex-start;
+    margin-bottom: 4px;
   }
   .brand-carousel-content h3{
     font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
     color: #171717;
-    font-size: 28px;
+    font-size: 20px;
     font-weight: 600;
-    line-height: 100%;
+    line-height: 110%;
     letter-spacing: -0.06em;
     text-align: left;
     align-self: flex-start;
     width: 100%;
+    margin: 0;
   }
   .brand-carousel-content p{
     font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 400;
-    line-height: 140%;
+    line-height: 130%;
     letter-spacing: -0.02em;
     color: #737373;
     text-align: left;
     align-self: flex-start;
     width: 100%;
+    margin: 0;
   }
   .brand-carousel-btn{
     font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 400;
-    line-height: 22.5px;
+    line-height: 20px;
     letter-spacing: -0.19px;
     align-self: flex-start;
     margin-left: 0;
+    padding: 8px 16px;
   }
   
   /* Green button - white text */
   .brand-carousel-btn[data-button-color="#4CAF50"]{
     color: #FFFFFF;
-    margin-top: 12px;
+    margin-top: 8px;
   }
   
   /* Yellow button - neutral/900 text */
@@ -504,14 +528,67 @@
     color: #171717;
   }
   .nav-arrow{
-    width: 44px;
-    height: 44px;
+    width: 42px;
+    height: 42px;
+  }
+  .nav-arrow svg{
+    width: 20px;
+    height: 20px;
   }
 }
 
+/* ---------- Mobile Responsive (600px and below) ---------- */
+@media (max-width: 600px){
+  .brands-carousel-section{
+    padding: 52px 0;
+    overflow-x: hidden;
+    overflow-y: visible;
+  }
+  .brands-carousel-header{
+    margin-bottom: 32px;
+  }
+  .brands-carousel-text h2{
+    font-size: 30px;
+  }
+  .brands-carousel-text h2 .our-word{
+    font-size: 30px;
+  }
+  .brands-carousel-description{
+    font-size: 15.5px;
+  }
+  .brands-carousel-cards-wrapper{
+    width: 100%;
+    position: relative;
+    left: auto;
+    right: auto;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .brand-carousel-card{
+    grid-template-columns: 130px 1fr;
+    min-height: 170px;
+    padding: 16px;
+    gap: 14px;
+    overflow: visible;
+  }
+  .brand-carousel-logo{
+    width: 130px;
+    height: 130px;
+    padding: 10px 12px 12px 12px;
+  }
+  .brand-carousel-content h3{
+    font-size: 22px;
+  }
+}
+
+/* ---------- Mobile Responsive (480px and below) ---------- */
 @media (max-width: 480px){
   .brands-carousel-section{
     padding: 48px 0;
+    overflow-x: hidden;
+    overflow-y: visible;
   }
   .brands-carousel-tag{
     font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
@@ -550,53 +627,69 @@
     margin-bottom: 32px;
   }
   .brands-carousel-cards-wrapper{
+    width: 100%;
+    position: relative;
+    left: auto;
+    right: auto;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 20px;
     padding-right: 20px;
   }
   .brands-carousel-cards{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     gap: 20px;
-    padding-right: 0;
-    min-width: auto;
+    padding-right: 20px;
+    min-width: fit-content;
   }
   .brand-carousel-card{
-    width: 100%;
-    min-width: auto;
-    height: 185px;
-    padding: 20px;
-    gap: 16px;
+    width: calc(100vw - 60px);
+    min-width: calc(100vw - 60px);
+    max-width: 450px;
+    height: auto;
+    min-height: 160px;
+    padding: 16px;
+    gap: 14px;
+    grid-template-columns: 120px 1fr;
+    flex-shrink: 0;
+    overflow: visible;
   }
   .brand-carousel-logo-area{
     justify-content: flex-start;
     align-self: flex-start;
     padding-top: 0;
+    gap: 10px;
   }
   .brand-carousel-logo{
-    width: 160px;
-    height: 160px;
+    width: 120px;
+    height: 120px;
     background: #F3F4F6;
     align-items: flex-start;
-    padding: 12px 16px 16px 16px;
+    padding: 10px 12px 12px 12px;
     margin-top: 0;
   }
   .brand-carousel-name{
-    font-size: 16px;
+    font-size: 15px;
   }
   .brand-carousel-content .brand-carousel-tag{
     font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
-    font-size: 10px;
+    font-size: 9px;
     font-weight: 500;
-    line-height: 21px;
+    line-height: 18px;
     letter-spacing: 0.27em;
     color: #171717;
+    margin-bottom: 4px;
   }
   .brand-carousel-content{
     align-items: flex-start;
     text-align: left;
+    gap: 8px;
+    overflow: visible;
   }
   .brand-carousel-content p + .brand-carousel-btn[data-button-color="#4CAF50"],
   .brand-carousel-content p + .brand-carousel-btn[data-button-color="#FFC107"]{
-    margin-top: 12px;
+    margin-top: 8px;
   }
   .brand-carousel-content .brand-carousel-tag{
     text-align: left;
@@ -605,31 +698,33 @@
   .brand-carousel-content h3{
     font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
     color: #171717;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 600;
-    line-height: 100%;
+    line-height: 110%;
     letter-spacing: -0.06em;
     text-align: left;
     align-self: flex-start;
     width: 100%;
+    margin: 0;
   }
   .brand-carousel-content p{
     font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 400;
-    line-height: 140%;
+    line-height: 130%;
     letter-spacing: -0.02em;
     color: #737373;
     text-align: left;
     align-self: flex-start;
     width: 100%;
+    margin: 0;
   }
   .brand-carousel-btn{
-    padding: 10px 20px;
+    padding: 8px 16px;
     font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 400;
-    line-height: 22.5px;
+    line-height: 20px;
     letter-spacing: -0.19px;
     align-self: flex-start;
     margin-left: 0;
@@ -638,7 +733,7 @@
   /* Green button - white text */
   .brand-carousel-btn[data-button-color="#4CAF50"]{
     color: #FFFFFF;
-    margin-top: 12px;
+    margin-top: 8px;
   }
   
   /* Yellow button - neutral/900 text */
@@ -652,6 +747,98 @@
   .nav-arrow svg{
     width: 20px;
     height: 20px;
+  }
+}
+
+/* ---------- Small Mobile (375px and below) ---------- */
+@media (max-width: 375px){
+  .brands-carousel-section{
+    padding: 40px 0;
+    overflow-x: hidden;
+    overflow-y: visible;
+  }
+  .brands-carousel-tag{
+    font-size: 9.5px;
+    padding: 5px 11px;
+    margin-bottom: 18px;
+  }
+  .brands-carousel-text h2{
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  .brands-carousel-text h2 .our-word{
+    font-size: 24px;
+  }
+  .brands-carousel-description{
+    font-size: 14px;
+  }
+  .brands-carousel-header{
+    margin-bottom: 28px;
+  }
+  .brands-carousel-cards-wrapper{
+    width: 100%;
+    position: relative;
+    left: auto;
+    right: auto;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  .brands-carousel-cards{
+    gap: 18px;
+    flex-direction: row;
+    padding-right: 16px;
+    min-width: fit-content;
+  }
+  .brand-carousel-card{
+    width: calc(100vw - 48px);
+    min-width: calc(100vw - 48px);
+    max-width: 400px;
+    padding: 14px;
+    gap: 12px;
+    grid-template-columns: 100px 1fr;
+    min-height: 150px;
+    flex-shrink: 0;
+    overflow: visible;
+  }
+  .brand-carousel-logo{
+    width: 100px;
+    height: 100px;
+    padding: 8px 10px 10px 10px;
+  }
+  .brand-carousel-name{
+    font-size: 14px;
+  }
+  .brand-carousel-content .brand-carousel-tag{
+    font-size: 8.5px;
+    line-height: 16px;
+    margin-bottom: 4px;
+  }
+  .brand-carousel-content{
+    gap: 6px;
+    overflow: visible;
+  }
+  .brand-carousel-content h3{
+    font-size: 16px;
+    line-height: 110%;
+  }
+  .brand-carousel-content p{
+    font-size: 11px;
+    line-height: 130%;
+  }
+  .brand-carousel-btn{
+    padding: 7px 14px;
+    font-size: 11px;
+    line-height: 18px;
+  }
+  .nav-arrow{
+    width: 36px;
+    height: 36px;
+  }
+  .nav-arrow svg{
+    width: 18px;
+    height: 18px;
   }
 }
 

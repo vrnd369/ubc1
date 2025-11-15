@@ -765,10 +765,31 @@
 }
 
 @media (max-width: 480px) {
+  .brand-hero {
+    height: 85vh !important;
+    min-height: 85vh !important;
+    padding-top: 10vh;
+  }
+  .brand-hero__bg-image {
+    height: 85vh !important;
+    min-height: 85vh !important;
+  }
+  .brand-hero__fg-image {
+    height: 85vh !important;
+    min-height: 85vh !important;
+    margin-top: 150px;
+    background-size: 100% auto;
+  }
+  .brand-hero__inner {
+    transform: translateY(-50px);
+    margin-top: 0;
+    padding: 0 16px;
+  }
   .brand-hero__title {
     font-size: 32px;
     line-height: 110%;
     letter-spacing: -0.06em;
+    margin-bottom: 12px;
   }
   .brand-hero__title .brand-hero__italic {
     font-size: 32px;
@@ -777,8 +798,10 @@
   }
   .brand-hero__lead {
     font-size: 14px;
-    line-height: normal;
+    line-height: 1.5;
     letter-spacing: -0.02em;
+    max-width: 100%;
+    margin-bottom: 20px;
   }
   .btn-primary {
     font-family: Arial, sans-serif;

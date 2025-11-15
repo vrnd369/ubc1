@@ -5,9 +5,11 @@ html, body { height: 100%; margin: 0; }
 
 .careers {
   width: 100%;
+  max-width: 100vw;
   display: block;
   color: #0b0f19;
   background: #ffffff;
+  overflow-x: hidden;
 }
 
 .site-container{
@@ -26,14 +28,18 @@ html, body { height: 100%; margin: 0; }
   display: flex;
   align-items: flex-end;   /* align content to bottom */
   justify-content: flex-start; /* align content to left */
-  background-position: center;
+  background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
+  background-attachment: fixed;
   padding: 0;              /* no extra padding so image fills screen */
+  overflow: hidden;
 }
 
 /* position content at bottom left */
 .careers-hero .site-container{
+  position: relative;
+  z-index: 1;
   padding-bottom: 8vh;
   padding-left: 24px;
   width: 100%;
@@ -379,3 +385,183 @@ html, body { height: 100%; margin: 0; }
 
 /* ===== Scroll snap with sticky navs ===== */
 .careers section:first-child { scroll-margin-top: 96px; }
+
+/* ===== Mobile Responsive (480px and below) ===== */
+@media (max-width: 480px) {
+  .site-container {
+    padding: 0 16px;
+  }
+
+  /* Hero Section Mobile */
+  .careers-hero {
+    min-height: 70vh;
+    height: 70vh;
+    max-height: 70vh;
+    align-items: center;
+    justify-content: center;
+    background-size: cover !important;
+    background-position: center center !important;
+    background-attachment: scroll !important;
+    background-repeat: no-repeat !important;
+    overflow: hidden;
+    width: 100%;
+    max-width: 100vw;
+    position: relative;
+    left: 0;
+    right: 0;
+  }
+  
+  /* Ensure background scales properly on all mobile devices */
+  @supports (background-size: cover) {
+    .careers-hero {
+      background-size: cover !important;
+    }
+  }
+  
+  /* Ensure content stays above background */
+  .careers-hero .site-container {
+    position: relative;
+    z-index: 1;
+    padding-bottom: 40px;
+    padding-left: 16px;
+    padding-right: 16px;
+    text-align: center;
+  }
+
+  .pill-outline {
+    width: 150px;
+    height: 30px;
+    font-size: 9px;
+    line-height: 19px;
+  }
+
+  .hero-title {
+    font-size: 36px;
+    line-height: 120%;
+    width: 100%;
+    height: auto;
+    margin: 16px 0 12px;
+    text-align: center;
+  }
+
+  .hero-sub {
+    font-size: 16px;
+    line-height: 140%;
+    width: 100%;
+    height: auto;
+    margin-top: 8px;
+    text-align: center;
+    -webkit-line-clamp: unset;
+    line-clamp: unset;
+    display: block;
+  }
+
+  /* Why Section Mobile */
+  .why {
+    padding: 64px 0 48px;
+  }
+
+  .pill-soft {
+    width: 90px;
+    height: 30px;
+    font-size: 9px;
+    line-height: 19px;
+    margin-bottom: 20px;
+  }
+
+  .section-title {
+    font-size: 36px;
+    width: 100%;
+    height: auto;
+    white-space: normal;
+    margin: 0 0 32px;
+    text-align: left;
+  }
+
+  .why .why-grid {
+    grid-template-columns: 1fr;
+    row-gap: 32px;
+  }
+
+  .why .why-head {
+    font-size: 20px;
+    width: 100%;
+    height: auto;
+    margin: 0 0 12px;
+  }
+
+  .why .why-text {
+    font-size: 16px;
+    width: 100%;
+    height: auto;
+    line-height: 140%;
+  }
+
+  /* Openings Section Mobile */
+  .openings {
+    padding: 64px 0;
+  }
+
+  .pill-outline.inverted {
+    width: 115px;
+    height: 30px;
+    font-size: 9px;
+    line-height: 19px;
+    margin-bottom: 20px;
+  }
+
+  .section-title.inverted {
+    font-size: 36px;
+    width: 100%;
+    height: auto;
+    white-space: normal;
+    margin: 0 0 24px;
+  }
+
+  .job-row {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 24px 0;
+    width: 100%;
+    height: auto;
+  }
+
+  .job-left {
+    height: auto;
+  }
+
+  .job-right {
+    height: auto;
+    gap: 16px;
+  }
+
+  .job-left .job-title {
+    font-size: 20px;
+    line-height: 1.4;
+    margin: 0 0 12px;
+  }
+
+  .job-date {
+    font-size: 13px;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .job-right .job-blurb {
+    font-size: 16px;
+    line-height: 1.6;
+    width: 100%;
+    height: auto;
+    margin: 0 0 16px;
+    -webkit-line-clamp: unset;
+    line-clamp: unset;
+    display: block;
+  }
+
+  .btn-apply {
+    width: 100%;
+    height: 44px;
+    font-size: 14px;
+    align-self: stretch;
+  }
+}

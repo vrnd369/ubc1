@@ -81,11 +81,12 @@ export default function ScrollToTop() {
     scrollToTop();
     
     // Scroll after next frame (catches content that renders after paint)
+    let rafId2 = null;
     const rafId1 = requestAnimationFrame(() => {
       scrollToTop();
       
       // Double RAF for better coverage
-      const rafId2 = requestAnimationFrame(() => {
+      rafId2 = requestAnimationFrame(() => {
         scrollToTop();
       });
     });
@@ -105,6 +106,9 @@ export default function ScrollToTop() {
 
     return () => {
       cancelAnimationFrame(rafId1);
+      if (rafId2 !== null) {
+        cancelAnimationFrame(rafId2);
+      }
       clearTimeout(timeoutId1);
       clearTimeout(timeoutId2);
       clearTimeout(timeoutId3);

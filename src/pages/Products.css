@@ -1,0 +1,145 @@
+main > .container.section{
+  padding-top:140px;
+}
+
+/* Brand Filter Section */
+.products-brand-filter {
+  padding: 120px 0 0;
+  background: #ffffff;
+}
+
+.brand-filter-header {
+  margin-bottom: 24px;
+}
+
+.brand-filter-header .tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: 0;
+  margin-right: auto;
+  margin-bottom: 0;
+}
+
+.brand-dropdown-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.brand-select {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.brand-select-custom {
+  position: relative;
+}
+
+.brand-select-trigger {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 20px;
+  background: #EAE9FF;
+  border: 1px solid #EAE9FF;
+  border-radius: 999px;
+  cursor: pointer;
+  min-width: 180px;
+  transition: all 0.2s ease;
+  font-weight: 600;
+  font-size: 14px;
+  color: #1F2A6B;
+  justify-content: space-between;
+}
+
+.brand-select-trigger:hover {
+  background: #DAD7FF;
+  border-color: #DAD7FF;
+  box-shadow: 0 2px 8px rgba(234, 233, 255, 0.4);
+}
+
+.brand-select-trigger.open {
+  background: #DAD7FF;
+  border-color: #DAD7FF;
+}
+
+.brand-select-icon {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.dropdown-arrow {
+  font-size: 12px;
+  color: #1F2A6B;
+  transition: transform 0.2s ease;
+}
+
+.brand-select-trigger.open .dropdown-arrow {
+  transform: rotate(180deg);
+}
+
+.brand-select-menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  background: #FFFFFF;
+  border-radius: 12px;
+  box-shadow: 0 10px 28px rgba(17, 24, 39, 0.1);
+  padding: 8px;
+  z-index: 100;
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 200px;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.brand-select-menu.open {
+  display: flex;
+}
+
+.brand-select-option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 16px;
+  border-radius: 8px;
+  border: none;
+  background: #F3F4F6;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  color: #374151;
+  font-weight: 500;
+  font-size: 14px;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.brand-select-option:hover {
+  background: #E5E7EB;
+}
+
+.brand-select-option.active {
+  background: #EAE9FF;
+  color: #1F2A6B;
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .brand-dropdown-wrapper {
+    width: 100%;
+  }
+  
+  .brand-select-trigger {
+    width: 100%;
+  }
+  
+  .brand-select-menu {
+    width: 100%;
+  }
+}
+

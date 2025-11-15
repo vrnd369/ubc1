@@ -1,0 +1,657 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap');
+
+.brands-carousel-section{
+  background: #1F2A6B;
+  color: #FFFFFF;
+  padding: 80px 0;
+  width: 100%;
+  overflow-x: hidden;
+  overflow-y: visible;
+}
+
+.brands-carousel-header{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 48px;
+  gap: 40px;
+}
+
+.brands-carousel-text{
+  flex: 1;
+}
+
+.brands-carousel-tag{
+  background: #1F2A6B;
+  color: #FFFFFF;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+  font-size: 10px;
+  font-weight: 500;
+  line-height: 21px;
+  letter-spacing: 0.27em;
+  margin-bottom: 28px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.brands-carousel-text h2{
+  color: #FFFFFF;
+  font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+  font-size: 44px;
+  line-height: 100%;
+  font-weight: 600;
+  margin: 0 0 16px 0;
+  letter-spacing: -0.04em;
+  text-align: left;
+}
+
+.brands-carousel-text h2 .our-word{
+  font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+  font-size: 44px;
+  font-weight: 500;
+  line-height: 100%;
+  letter-spacing: -0.08em;
+}
+
+.brands-carousel-description{
+  font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+  color: rgba(246, 247, 249, 0.8);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 120%;
+  letter-spacing: -0.02em;
+  margin: 0;
+  max-width: 600px;
+  text-align: left;
+}
+
+.brands-carousel-nav{
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.nav-arrow{
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #FFFFFF;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  color: #374151;
+}
+
+.nav-arrow:hover{
+  background: #F3F4F6;
+  transform: scale(1.05);
+}
+
+.nav-arrow svg{
+  width: 24px;
+  height: 24px;
+}
+
+.brands-carousel-cards-wrapper{
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  padding-left: max(24px, calc(50vw - 600px));
+  padding-right: 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
+.brands-carousel-cards-wrapper::-webkit-scrollbar {
+  display: none; /* Chrome, Safari and Opera */
+}
+
+.brands-carousel-cards{
+  display: flex;
+  gap: 32px;
+  width: fit-content;
+  min-width: calc(1484px + 32px + 80px); /* 2 cards (742px each) + gap + padding */
+  padding-right: 80px;
+}
+
+.brand-carousel-card{
+  background: #FFFFFF;
+  border-radius: 24px;
+  padding: 24px;
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 24px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  width: 742px;
+  min-width: 742px;
+  height: 358px;
+  flex-shrink: 0;
+}
+
+.brand-carousel-logo-area{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  align-self: flex-start;
+  gap: 16px;
+  padding-top: 0;
+}
+
+.brand-carousel-logo{
+  width: 320px;
+  height: 320px;
+  border-radius: 20px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 20px 24px 24px 24px;
+  background: #F3F4F6;
+  margin-top: 0;
+}
+
+.brand-carousel-logo svg{
+  width: 80px;
+  height: 80px;
+}
+
+.brand-carousel-logo-img{
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.brand-carousel-name{
+  color: #111827;
+  font-size: 18px;
+  font-weight: 700;
+  margin: 0;
+  text-align: center;
+}
+
+.brand-carousel-content{
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 100%;
+  overflow-wrap: break-word;
+  justify-content: flex-start;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.brand-carousel-content p + .brand-carousel-btn[data-button-color="#4CAF50"],
+.brand-carousel-content p + .brand-carousel-btn[data-button-color="#FFC107"]{
+  margin-top: 12px;
+}
+
+.brand-carousel-content .brand-carousel-tag{
+  background: transparent;
+  color: #171717;
+  border: none;
+  padding: 0;
+  font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+  font-size: 10px;
+  font-weight: 500;
+  line-height: 21px;
+  letter-spacing: 0.27em;
+  margin-bottom: 0;
+  text-align: left;
+  align-self: flex-start;
+}
+
+.brand-carousel-content h3{
+  font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+  color: #171717;
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 100%;
+  letter-spacing: -0.06em;
+  margin: 0;
+  text-align: left;
+  align-self: flex-start;
+  width: 100%;
+}
+
+.brand-carousel-content p{
+  font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+  color: #737373;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 140%;
+  letter-spacing: -0.02em;
+  margin: 0;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  text-align: left;
+  align-self: flex-start;
+  width: 100%;
+}
+
+.brand-carousel-btn{
+  padding: 12px 24px;
+  border-radius: 999px;
+  border: none;
+  font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22.5px;
+  letter-spacing: -0.19px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  width: fit-content;
+  margin-top: 12px;
+  margin-left: 0;
+  text-decoration: none;
+  display: inline-block;
+  align-self: flex-start;
+  text-align: center;
+}
+
+/* Green button - white text */
+.brand-carousel-btn[data-button-color="#4CAF50"]{
+  color: #FFFFFF;
+  margin-top: 12px;
+}
+
+/* Yellow button - neutral/900 text */
+.brand-carousel-btn[data-button-color="#FFC107"]{
+  color: #171717;
+}
+
+.brand-carousel-btn:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive styles */
+@media (max-width: 1024px){
+  .brands-carousel-section{
+    padding: 72px 0;
+  }
+  .brands-carousel-header{
+    flex-direction: column;
+    gap: 32px;
+  }
+  .brands-carousel-nav{
+    align-self: flex-end;
+  }
+  .brands-carousel-tag{
+    font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+    font-size: 10px;
+    font-weight: 500;
+    line-height: 21px;
+    letter-spacing: 0.27em;
+  }
+  .brands-carousel-text h2{
+    font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+    font-size: 36px;
+    line-height: 100%;
+    font-weight: 600;
+    letter-spacing: -0.04em;
+  }
+  
+  .brands-carousel-text h2 .our-word{
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    font-weight: 500;
+    line-height: 100%;
+    letter-spacing: -0.08em;
+  }
+  .brands-carousel-cards-wrapper{
+    padding-right: 24px;
+  }
+  .brands-carousel-cards{
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding-right: 0;
+    min-width: auto;
+  }
+  .brand-carousel-card{
+    width: 100%;
+    min-width: auto;
+    height: 316px;
+    grid-template-columns: 280px 1fr;
+    padding: 24px;
+  }
+  .brand-carousel-logo{
+    width: 280px;
+    height: 280px;
+    background: #F3F4F6;
+    align-items: flex-start;
+    padding: 18px 22px 22px 22px;
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 900px){
+  .brands-carousel-cards-wrapper{
+    padding-right: 24px;
+  }
+  .brands-carousel-cards{
+    display: flex;
+    flex-direction: column;
+    padding-right: 0;
+    min-width: auto;
+  }
+  .brand-carousel-card{
+    width: 100%;
+    min-width: auto;
+    height: 292px;
+    grid-template-columns: 260px 1fr;
+    gap: 24px;
+  }
+  .brand-carousel-logo{
+    width: 260px;
+    height: 260px;
+    background: #F3F4F6;
+    align-items: flex-start;
+    padding: 16px 20px 20px 20px;
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 768px){
+  .brands-carousel-section{
+    padding: 64px 0;
+  }
+  .brands-carousel-header{
+    margin-bottom: 40px;
+    gap: 24px;
+  }
+  .brands-carousel-tag{
+    font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+    font-size: 10px;
+    font-weight: 500;
+    line-height: 21px;
+    letter-spacing: 0.27em;
+  }
+  .brands-carousel-text h2{
+    font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+    font-size: 32px;
+    line-height: 100%;
+    font-weight: 600;
+    letter-spacing: -0.04em;
+  }
+  
+  .brands-carousel-text h2 .our-word{
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 100%;
+    letter-spacing: -0.08em;
+  }
+  .brands-carousel-description{
+    font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 120%;
+    letter-spacing: -0.02em;
+    color: rgba(246, 247, 249, 0.8);
+  }
+  .brands-carousel-cards-wrapper{
+    padding-right: 20px;
+  }
+  .brands-carousel-cards{
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding-right: 0;
+    min-width: auto;
+  }
+  .brand-carousel-card{
+    width: 100%;
+    min-width: auto;
+    height: 243px;
+    grid-template-columns: 200px 1fr;
+    padding: 24px;
+    gap: 20px;
+  }
+  .brand-carousel-logo-area{
+    flex-direction: column;
+    justify-content: flex-start;
+    align-self: flex-start;
+    gap: 16px;
+    padding-top: 0;
+  }
+  .brand-carousel-logo{
+    width: 200px;
+    height: 200px;
+    flex-shrink: 0;
+    background: #F3F4F6;
+    align-items: flex-start;
+    padding: 16px 20px 20px 20px;
+    margin-top: 0;
+  }
+  .brand-carousel-name{
+    text-align: center;
+    align-self: center;
+  }
+  .brand-carousel-content{
+    align-items: flex-start;
+    text-align: left;
+  }
+  .brand-carousel-content p + .brand-carousel-btn[data-button-color="#4CAF50"],
+  .brand-carousel-content p + .brand-carousel-btn[data-button-color="#FFC107"]{
+    margin-top: 12px;
+  }
+  .brand-carousel-content .brand-carousel-tag{
+    font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+    font-size: 10px;
+    font-weight: 500;
+    line-height: 21px;
+    letter-spacing: 0.27em;
+    color: #171717;
+    text-align: left;
+    align-self: flex-start;
+  }
+  .brand-carousel-content h3{
+    font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+    color: #171717;
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 100%;
+    letter-spacing: -0.06em;
+    text-align: left;
+    align-self: flex-start;
+    width: 100%;
+  }
+  .brand-carousel-content p{
+    font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 140%;
+    letter-spacing: -0.02em;
+    color: #737373;
+    text-align: left;
+    align-self: flex-start;
+    width: 100%;
+  }
+  .brand-carousel-btn{
+    font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 22.5px;
+    letter-spacing: -0.19px;
+    align-self: flex-start;
+    margin-left: 0;
+  }
+  
+  /* Green button - white text */
+  .brand-carousel-btn[data-button-color="#4CAF50"]{
+    color: #FFFFFF;
+    margin-top: 12px;
+  }
+  
+  /* Yellow button - neutral/900 text */
+  .brand-carousel-btn[data-button-color="#FFC107"]{
+    color: #171717;
+  }
+  .nav-arrow{
+    width: 44px;
+    height: 44px;
+  }
+}
+
+@media (max-width: 480px){
+  .brands-carousel-section{
+    padding: 48px 0;
+  }
+  .brands-carousel-tag{
+    font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+    font-size: 10px;
+    font-weight: 500;
+    line-height: 21px;
+    letter-spacing: 0.27em;
+    padding: 6px 12px;
+    margin-bottom: 20px;
+  }
+  .brands-carousel-text h2{
+    font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+    font-size: 28px;
+    line-height: 100%;
+    font-weight: 600;
+    letter-spacing: -0.04em;
+    margin-bottom: 12px;
+  }
+  
+  .brands-carousel-text h2 .our-word{
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: 500;
+    line-height: 100%;
+    letter-spacing: -0.08em;
+  }
+  .brands-carousel-description{
+    font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 120%;
+    letter-spacing: -0.02em;
+    color: rgba(246, 247, 249, 0.8);
+  }
+  .brands-carousel-header{
+    margin-bottom: 32px;
+  }
+  .brands-carousel-cards-wrapper{
+    padding-right: 20px;
+  }
+  .brands-carousel-cards{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-right: 0;
+    min-width: auto;
+  }
+  .brand-carousel-card{
+    width: 100%;
+    min-width: auto;
+    height: 185px;
+    padding: 20px;
+    gap: 16px;
+  }
+  .brand-carousel-logo-area{
+    justify-content: flex-start;
+    align-self: flex-start;
+    padding-top: 0;
+  }
+  .brand-carousel-logo{
+    width: 160px;
+    height: 160px;
+    background: #F3F4F6;
+    align-items: flex-start;
+    padding: 12px 16px 16px 16px;
+    margin-top: 0;
+  }
+  .brand-carousel-name{
+    font-size: 16px;
+  }
+  .brand-carousel-content .brand-carousel-tag{
+    font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+    font-size: 10px;
+    font-weight: 500;
+    line-height: 21px;
+    letter-spacing: 0.27em;
+    color: #171717;
+  }
+  .brand-carousel-content{
+    align-items: flex-start;
+    text-align: left;
+  }
+  .brand-carousel-content p + .brand-carousel-btn[data-button-color="#4CAF50"],
+  .brand-carousel-content p + .brand-carousel-btn[data-button-color="#FFC107"]{
+    margin-top: 12px;
+  }
+  .brand-carousel-content .brand-carousel-tag{
+    text-align: left;
+    align-self: flex-start;
+  }
+  .brand-carousel-content h3{
+    font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+    color: #171717;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 100%;
+    letter-spacing: -0.06em;
+    text-align: left;
+    align-self: flex-start;
+    width: 100%;
+  }
+  .brand-carousel-content p{
+    font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 140%;
+    letter-spacing: -0.02em;
+    color: #737373;
+    text-align: left;
+    align-self: flex-start;
+    width: 100%;
+  }
+  .brand-carousel-btn{
+    padding: 10px 20px;
+    font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 22.5px;
+    letter-spacing: -0.19px;
+    align-self: flex-start;
+    margin-left: 0;
+  }
+  
+  /* Green button - white text */
+  .brand-carousel-btn[data-button-color="#4CAF50"]{
+    color: #FFFFFF;
+    margin-top: 12px;
+  }
+  
+  /* Yellow button - neutral/900 text */
+  .brand-carousel-btn[data-button-color="#FFC107"]{
+    color: #171717;
+  }
+  .nav-arrow{
+    width: 40px;
+    height: 40px;
+  }
+  .nav-arrow svg{
+    width: 20px;
+    height: 20px;
+  }
+}
+

@@ -1,0 +1,559 @@
+/* ===== HERO ===== */
+.hero {
+  position: relative !important;
+  width: 100vw !important;
+  height: 132vh !important;
+  min-height: 132vh !important;
+  max-width: 100vw !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden !important;
+  margin: 0 !important;
+  margin-top: 0 !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  margin-bottom: 0 !important;
+  padding: 0 !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  background: #000 !important;
+  box-sizing: border-box !important;
+}
+
+/* Remove space between hero and next section */
+.hero + .promise-section,
+.hero + section.promise-section,
+.hero + .section {
+  margin-top: -32vh !important;
+}
+
+/* Ensure no white background shows through from parent elements */
+.home .hero,
+main .hero,
+.App .hero {
+  background: transparent !important;
+  margin-left: 0 !important;
+  padding-left: 0 !important;
+}
+
+/* Hide any white space on the left */
+.home,
+main,
+.App {
+  overflow-x: hidden !important;
+}
+
+/* Ensure video covers any potential gaps */
+.hero-video-wrapper::before {
+  content: '';
+  position: absolute;
+  height: 150px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 150px;
+  background: transparent;
+  z-index: -1;
+}
+
+/* Video wrapper */
+.hero-video-wrapper {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  width: 100vw !important;
+  height: 100% !important;
+  min-width: 100vw !important;
+  max-width: 100vw !important;
+  min-height: 100% !important;
+  margin: 0 !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  padding: 0 !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  z-index: 0 !important;
+  overflow: visible !important;
+  background: transparent !important;
+  pointer-events: none;
+  box-sizing: border-box !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Video fill */
+.hero-video {
+  position: absolute !important;
+  top: 0 !important;
+  left: 50% !important;
+  transform: translateX(-50%) translateZ(0) !important;
+  width: 100vw !important;
+  height: auto !important;
+  min-width: 100vw !important;
+  max-width: 100vw !important;
+  min-height: 100vh !important;
+  max-height: none !important;
+  object-fit: contain !important;
+  object-position: center top !important;
+  pointer-events: none !important;
+  margin: 0 !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  padding: 0 !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  display: block !important;
+  background: transparent !important;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  box-sizing: border-box !important;
+}
+
+/* Optional overlay */
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 132vh;
+  min-height: 132vh;
+  background: transparent;
+  z-index: 1;
+  margin-left: 0 !important;
+  padding-left: 0 !important;
+}
+
+/* Inner content */
+.hero-inner {
+  position: relative;
+  padding: 80px 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-top: -200px;
+  width: 100%;
+  text-align: left;
+  z-index: 2;
+  background: transparent !important;
+  box-sizing: border-box;
+}
+
+.hero .container { background: transparent !important; }
+
+.hero h1 {
+  color: #fff;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, .5), 0 2px 10px rgba(0, 0, 0, .3);
+  margin-bottom: 24px;
+  /* margin-top: -55px; */
+  font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+  font-size: 88px;
+  font-weight: 600;
+  letter-spacing: -0.06em;
+  line-height: 0.87;
+  /* margin-bottom: 250px; */
+}
+
+.hero .lead {
+  color: #fff;
+  max-width: 720px;
+  /* margin-bottom: 240px; */
+  font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: -0.02em;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, .4);
+}
+
+.hero-actions {
+  display: flex;
+  gap: 24px;
+  margin-top: 24px;
+  margin-bottom: 32px;
+  flex-wrap: wrap;
+}
+
+/* Buttons */
+.hero .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 20px;
+  border-radius: 9999px;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22.5px;
+  letter-spacing: -0.19px;
+  text-decoration: none;
+  transition: transform .15s ease, box-shadow .15s ease, background-color .15s ease, color .15s ease, border-color .15s ease;
+  background: rgba(229, 231, 235, .9);
+  color: #111827;
+  border: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, .15);
+}
+
+.hero .btn:hover {
+  background: rgba(209, 213, 219, .95);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, .2);
+}
+
+.hero .btn.ghost {
+  background: transparent;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, .9);
+  box-shadow: none;
+}
+
+.hero .btn.ghost:hover {
+  background: rgba(255, 255, 255, .1);
+  transform: none;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 1024px) {
+  .hero h1 {
+    font-size: 64px;
+    line-height: 0.87;
+    letter-spacing: -0.06em;
+    font-weight: 600;
+  }
+  
+  .hero .lead {
+    font-size: 17px;
+    font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: -0.02em;
+  }
+  
+  .hero .btn, .hero .btn.ghost {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 22.5px;
+    letter-spacing: -0.19px;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Remove all margins from hero section and video elements */
+  .hero { 
+    min-height: 100vh;
+    height: 100vh !important;
+    width: 100vw !important;
+    max-width: 100vw !important;
+    min-width: 100vw !important;
+    left: 0 !important;
+    right: 0 !important;
+    margin: 0 !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding: 0 !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    overflow: hidden !important;
+    position: relative !important;
+    background: #000 !important;
+    box-sizing: border-box !important;
+  }
+  
+  /* Remove gap between hero and next section */
+  .hero + section,
+  .hero + .section,
+  .hero + .promise-section {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
+  
+  /* Video wrapper - no margins */
+  .hero-video-wrapper {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    width: 100vw !important;
+    max-width: 100vw !important;
+    min-width: 100vw !important;
+    height: 100vh !important;
+    min-height: 100vh !important;
+    margin: 0 !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding: 0 !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    overflow: hidden !important;
+    z-index: 0 !important;
+    background: transparent !important;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    box-sizing: border-box !important;
+  }
+  
+  /* Video element - fit to mobile viewport */
+  .hero-video {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100vw !important;
+    max-width: 100vw !important;
+    min-width: 100vw !important;
+    height: 100vh !important;
+    min-height: 100vh !important;
+    max-height: 100vh !important;
+    object-fit: cover !important;
+    object-position: center top !important;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    z-index: 0 !important;
+    margin: 0 !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding: 0 !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    box-sizing: border-box !important;
+  }
+  
+  /* Overlay - no margins */
+  .hero-overlay {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    width: 100vw !important;
+    max-width: 100vw !important;
+    min-width: 100vw !important;
+    height: 100vh !important;
+    min-height: 100vh !important;
+    margin: 0 !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding: 0 !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    z-index: 1 !important;
+    box-sizing: border-box !important;
+  }
+  
+  .hero-inner { 
+    padding: 60px 20px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    left: 0 !important;
+    right: 0 !important;
+    margin: 0 auto !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    margin-top: 0 !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+    box-sizing: border-box !important;
+    position: relative !important;
+    z-index: 2 !important;
+  }
+  
+  .hero .container {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+  
+  .hero-actions { 
+    margin-bottom: 24px; 
+    margin-top: 24px;
+  }
+  
+  .hero h1 { 
+    font-size: 48px; 
+    line-height: 0.87; 
+    letter-spacing: -0.06em;
+    font-weight: 600;
+    margin-bottom: 20px; 
+  }
+  
+  .hero .lead { 
+    font-size: 16px; 
+    font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: -0.02em;
+    margin-bottom: 24px; 
+  }
+  
+  .hero-actions { 
+    flex-direction: column; 
+    gap: 12px; 
+  }
+  
+  .hero .btn, .hero .btn.ghost {
+    width: 100%; 
+    justify-content: center; 
+    padding: 14px 24px; 
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 22.5px;
+    letter-spacing: -0.19px;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Small mobile - remove all margins */
+  .hero { 
+    min-height: 100vh;
+    height: 100vh !important;
+    width: 100vw !important;
+    max-width: 100vw !important;
+    min-width: 100vw !important;
+    margin: 0 !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding: 0 !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+  
+  .hero-video-wrapper {
+    left: 0 !important;
+    width: 100vw !important;
+    max-width: 100vw !important;
+    min-width: 100vw !important;
+    height: 100vh !important;
+    min-height: 100vh !important;
+    margin: 0 !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding: 0 !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    overflow: hidden !important;
+  }
+  
+  .hero-video {
+    left: 0 !important;
+    top: 0 !important;
+    width: 100vw !important;
+    max-width: 100vw !important;
+    min-width: 100vw !important;
+    height: 100vh !important;
+    min-height: 100vh !important;
+    max-height: 100vh !important;
+    object-fit: cover !important;
+    object-position: center top !important;
+    margin: 0 !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding: 0 !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+  
+  .hero-overlay {
+    height: 100vh !important;
+    min-height: 100vh !important;
+    width: 100vw !important;
+    max-width: 100vw !important;
+    min-width: 100vw !important;
+    margin: 0 !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding: 0 !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+  
+  .hero-inner { 
+    padding: 40px 16px !important;
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+  
+  .hero .container {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+  
+  .hero-actions { 
+    margin-bottom: 20px; 
+    margin-top: 20px;
+  }
+  
+  .hero h1 { 
+    font-size: 36px; 
+    line-height: 0.87; 
+    letter-spacing: -0.06em;
+    font-weight: 600;
+    margin-bottom: 16px; 
+  }
+  
+  .hero .lead { 
+    font-size: 15px; 
+    font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: -0.02em;
+    margin-bottom: 20px; 
+  }
+  
+  .hero .btn, .hero .btn.ghost { 
+    padding: 12px 20px; 
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 22.5px;
+    letter-spacing: -0.19px;
+  }
+}

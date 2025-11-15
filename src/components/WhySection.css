@@ -1,0 +1,228 @@
+/* =========================
+   WHY SECTION (fixed + improved)
+   ========================= */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+.why-section {
+  background: #F3F4F6;           /* light grey like ref */
+  padding: 96px 0 80px;
+  width: 100%;
+}
+
+.why-section .container {
+  max-width: 1200px;             /* same working width as careers */
+  margin: 0 auto;
+  padding: 0 24px;
+  text-align: left;
+}
+
+/* Tag pill */
+.tag.why-tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  width: 99.41px;
+  height: 33px;
+  padding: 0;
+  border-radius: 999px;
+  font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 21px;
+  letter-spacing: 0.27em;
+  background:#2036c9;
+  color: #ffffff;
+  border: 1px solid #2C36A6;
+  margin-bottom: 24px;
+  white-space: nowrap;
+}
+
+/* Heading + subtitle */
+.why-heading {
+  font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+  font-weight: 600;
+  font-size: 56px;
+  line-height: 100%;
+  letter-spacing: -0.04em;
+  color: #171717;
+  margin: 0 0 18px 0;
+}
+
+.lead.why-subtitle {
+  font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 125%;
+  letter-spacing: -0.02em;
+  color: #000000;
+  margin: 0 0 48px 0;
+  max-width: 720px;
+}
+
+/* Features layout - scoped to .why-section only */
+.why-section .why-features {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(300px, 1fr));
+  column-gap: 56px;
+  row-gap: 48px;
+  align-items: start;
+  justify-items: start;
+}
+
+/* Card layout - scoped to .why-section only */
+.why-section .why-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  width: 100%;
+  min-width: 0;
+}
+
+/* Icon circular with halo - scoped to .why-section only */
+.why-section .why-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: none;
+  margin-bottom: 24px;
+  border: none;
+  flex-shrink: 0;
+}
+
+.why-section .why-icon img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+}
+
+/* Title - scoped to .why-section only */
+.why-section .why-card h3 {
+  font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 120%;
+  letter-spacing: -0.02em;
+  color: #171717;
+  margin: 0 0 16px 0;
+}
+
+/* Description text — scoped to .why-section only */
+.why-section .why-card p {
+  margin: 0;
+  font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 140%;
+  letter-spacing: -0.02em;
+  color: #999999;
+  opacity: 1;
+  width: 282px;
+  height: 118px;
+  display: block;
+  word-break: normal;
+  overflow-wrap: normal;
+  word-wrap: normal;
+  white-space: normal;
+  -webkit-hyphens: none;
+  hyphens: none;
+  text-align: left;
+  box-sizing: border-box;
+}
+
+.why-section .why-desc-4,
+.why-section .why-desc-5 {
+  margin: 0 !important;
+  font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif !important;
+  font-weight: 400 !important;
+  font-size: 18px !important;
+  line-height: 140% !important;
+  letter-spacing: -0.02em !important;
+  color: #999999 !important;
+  opacity: 1 !important;
+  width: 282px !important;
+  height: 118px !important;
+  display: block !important;
+  word-break: normal !important;
+  overflow-wrap: normal !important;
+  word-wrap: normal !important;
+  white-space: normal !important;
+  -webkit-hyphens: none !important;
+  hyphens: none !important;
+  text-align: left !important;
+  box-sizing: border-box !important;
+}
+
+/* =========================
+   Responsive
+   ========================= */
+@media (max-width: 1200px) {
+  .why-section .why-features {
+    gap: 44px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .why-section { padding: 80px 0 64px; }
+  .lead.why-subtitle { font-size: 20px; }
+  .why-heading { font-size: 48px; }
+  .why-section .why-features {
+    grid-template-columns: 1fr 1fr;
+    column-gap: 40px;
+  }
+  .why-section .why-icon {
+    width: 54px;
+    height: 54px;
+    background: transparent;
+    box-shadow: none;
+  }
+  .why-section .why-icon img {
+    width: 27px;
+    height: 27px;
+  }
+  .why-section .why-card h3 {
+    font-size: 22px;
+    margin: 0 0 14px 0;
+  }
+  .why-section .why-card p {
+    font-size: 16px;
+    max-width: 420px;
+  }
+}
+
+@media (max-width: 720px) {
+  .why-section { padding: 64px 0; }
+  .why-heading { font-size: 36px; }
+  .lead.why-subtitle {
+    font-size: 18px;
+    margin-bottom: 36px;
+  }
+  .why-section .why-features {
+    grid-template-columns: 1fr;
+    row-gap: 32px;
+  }
+  .why-section .why-icon {
+    width: 50px;
+    height: 50px;
+    background: transparent;
+    box-shadow: none;
+    margin-bottom: 16px;
+  }
+  .why-section .why-icon img {
+    width: 25px;
+    height: 25px;
+  }
+  .why-section .why-card h3 {
+    font-size: 20px;
+    margin: 0 0 12px 0;
+  }
+  .why-section .why-card p {
+    font-size: 14px;
+    max-width: 420px;
+  }
+}

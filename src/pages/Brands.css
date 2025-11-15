@@ -1,0 +1,864 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
+
+/* Page wrapper (keeps things isolated) */
+.brand-page {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* Containers */
+.container {
+  max-width: 1200px;
+  padding: 0 24px;
+  margin: 0 auto;
+  background: transparent !important;
+}
+
+/* ===== HERO ===== */
+.brand-hero {
+  position: relative !important;
+  width: 100vw !important;
+  height: 135vh !important;
+  min-height: 135vh !important;
+  max-width: 100vw !important;
+  display: grid;
+  align-items: start;
+  padding-top: 15vh;
+  overflow: hidden !important;
+  margin: 0 !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  padding-bottom: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  background-color: #f5f6f8;
+  z-index: 1;
+}
+
+/* Background image br1 - full cover */
+.brand-hero__bg-image {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  width: 100vw !important;
+  height: 135vh !important;
+  min-height: 135vh !important;
+  z-index: 0 !important;
+  pointer-events: none;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+/* Foreground image br2 - 80% width */
+.brand-hero__fg-image {
+  margin-top: 250px;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  width: 110vw !important;
+  height: 135vh !important;
+  min-height: 135vh !important;
+  z-index: 1 !important;
+  pointer-events: none;
+}
+
+.brand-hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.15) 0%,
+    rgba(0, 0, 0, 0.1) 35%,
+    rgba(0, 0, 0, 0.08) 65%,
+    rgba(0, 0, 0, 0.05) 100%
+  );
+  pointer-events: none;
+  z-index: 2;
+  /* padding: 0; */
+}
+
+.brand-hero__inner {
+  margin-top: 0;
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  color: #0f172a;
+  transform: translateY(-100px);
+}
+
+.brand-hero__title {
+  font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+  color: #111827;
+  font-size: 68px;
+  line-height: 110%;
+  font-weight: 600;
+  letter-spacing: -0.06em;
+  margin: 0 0 16px 0;
+  text-shadow: 0 6px 28px rgba(0, 0, 0, 0.35);
+}
+.brand-hero__title .brand-hero__italic {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 68px;
+  line-height: 110%;
+  letter-spacing: -0.06em;
+  color: #111827;
+  font-variant: normal;
+}
+
+.brand-hero__lead {
+  font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+  max-width: 820px;
+  margin: 0 auto 24px auto;
+  color: #6B7280;
+  font-size: 18px;
+  line-height: normal;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  text-shadow: 0 2px 12px rgba(255, 255, 255, 0.6),
+    0 2px 14px rgba(0, 0, 0, 0.25);
+}
+
+/* ===== Shared section styles ===== */
+.brand-section {
+  background: #f5f6f8;
+  padding: clamp(56px, 8vw, 96px) 0;
+  position: relative;
+  z-index: 2;
+}
+
+.brand-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: clamp(24px, 5vw, 64px);
+  align-items: start;
+}
+
+.brand-title {
+  font-family: 'Ag H', 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+  font-size: clamp(32px, 4.8vw, 48px);
+  line-height: 1.1;
+  font-weight: 800;
+  letter-spacing: -0.015em;
+  margin: 6px 0 0 0;
+  color: #171717;                  /* Neutral/900 */
+}
+
+/* What We Stand For section title */
+.brand-standfor .brand-title {
+  font-family: 'Ag H', 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+  color: #171717;                  /* Neutral/900 */
+}
+
+/* Why Soil King section title */
+.brand-why .brand-title {
+  font-family: 'Ag H', 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+  color: #171717;                  /* Neutral/900 */
+}
+
+.brand-copy {
+  font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+  font-weight: 400;              /* Regular */
+  font-size: 22px;
+  line-height: 125%;             /* 125% */
+  letter-spacing: -0.02em;        /* -2% */
+  color: #171717;                /* Neutral/900 */
+}
+.brand-copy .muted { color: #6b7280; }
+
+/* Spacing between paragraph and button in brand-copy */
+.brand-copy .btn-primary {
+  margin-top: 24px;
+  background: #2f2a82;
+  color: #FFFFFF;
+}
+
+/* What We Stand For section copy text */
+.brand-standfor .brand-copy {
+  font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+  font-weight: 400;              /* Regular */
+  font-size: 22px;
+  line-height: 125%;             /* 125% */
+  letter-spacing: -0.02em;        /* -2% */
+  color: #171717;                /* Neutral/900 */
+}
+
+/* Why Soil King section copy text */
+.brand-why .brand-copy {
+  font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+  font-weight: 400;              /* Regular */
+  font-size: 22px;
+  line-height: 125%;             /* 125% */
+  letter-spacing: -0.02em;        /* -2% */
+  color: #171717;                /* Neutral/900 */
+}
+
+/* Eyebrow / badge */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 0;
+  border-radius: 999px;
+  background: #2f2a82;
+  font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+  font-weight: 500;              /* Medium */
+  font-size: 10px;
+  line-height: 21px;
+  letter-spacing: 0.27em;        /* 27% */
+  color: #FFFFFF;                /* White with 100% opacity */
+  text-transform: uppercase;
+  margin-bottom: 24px;
+  width: 195px;
+  height: 33px;
+  box-sizing: border-box;
+  flex-shrink: 0;
+}
+
+/* What We Stand For tag specific styling */
+.brand-standfor .eyebrow {
+  font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+  font-weight: 500;              /* Medium */
+  font-size: 10px;
+  line-height: 21px;
+  letter-spacing: 0.27em;        /* 27% */
+  color: #FFFFFF;                /* White with 100% opacity */
+}
+
+/* Why Soil King tag specific styling */
+.brand-why .eyebrow {
+  font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+  font-weight: 500;              /* Medium */
+  font-size: 10px;
+  line-height: 21px;
+  letter-spacing: 0.27em;        /* 27% */
+  color: #FFFFFF;                /* White with 100% opacity */
+}
+
+/* CTA buttons reused */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 22px;
+  border-radius: 9999px;
+  text-decoration: none;
+  font-weight: 700;
+  line-height: 1;
+  transition: transform 0.15s ease, box-shadow 0.15s ease,
+    background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+  border: 0;
+}
+.btn-primary {
+  background: #2f2a82;
+  color: #FFFFFF;
+  box-shadow: 0 8px 20px rgba(47, 42, 130, 0.25);
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  line-height: 22.5px;
+  font-weight: 400;
+  letter-spacing: -0.19px;
+}
+.btn-primary:hover { transform: translateY(-1px); box-shadow: 0 12px 24px rgba(47, 42, 130, 0.3); }
+.icon-btn { width: 48px; height: 48px; border-radius: 999px; background: #fff; color: #0f172a; }
+
+/* Section specific tweaks */
+.brand-about, .brand-why { background: #f5f6f8; }
+.brand-standfor { background: #FFFFFF; }
+
+/* ===== PRODUCTS ===== */
+.brand-products { background: #fff; }
+
+/* header with arrows */
+.prod-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+.prod-title {
+  font-size: clamp(28px, 4.2vw, 48px);
+  line-height: 1.1;
+  font-weight: 800;
+  color: #0f172a;
+  letter-spacing: -0.015em;
+  margin: 0;
+}
+
+/* One-line row (no manual scroll) */
+.brand-prod-row {
+  --gap: 24px;
+  display: flex;
+  gap: var(--gap);
+  overflow-x: hidden; /* hide & block user scroll */
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+  padding: 8px 0 2px;
+}
+.no-user-scroll { touch-action: none; }
+
+/* EXACT three-per-view on desktop, two on tablet, one on mobile */
+.brand-prod-card {
+  flex: 0 0 calc((100% - (var(--gap) * 2)) / 3);  /* 3-up */
+  display: flex;
+  flex-direction: column;
+  background: #f7f8fb;
+  border-radius: 28px;
+  border: 1px solid #eef0f4;
+  overflow: hidden;
+}
+
+/* keep image area consistent & large */
+.brand-prod-media {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+}
+.brand-prod-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* product packs keep proportions */
+}
+
+/* fixed footer alignment */
+.brand-prod-body {
+  display: flex;
+  flex-direction: column;
+  padding: 18px 20px 20px 20px;
+  min-height: 150px; /* helps equalize body height */
+}
+.brand-prod-name {
+  font-size: 20px;
+  font-weight: 800;
+  line-height: 1.25;
+  color: #0f172a;
+  margin: 0 0 6px 0;
+}
+.brand-prod-blurb {
+  margin: 0 0 14px 0;
+  color: #6b7280;
+  font-size: 14.5px;
+  line-height: 1.55;
+}
+
+/* Know more chip pinned to bottom */
+.chip-link {
+  margin-top: auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 16px;
+  border-radius: 999px;
+  background: #fff;
+  color: #111827;
+  font-weight: 700;
+  font-size: 13.5px;
+  text-decoration: none;
+  border: 1px solid #e8eaf0;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1024px) {
+  .brand-hero { height: 100vh; min-height: 100vh; }
+  .brand-grid { grid-template-columns: 1fr; }
+  .brand-title {
+    font-family: 'Ag H', 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+    color: #171717;                  /* Neutral/900 */
+    margin-bottom: 8px;
+  }
+  .brand-standfor .brand-title {
+    font-family: 'Ag H', 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+    color: #171717;                  /* Neutral/900 */
+  }
+  .brand-why .brand-title {
+    font-family: 'Ag H', 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+    color: #171717;                  /* Neutral/900 */
+  }
+  .brand-hero__title {
+    font-size: 58px;
+    line-height: 110%;
+    letter-spacing: -0.06em;
+  }
+  .brand-hero__title .brand-hero__italic {
+    font-size: 58px;
+    line-height: 110%;
+    letter-spacing: -0.06em;
+  }
+
+  .brand-hero__lead {
+    font-size: 17px;
+    line-height: normal;
+    letter-spacing: -0.02em;
+  }
+  .btn-primary {
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    line-height: 21px;
+    font-weight: 400;
+    letter-spacing: -0.19px;
+    color: #FFFFFF;
+    background: #2f2a82;
+  }
+  .eyebrow {
+    font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+    font-weight: 500;              /* Medium */
+    font-size: 9.5px;              /* 10px * 0.95 = 9.5px */
+    line-height: 19.95px;          /* 21 * 0.95 = 19.95px to maintain ratio */
+    letter-spacing: 0.27em;        /* 27% */
+    color: #FFFFFF;                 /* White with 100% opacity */
+    width: 185px;                  /* 195px * 0.95 = 185px */
+    height: 31px;                  /* 33px * 0.95 = 31px */
+  }
+  .brand-standfor .eyebrow {
+    font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+    font-weight: 500;              /* Medium */
+    font-size: 9.5px;              /* 10px * 0.95 = 9.5px */
+    line-height: 19.95px;          /* 21 * 0.95 = 19.95px to maintain ratio */
+    letter-spacing: 0.27em;        /* 27% */
+    color: #FFFFFF;                 /* White with 100% opacity */
+  }
+  .brand-why .eyebrow {
+    font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+    font-weight: 500;              /* Medium */
+    font-size: 9.5px;              /* 10px * 0.95 = 9.5px */
+    line-height: 19.95px;          /* 21 * 0.95 = 19.95px to maintain ratio */
+    letter-spacing: 0.27em;        /* 27% */
+    color: #FFFFFF;                 /* White with 100% opacity */
+  }
+  .brand-copy {
+    font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+    font-weight: 400;              /* Regular */
+    font-size: 21px;              /* 22px * 0.95 = 21px */
+    line-height: 125%;             /* 125% */
+    letter-spacing: -0.02em;        /* -2% */
+    color: #171717;                /* Neutral/900 */
+  }
+  .brand-standfor .brand-copy {
+    font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+    font-weight: 400;              /* Regular */
+    font-size: 21px;              /* 22px * 0.95 = 21px */
+    line-height: 125%;             /* 125% */
+    letter-spacing: -0.02em;        /* -2% */
+    color: #171717;                /* Neutral/900 */
+  }
+  .brand-why .brand-copy {
+    font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+    font-weight: 400;              /* Regular */
+    font-size: 21px;              /* 22px * 0.95 = 21px */
+    line-height: 125%;             /* 125% */
+    letter-spacing: -0.02em;        /* -2% */
+    color: #171717;                /* Neutral/900 */
+  }
+  .brand-copy .btn-primary {
+    margin-top: 23px;              /* 24px * 0.95 = 23px */
+    background: #2f2a82;
+    color: #FFFFFF;
+  }
+
+  /* 2-up */
+  .brand-prod-card {
+    flex: 0 0 calc((100% - var(--gap)) / 2);
+  }
+}
+
+@media (max-width: 900px) {
+  .brand-hero__title {
+    font-size: 48px;
+    line-height: 110%;
+    letter-spacing: -0.06em;
+  }
+  .brand-hero__title .brand-hero__italic {
+    font-size: 48px;
+    line-height: 110%;
+    letter-spacing: -0.06em;
+  }
+  .brand-hero__lead {
+    font-size: 16px;
+    line-height: normal;
+    letter-spacing: -0.02em;
+  }
+  .btn-primary {
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    line-height: 20.5px;
+    font-weight: 400;
+    letter-spacing: -0.19px;
+    color: #FFFFFF;
+    background: #2f2a82;
+  }
+  .brand-title {
+    font-family: 'Ag H', 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+    color: #171717;                  /* Neutral/900 */
+  }
+  .brand-standfor .brand-title {
+    font-family: 'Ag H', 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+    color: #171717;                  /* Neutral/900 */
+  }
+  .brand-why .brand-title {
+    font-family: 'Ag H', 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+    color: #171717;                  /* Neutral/900 */
+  }
+  .eyebrow {
+    font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+    font-weight: 500;              /* Medium */
+    font-size: 9px;               /* 10px * 0.9 = 9px */
+    line-height: 18.9px;           /* 21 * 0.9 = 18.9px to maintain ratio */
+    letter-spacing: 0.27em;        /* 27% */
+    color: #FFFFFF;                 /* White with 100% opacity */
+    width: 176px;                  /* 195px * 0.9 = 176px */
+    height: 30px;                  /* 33px * 0.9 = 30px */
+  }
+  .brand-standfor .eyebrow {
+    font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+    font-weight: 500;              /* Medium */
+    font-size: 9px;               /* 10px * 0.9 = 9px */
+    line-height: 18.9px;           /* 21 * 0.9 = 18.9px to maintain ratio */
+    letter-spacing: 0.27em;        /* 27% */
+    color: #FFFFFF;                 /* White with 100% opacity */
+  }
+  .brand-why .eyebrow {
+    font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+    font-weight: 500;              /* Medium */
+    font-size: 9px;               /* 10px * 0.9 = 9px */
+    line-height: 18.9px;           /* 21 * 0.9 = 18.9px to maintain ratio */
+    letter-spacing: 0.27em;        /* 27% */
+    color: #FFFFFF;                 /* White with 100% opacity */
+  }
+  .brand-copy {
+    font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+    font-weight: 400;              /* Regular */
+    font-size: 20px;              /* 22px * 0.9 = 20px */
+    line-height: 125%;             /* 125% */
+    letter-spacing: -0.02em;        /* -2% */
+    color: #171717;                /* Neutral/900 */
+  }
+  .brand-standfor .brand-copy {
+    font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+    font-weight: 400;              /* Regular */
+    font-size: 20px;              /* 22px * 0.9 = 20px */
+    line-height: 125%;             /* 125% */
+    letter-spacing: -0.02em;        /* -2% */
+    color: #171717;                /* Neutral/900 */
+  }
+  .brand-why .brand-copy {
+    font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+    font-weight: 400;              /* Regular */
+    font-size: 20px;              /* 22px * 0.9 = 20px */
+    line-height: 125%;             /* 125% */
+    letter-spacing: -0.02em;        /* -2% */
+    color: #171717;                /* Neutral/900 */
+  }
+  .brand-copy .btn-primary {
+    margin-top: 22px;              /* 24px * 0.9 = 22px */
+    background: #2f2a82;
+    color: #FFFFFF;
+  }
+}
+
+@media (max-width: 768px) {
+  .brand-hero__title {
+    font-size: 42px;
+    line-height: 110%;
+    letter-spacing: -0.06em;
+  }
+  .brand-hero__title .brand-hero__italic {
+    font-size: 42px;
+    line-height: 110%;
+    letter-spacing: -0.06em;
+  }
+  .brand-hero__lead {
+    font-size: 16px;
+    line-height: normal;
+    letter-spacing: -0.02em;
+  }
+  .btn-primary {
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    line-height: 20.5px;
+    font-weight: 400;
+    letter-spacing: -0.19px;
+    color: #FFFFFF;
+    background: #2f2a82;
+  }
+  .brand-title {
+    font-family: 'Ag H', 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+    color: #171717;                  /* Neutral/900 */
+  }
+  .brand-standfor .brand-title {
+    font-family: 'Ag H', 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+    color: #171717;                  /* Neutral/900 */
+  }
+  .brand-why .brand-title {
+    font-family: 'Ag H', 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+    color: #171717;                  /* Neutral/900 */
+  }
+  .eyebrow {
+    font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+    font-weight: 500;              /* Medium */
+    font-size: 8.5px;              /* 10px * 0.85 = 8.5px */
+    line-height: 17.85px;          /* 21 * 0.85 = 17.85px to maintain ratio */
+    letter-spacing: 0.27em;        /* 27% */
+    color: #FFFFFF;                 /* White with 100% opacity */
+    width: 166px;                  /* 195px * 0.85 = 166px */
+    height: 28px;                  /* 33px * 0.85 = 28px */
+  }
+  .brand-standfor .eyebrow {
+    font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+    font-weight: 500;              /* Medium */
+    font-size: 8.5px;              /* 10px * 0.85 = 8.5px */
+    line-height: 17.85px;          /* 21 * 0.85 = 17.85px to maintain ratio */
+    letter-spacing: 0.27em;        /* 27% */
+    color: #FFFFFF;                 /* White with 100% opacity */
+  }
+  .brand-why .eyebrow {
+    font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+    font-weight: 500;              /* Medium */
+    font-size: 8.5px;              /* 10px * 0.85 = 8.5px */
+    line-height: 17.85px;          /* 21 * 0.85 = 17.85px to maintain ratio */
+    letter-spacing: 0.27em;        /* 27% */
+    color: #FFFFFF;                 /* White with 100% opacity */
+  }
+  .brand-copy {
+    font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+    font-weight: 400;              /* Regular */
+    font-size: 19px;              /* 22px * 0.85 = 19px */
+    line-height: 125%;             /* 125% */
+    letter-spacing: -0.02em;        /* -2% */
+    color: #171717;                /* Neutral/900 */
+  }
+  .brand-standfor .brand-copy {
+    font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+    font-weight: 400;              /* Regular */
+    font-size: 19px;              /* 22px * 0.85 = 19px */
+    line-height: 125%;             /* 125% */
+    letter-spacing: -0.02em;        /* -2% */
+    color: #171717;                /* Neutral/900 */
+  }
+  .brand-why .brand-copy {
+    font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+    font-weight: 400;              /* Regular */
+    font-size: 19px;              /* 22px * 0.85 = 19px */
+    line-height: 125%;             /* 125% */
+    letter-spacing: -0.02em;        /* -2% */
+    color: #171717;                /* Neutral/900 */
+  }
+  .brand-copy .btn-primary {
+    margin-top: 20px;              /* 24px * 0.85 = 20px */
+    background: #2f2a82;
+    color: #FFFFFF;
+  }
+}
+
+@media (max-width: 640px) {
+  .brand-hero { height: 100vh; min-height: 100vh; }
+  .hide-sm { display: none; }
+  .brand-hero__title {
+    font-size: 36px;
+    line-height: 110%;
+    letter-spacing: -0.06em;
+  }
+  .brand-hero__title .brand-hero__italic {
+    font-size: 36px;
+    line-height: 110%;
+    letter-spacing: -0.06em;
+  }
+
+  .brand-hero__lead {
+    font-size: 15px;
+    line-height: normal;
+    letter-spacing: -0.02em;
+  }
+  .btn-primary {
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    line-height: 19.5px;
+    font-weight: 400;
+    letter-spacing: -0.19px;
+    color: #FFFFFF;
+    background: #2f2a82;
+  }
+  .brand-title {
+    font-family: 'Ag H', 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+    color: #171717;                  /* Neutral/900 */
+  }
+  .brand-standfor .brand-title {
+    font-family: 'Ag H', 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+    color: #171717;                  /* Neutral/900 */
+  }
+  .brand-why .brand-title {
+    font-family: 'Ag H', 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+    color: #171717;                  /* Neutral/900 */
+  }
+  .eyebrow {
+    font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+    font-weight: 500;              /* Medium */
+    font-size: 8px;               /* 10px * 0.8 = 8px */
+    line-height: 16.8px;          /* 21 * 0.8 = 16.8px to maintain ratio */
+    letter-spacing: 0.27em;        /* 27% */
+    color: #FFFFFF;                 /* White with 100% opacity */
+    width: 156px;                  /* 195px * 0.8 = 156px */
+    height: 26px;                  /* 33px * 0.8 = 26px */
+  }
+  .brand-standfor .eyebrow {
+    font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+    font-weight: 500;              /* Medium */
+    font-size: 8px;               /* 10px * 0.8 = 8px */
+    line-height: 16.8px;          /* 21 * 0.8 = 16.8px to maintain ratio */
+    letter-spacing: 0.27em;        /* 27% */
+    color: #FFFFFF;                 /* White with 100% opacity */
+  }
+  .brand-why .eyebrow {
+    font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+    font-weight: 500;              /* Medium */
+    font-size: 8px;               /* 10px * 0.8 = 8px */
+    line-height: 16.8px;          /* 21 * 0.8 = 16.8px to maintain ratio */
+    letter-spacing: 0.27em;        /* 27% */
+    color: #FFFFFF;                 /* White with 100% opacity */
+  }
+  .brand-copy {
+    font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+    font-weight: 400;              /* Regular */
+    font-size: 18px;              /* 22px * 0.8 = 18px */
+    line-height: 125%;             /* 125% */
+    letter-spacing: -0.02em;        /* -2% */
+    color: #171717;                /* Neutral/900 */
+  }
+  .brand-standfor .brand-copy {
+    font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+    font-weight: 400;              /* Regular */
+    font-size: 18px;              /* 22px * 0.8 = 18px */
+    line-height: 125%;             /* 125% */
+    letter-spacing: -0.02em;        /* -2% */
+    color: #171717;                /* Neutral/900 */
+  }
+  .brand-why .brand-copy {
+    font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+    font-weight: 400;              /* Regular */
+    font-size: 18px;              /* 22px * 0.8 = 18px */
+    line-height: 125%;             /* 125% */
+    letter-spacing: -0.02em;        /* -2% */
+    color: #171717;                /* Neutral/900 */
+  }
+  .brand-copy .btn-primary {
+    margin-top: 19px;              /* 24px * 0.8 = 19px */
+    background: #2f2a82;
+    color: #FFFFFF;
+  }
+
+  /* 1-up */
+  .brand-prod-card {
+    flex: 0 0 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .brand-hero__title {
+    font-size: 32px;
+    line-height: 110%;
+    letter-spacing: -0.06em;
+  }
+  .brand-hero__title .brand-hero__italic {
+    font-size: 32px;
+    line-height: 110%;
+    letter-spacing: -0.06em;
+  }
+  .brand-hero__lead {
+    font-size: 14px;
+    line-height: normal;
+    letter-spacing: -0.02em;
+  }
+  .btn-primary {
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    line-height: 19px;
+    font-weight: 400;
+    letter-spacing: -0.19px;
+    color: #FFFFFF;
+    background: #2f2a82;
+  }
+  .brand-title {
+    font-family: 'Ag H', 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+    color: #171717;                  /* Neutral/900 */
+  }
+  .brand-standfor .brand-title {
+    font-family: 'Ag H', 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+    color: #171717;                  /* Neutral/900 */
+  }
+  .brand-why .brand-title {
+    font-family: 'Ag H', 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+    color: #171717;                  /* Neutral/900 */
+  }
+  .eyebrow {
+    font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+    font-weight: 500;              /* Medium */
+    font-size: 7.5px;             /* 10px * 0.75 = 7.5px */
+    line-height: 15.75px;         /* 21 * 0.75 = 15.75px to maintain ratio */
+    letter-spacing: 0.27em;        /* 27% */
+    color: #FFFFFF;                 /* White with 100% opacity */
+    width: 146px;                  /* 195px * 0.75 = 146px */
+    height: 25px;                  /* 33px * 0.75 = 25px */
+  }
+  .brand-standfor .eyebrow {
+    font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+    font-weight: 500;              /* Medium */
+    font-size: 7.5px;             /* 10px * 0.75 = 7.5px */
+    line-height: 15.75px;         /* 21 * 0.75 = 15.75px to maintain ratio */
+    letter-spacing: 0.27em;        /* 27% */
+    color: #FFFFFF;                 /* White with 100% opacity */
+  }
+  .brand-why .eyebrow {
+    font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+    font-weight: 500;              /* Medium */
+    font-size: 7.5px;             /* 10px * 0.75 = 7.5px */
+    line-height: 15.75px;         /* 21 * 0.75 = 15.75px to maintain ratio */
+    letter-spacing: 0.27em;        /* 27% */
+    color: #FFFFFF;                 /* White with 100% opacity */
+  }
+  .brand-copy {
+    font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+    font-weight: 400;              /* Regular */
+    font-size: 17px;              /* 22px * 0.75 = 17px */
+    line-height: 125%;             /* 125% */
+    letter-spacing: -0.02em;        /* -2% */
+    color: #171717;                /* Neutral/900 */
+  }
+  .brand-standfor .brand-copy {
+    font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+    font-weight: 400;              /* Regular */
+    font-size: 17px;              /* 22px * 0.75 = 17px */
+    line-height: 125%;             /* 125% */
+    letter-spacing: -0.02em;        /* -2% */
+    color: #171717;                /* Neutral/900 */
+  }
+  .brand-why .brand-copy {
+    font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+    font-weight: 400;              /* Regular */
+    font-size: 17px;              /* 22px * 0.75 = 17px */
+    line-height: 125%;             /* 125% */
+    letter-spacing: -0.02em;        /* -2% */
+    color: #171717;                /* Neutral/900 */
+  }
+  .brand-copy .btn-primary {
+    margin-top: 18px;              /* 24px * 0.75 = 18px */
+    background: #2f2a82;
+    color: #FFFFFF;
+  }
+}
+/* Container with brand-hero__inner - move text upward */
+.container.brand-hero__inner {
+  transform: translateY(-0px);
+  margin-top: 100px;
+}

@@ -1,0 +1,152 @@
+/* =========================
+   PROMISE (hero)
+   ========================= */
+.promise-section.section{
+  /* Variables to compute the exact offset for the right column */
+  --tag-vpad: 8px;       /* tag vertical padding */
+  --tag-fs: 12px;        /* tag font size */
+  --tag-mb: 27px;        /* margin below tag */
+  /* tag height = 2*padding + font-size; add margin-bottom */
+  --right-offset: calc((2 * var(--tag-vpad) + var(--tag-fs)) + var(--tag-mb));
+
+  background:white;
+  min-height:auto;
+  display:flex;
+  align-items:flex-start;
+  padding:101px 0 !important;
+  padding-top: 101px !important;
+  padding-bottom: 101px !important;
+  margin: 0 !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  position: relative;
+  z-index: 1;
+}
+
+.promise-content{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:67px;
+  align-items:start;
+}
+
+.promise-left{
+  display:flex;
+  flex-direction:column;
+}
+
+/* Tag pill */
+.promise-tag{
+  background:#1F2A6B;
+  color:#FFFFFF;
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding: var(--tag-vpad) 14px;
+  border-radius:999px;
+  font-weight:600;
+  font-size: var(--tag-fs);
+  letter-spacing:.3px;
+  margin-bottom: var(--tag-mb);
+  width:fit-content;
+}
+
+/* Heading */
+.promise-left h2,
+.promise-heading{
+  color:#212121;
+  font-size:40px;
+  line-height:1.1;
+  font-weight:700;
+  margin:0;
+  letter-spacing:-0.02em;
+  text-align:left;
+}
+
+/* Right column starts exactly at the first heading line */
+.promise-right{
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  gap:20px;
+  padding-top: var(--right-offset);
+}
+
+.promise-right .promise-p1{
+  color:#000000;
+  font-size:18px;
+  line-height:1.7;
+  margin:0;
+  max-width:100%;
+  text-align:left;
+  font-weight:400;
+}
+.promise-right .promise-p1 strong{
+  font-weight:700;
+  color:#000000;
+}
+.promise-right .promise-p2{
+  color:#555555;
+  font-size:18px;
+  line-height:1.7;
+  margin:0;
+  max-width:100%;
+  text-align:left;
+  font-weight:400;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1200px){
+  .promise-content{ gap:67px; }
+}
+
+@media (max-width: 1024px){
+  .promise-section{ padding:81px 0 !important; }
+  .promise-content{
+    grid-template-columns:1fr;
+    gap:41px;
+  }
+  /* remove the offset when stacked */
+  .promise-right{ padding-top:0; }
+  .promise-left h2{ font-size:36px; }
+}
+
+@media (max-width: 900px){
+  .promise-left h2{ font-size:32px; }
+}
+
+@media (max-width: 768px){
+  .promise-section{ 
+    padding:67px 0 !important; 
+  }
+  .promise-left h2{ font-size:28px; }
+  .promise-right .promise-p1,
+  .promise-right .promise-p2{ 
+    font-size:16px; 
+    line-height:1.6;
+  }
+}
+
+@media (max-width: 480px){
+  .promise-section{ 
+    padding:53px 0 !important; 
+  }
+  .promise-content{
+    gap:34px;
+  }
+  .promise-left h2{ 
+    font-size:24px; 
+    line-height:1.2;
+  }
+  .promise-right .promise-p1,
+  .promise-right .promise-p2{
+    font-size:15px;
+    line-height:1.6;
+  }
+  .promise-tag{
+    font-size:11px;
+    padding:6px 12px;
+  }
+}

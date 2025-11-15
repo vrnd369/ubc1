@@ -1,0 +1,574 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap');
+
+.testimonials{
+  background: #F5F5F5;
+  padding: 80px 0;
+  overflow-x: visible;
+  width: 100%;
+  position: relative;
+}
+
+.testimonials .container{
+  text-align: left;
+  position: relative;
+}
+
+.t-grid-wrapper{
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  overflow-x: auto;
+  overflow-y: visible;
+  padding: 0;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.t-grid-wrapper::-webkit-scrollbar{
+  display: none;
+}
+
+.testimonials-header{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 32px;
+  gap: 40px;
+}
+
+.testimonials-title-area{
+  flex: 1;
+}
+
+.testimonials-tag{
+  background: #E8E7ED;
+  color: #111827;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 21px;
+  letter-spacing: 0.27em;
+  margin-bottom: 28px;
+  margin-left: 0;
+  margin-right: auto;
+  width: fit-content;
+}
+
+.testimonials-star{
+  color: #4B409B;
+}
+
+.testimonials-heading{
+  font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+  color: #111827;
+  font-size: 44px;
+  line-height: 100%;
+  font-weight: 600;
+  margin: 0;
+  letter-spacing: -0.04em;
+  text-align: left;
+}
+
+.testimonials-heading .testimonials-playfair-text{
+  font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+  font-weight: 500;
+  font-size: 44px;
+  line-height: 100%;
+  letter-spacing: -0.09em;
+  color: #111827;
+}
+
+.testimonials-nav{
+  display: flex;
+  gap: 0;
+  align-items: center;
+  flex-shrink: 0;
+  background: #E8E7ED;
+  border-radius: 999px;
+  padding: 4px;
+}
+
+.nav-arrow-testimonial{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: transparent;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  color: #374151;
+  padding: 0;
+  margin: 0;
+  outline: none;
+}
+
+.nav-arrow-testimonial:focus{
+  outline: none;
+}
+
+.nav-arrow-testimonial:hover{
+  background: #FFFFFF;
+  color: #111827;
+}
+
+.nav-arrow-testimonial:active{
+  background: #FFFFFF;
+  transform: scale(0.95);
+}
+
+.nav-arrow-testimonial svg{
+  width: 20px;
+  height: 20px;
+}
+
+.t-grid{
+  display: grid;
+  gap: 24px;
+  grid-template-columns: 526px 311px 311px 311px;
+  justify-content: start;
+  margin-top: 0;
+  overflow-x: visible;
+  scroll-snap-type: x mandatory;
+  width: max-content;
+  min-width: 100%;
+  padding-left: calc(50vw - 600px);
+  padding-right: calc(50vw - 600px);
+  box-sizing: border-box;
+}
+
+.t-grid::-webkit-scrollbar{
+  display: none;
+}
+
+.t-card{
+  padding: 24px;
+  background: #FFFFFF;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.t-card-first{
+  width: 526px;
+  height: 282px;
+}
+
+.t-card-second{
+  width: 311px;
+  height: 282px;
+}
+
+.t-quote{
+  font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+  color: #6B7280;
+  font-size: 22px;
+  line-height: 1.5;
+  font-weight: 500;
+  letter-spacing: -0.04em;
+  margin: 0 0 20px 0;
+  max-width: 100%;
+}
+
+.t-card-second .t-quote{
+  font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+  font-size: 18px;
+  line-height: 120%;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  color: #6B7280;
+}
+
+.t-author{
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  margin-top: auto;
+}
+
+.avatar{
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #E5E7EB;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.avatar img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.t-author-info{
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+}
+
+.t-name{
+  font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+  color: #111827;
+  font-size: 16.71px;
+  line-height: 17.8px;
+  font-weight: 400;
+  letter-spacing: 0;
+  margin: 0;
+}
+
+.t-role-container{
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.t-company{
+  font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+  color: #9B9CA3;
+  font-size: 16.85px;
+  line-height: 26.7px;
+  font-weight: 400;
+  letter-spacing: 0;
+  margin: 0;
+}
+
+.t-role-tag{
+  font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+  background: #EFF1F5;
+  color: #111827;
+  border: 1px solid #E5E7EB;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 13.43px;
+  line-height: 20.8px;
+  font-weight: 400;
+  letter-spacing: 0;
+  margin: 0;
+}
+
+/* Responsive styles */
+@media (max-width: 1024px){
+  .testimonials{
+    padding: 72px 0;
+  }
+  .testimonials-header{
+    margin-bottom: 28px;
+  }
+  .testimonials-tag{
+    font-size: 10px;
+    line-height: 21px;
+    letter-spacing: 0.27em;
+  }
+  .testimonials-heading{
+    font-size: 38px;
+    line-height: 100%;
+    letter-spacing: -0.04em;
+  }
+  .testimonials-heading .testimonials-playfair-text{
+    font-size: 38px;
+    line-height: 100%;
+    letter-spacing: -0.09em;
+  }
+  .t-grid{
+    grid-template-columns: 480px 283px 283px 283px;
+    justify-content: start;
+    padding-left: calc(50vw - 512px);
+    padding-right: calc(50vw - 512px);
+  }
+  .t-card-first{
+    width: 480px;
+    height: 257px;
+  }
+  .t-card-second{
+    width: 283px;
+    height: 257px;
+  }
+  .t-quote{
+    font-size: 21px;
+    line-height: 1.5;
+    letter-spacing: -0.04em;
+  }
+  .t-card-second .t-quote{
+    font-size: 17px;
+    line-height: 120%;
+    letter-spacing: -0.02em;
+  }
+  .t-name{
+    font-size: 16px;
+    line-height: 17px;
+    letter-spacing: 0;
+  }
+  .t-company{
+    font-size: 16px;
+    line-height: 25.4px;
+    letter-spacing: 0;
+  }
+  .t-role-tag{
+    font-size: 13px;
+    line-height: 20.2px;
+    letter-spacing: 0;
+  }
+}
+
+@media (max-width: 900px){
+  .testimonials{
+    padding: 64px 0;
+  }
+  .testimonials-header{
+    flex-direction: column;
+    gap: 24px;
+    margin-bottom: 24px;
+  }
+  .testimonials-nav{
+    align-self: flex-end;
+  }
+  .testimonials-tag{
+    font-size: 10px;
+    line-height: 21px;
+    letter-spacing: 0.27em;
+  }
+  .testimonials-heading{
+    font-size: 34px;
+    line-height: 100%;
+    letter-spacing: -0.04em;
+  }
+  .testimonials-heading .testimonials-playfair-text{
+    font-size: 34px;
+    line-height: 100%;
+    letter-spacing: -0.09em;
+  }
+  .t-grid{
+    grid-template-columns: 450px 266px 266px 266px;
+    justify-content: start;
+    padding-left: calc(50vw - 450px);
+    padding-right: calc(50vw - 450px);
+  }
+  .t-card-first{
+    width: 450px;
+    height: 241px;
+  }
+  .t-card-second{
+    width: 266px;
+    height: 241px;
+  }
+  .t-quote{
+    font-size: 20px;
+    line-height: 1.5;
+    letter-spacing: -0.04em;
+  }
+  .t-card-second .t-quote{
+    font-size: 16px;
+    line-height: 120%;
+    letter-spacing: -0.02em;
+  }
+  .t-name{
+    font-size: 15.5px;
+    line-height: 16.5px;
+    letter-spacing: 0;
+  }
+  .t-company{
+    font-size: 15.5px;
+    line-height: 24.6px;
+    letter-spacing: 0;
+  }
+  .t-role-tag{
+    font-size: 12.5px;
+    line-height: 19.4px;
+    letter-spacing: 0;
+  }
+}
+
+@media (max-width: 768px){
+  .testimonials{
+    padding: 56px 0;
+  }
+  .testimonials-tag{
+    font-size: 9px;
+    line-height: 19px;
+    padding: 6px 12px;
+    margin-bottom: 20px;
+    gap: 6px;
+    letter-spacing: 0.27em;
+  }
+  .testimonials-heading{
+    font-size: 28px;
+    line-height: 100%;
+    letter-spacing: -0.04em;
+  }
+  .testimonials-heading .testimonials-playfair-text{
+    font-size: 28px;
+    line-height: 100%;
+    letter-spacing: -0.09em;
+  }
+  .testimonials-header{
+    margin-bottom: 20px;
+    gap: 20px;
+  }
+  .t-grid{
+    grid-template-columns: 400px 237px 237px 237px;
+    justify-content: start;
+    gap: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .t-card{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+  .t-card-first{
+    width: 400px;
+    height: 214px;
+  }
+  .t-card-second{
+    width: 237px;
+    height: 214px;
+  }
+  .t-quote{
+    font-size: 20px;
+    line-height: 1.5;
+    letter-spacing: -0.04em;
+  }
+  .t-card-second .t-quote{
+    font-size: 16px;
+    line-height: 120%;
+    letter-spacing: -0.02em;
+  }
+  .nav-arrow-testimonial{
+    width: 36px;
+    height: 36px;
+  }
+  .nav-arrow-testimonial svg{
+    width: 18px;
+    height: 18px;
+  }
+  .t-author{
+    gap: 10px;
+  }
+  .t-name{
+    font-size: 15px;
+    line-height: 16px;
+    letter-spacing: 0;
+  }
+  .t-company{
+    font-size: 15px;
+    line-height: 23.8px;
+    letter-spacing: 0;
+  }
+  .t-role-tag{
+    font-size: 12px;
+    line-height: 18.6px;
+    letter-spacing: 0;
+  }
+}
+
+@media (max-width: 480px){
+  .testimonials{
+    padding: 48px 0;
+  }
+  .testimonials-tag{
+    font-size: 9px;
+    line-height: 18px;
+    padding: 5px 10px;
+    margin-bottom: 16px;
+    gap: 5px;
+    letter-spacing: 0.27em;
+  }
+  .testimonials-heading{
+    font-size: 24px;
+    line-height: 100%;
+    letter-spacing: -0.04em;
+  }
+  .testimonials-heading .testimonials-playfair-text{
+    font-size: 24px;
+    line-height: 100%;
+    letter-spacing: -0.09em;
+  }
+  .testimonials-header{
+    margin-bottom: 16px;
+    gap: 16px;
+  }
+  .t-grid{
+    grid-template-columns: 350px 207px 207px 207px;
+    gap: 16px;
+    justify-content: start;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .t-card{
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+  }
+  .t-card-first{
+    width: 100%;
+    max-width: 350px;
+    height: 188px;
+    margin: 0 auto;
+  }
+  .t-card-second{
+    width: 100%;
+    max-width: 207px;
+    height: 188px;
+    margin: 0 auto;
+  }
+  .t-quote{
+    font-size: 18px;
+    line-height: 1.5;
+    letter-spacing: -0.04em;
+    margin-bottom: 16px;
+  }
+  .t-card-second .t-quote{
+    font-size: 15px;
+    line-height: 120%;
+    letter-spacing: -0.02em;
+  }
+  .avatar{
+    width: 40px;
+    height: 40px;
+  }
+  .t-author{
+    gap: 10px;
+  }
+  .t-name{
+    font-size: 14.5px;
+    line-height: 15.5px;
+    letter-spacing: 0;
+  }
+  .t-company{
+    font-size: 14.5px;
+    line-height: 23px;
+    letter-spacing: 0;
+  }
+  .t-role-tag{
+    font-size: 11.5px;
+    line-height: 17.8px;
+    letter-spacing: 0;
+    padding: 3px 8px;
+  }
+  .nav-arrow-testimonial{
+    width: 36px;
+    height: 36px;
+  }
+  .nav-arrow-testimonial svg{
+    width: 16px;
+    height: 16px;
+  }
+}

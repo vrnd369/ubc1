@@ -148,7 +148,8 @@
 /* ---------- Mobile Responsive (768px and below) ---------- */
 @media (max-width: 768px){
   .promise-section{ 
-    padding: 64px 0 !important; 
+    padding-top: 0 !important; /* Top padding removed because it comes after hero */
+    padding-bottom: 64px !important; /* Bottom padding for spacing */
   }
   .promise-section .container{
     padding-left: 20px !important;
@@ -182,7 +183,8 @@
 
 @media (max-width: 600px){
   .promise-section{ 
-    padding: 56px 0 !important; 
+    padding-top: 0 !important; /* Top padding removed because it comes after hero */
+    padding-bottom: 56px !important; /* Bottom padding for spacing */
   }
   .promise-section .container{
     padding-left: 20px !important;
@@ -215,7 +217,8 @@
 
 @media (max-width: 480px){
   .promise-section{ 
-    padding: 48px 0 !important; 
+    padding-top: 0 !important; /* Top padding removed because it comes after hero */
+    padding-bottom: 48px !important; /* Bottom padding for spacing */
   }
   .promise-section .container{
     padding-left: 20px !important;
@@ -252,7 +255,8 @@
 
 @media (max-width: 375px){
   .promise-section{ 
-    padding: 40px 0 !important; 
+    padding-top: 0 !important; /* Top padding removed because it comes after hero */
+    padding-bottom: 40px !important; /* Bottom padding for spacing */
   }
   .promise-section .container{
     padding-left: 16px !important;

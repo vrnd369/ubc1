@@ -29,7 +29,7 @@
 .hero + .promise-section,
 .hero + section.promise-section,
 .hero + .section {
-  margin-top: -32vh !important;
+  margin-top: -29vh !important;
 }
 
 /* Ensure no white background shows through from parent elements */

@@ -42,8 +42,9 @@
   border-radius: 999px;
   box-sizing: border-box;
 }
+.about-leaders .tag .tag-star,
 .about-leaders .tag::first-letter{
-  color: #3B82F6; /* Blue/500 for star */
+  color: #1E3A8A; /* Blue/900 for star */
 }
 .about-leaders-heading{ 
   font-family: 'Ag H', 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
@@ -466,7 +467,7 @@
   align-items: center;
   justify-content: center;
   gap: 8px;
-  background: #F3F4F6; /* Light gray/white background */
+  background: rgba(50, 55, 144, 0.1); /* #323790 with 10% opacity */
   color: #111827; /* Neutral/900 */
   font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
   font-weight: 500; /* Medium */

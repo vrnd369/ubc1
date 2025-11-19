@@ -41,32 +41,40 @@
   margin: 0;
 }
 
+/* ================= TAG & SMALL STAR ================= */
+
 .overview-tag{
   background: transparent;
-  color: #111827;
+  color: #111827; /* Neutral/900 */
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 8px 14px;
-  border-radius: 999px;
+  padding: 0;
+  border-radius: 0;
   font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
-  font-weight: 500;
+  font-weight: 500; /* Medium */
   font-size: 10.43px;
   line-height: 21.9px;
-  letter-spacing: 0.27em;
+  letter-spacing: 0.27em; /* 27% */
   margin-bottom: 0;
   margin-left: 0;
   margin-right: auto;
   width: fit-content;
   border: none;
+  text-transform: uppercase;
 }
 
-.overview-star{
-  color: #1F2A6B;
-  font-size: 12px;
-  display: inline-block;
+.overview-tag .tell-us-star{
+  width: 12.52px;
+  height: 12.52px;
+  flex-shrink: 0;
+  display: block;
+  color: #3D3791; /* Blue/500 */
+  font-size: 12.52px;
   line-height: 1;
 }
+
+/* ================= HEADING / TEXT ================= */
 
 .overview-heading{
   color: #111827;
@@ -86,6 +94,7 @@
 .overview-logo img{
   height: 44px;
   width: auto;
+  filter: brightness(0) saturate(100%) invert(15%) sepia(95%) saturate(3000%) hue-rotate(210deg) brightness(0.85) contrast(1.1);
 }
 
 .overview-text{
@@ -99,43 +108,51 @@
   text-align: left;
 }
 
+/* ================= BUTTON & STAR (MATCHES IMAGE) ================= */
+
 .overview-btn{
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
-  padding: 12px 24px;
+  gap: 10px;
+  padding: 0 28px;
+  height: 52px;
   border-radius: 999px;
   background: #FFFFFF;
   color: #111827;
-  border: 1px solid #E5E7EB;
-  font-family: Arial, sans-serif;
+  border: 1px solid rgba(229, 231, 235, 0.9);
+  font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
   font-weight: 400;
-  font-size: 14.61px;
-  line-height: 23.5px;
-  letter-spacing: -0.2px;
+  font-size: 16px;
+  line-height: 1;
+  letter-spacing: -0.01em;
   text-decoration: none;
   transition: all 0.2s ease;
-  box-shadow: none;
-  width: fit-content;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
+  box-sizing: border-box;
   margin: 8px 0 0 0;
   align-self: flex-start;
 }
 
 .overview-btn:hover{
   background: #F9FAFB;
-  border-color: #D1D5DB;
-  box-shadow: none;
-  transform: none;
+  border-color: rgba(209, 213, 219, 0.9);
+  box-shadow: 0 12px 36px rgba(15, 23, 42, 0.08);
+  transform: translateY(-1px);
 }
 
-.overview-btn::after{
-  content: "★";
-  color: #1F2A6B;
-  font-size: 16px;
+.overview-btn .tell-us-star{
+  width: 20.87px;
+  height: 20.87px;
+  flex-shrink: 0;
+  display: block;
+  color: #3D3791; /* Blue/500 */
+  font-size: 20.87px;
+  line-height: 1;
 }
 
-/* Responsive styles */
+/* ================= RESPONSIVE ================= */
+
 @media (max-width: 1024px){
   .overview{
     padding: 72px 0;
@@ -147,22 +164,30 @@
   .overview-content{
     width: 90%;
     max-width: 606.4px;
-    min-height: auto;
     padding: 40px;
     margin: 0;
   }
   .overview-heading{
     font-size: 40px;
-    line-height: 100%;
-    letter-spacing: -0.04em;
-    font-weight: 600;
+  }
+  .overview-text{
+    font-size: 18px;
   }
   .overview-btn{
-    font-size: 14.61px;
-    line-height: 23.5px;
-    letter-spacing: -0.2px;
-    font-weight: 400;
-    padding: 12px 24px;
+    height: 48px;
+    padding: 0 24px;
+    font-size: 15px;
+  }
+  .overview-tag .tell-us-star{
+    width: 12.52px;
+    height: 12.52px;
+    font-size: 12.52px;
+    color: #3D3791; /* Blue/500 */
+  }
+  .overview-btn .tell-us-star{
+    width: 20.87px;
+    height: 20.87px;
+    font-size: 20.87px;
   }
 }
 
@@ -177,35 +202,36 @@
   .overview-content{
     width: 85%;
     max-width: 550px;
-    min-height: auto;
     padding: 36px;
     margin: 0;
   }
   .overview-heading{
     font-size: 36px;
-    line-height: 100%;
-    letter-spacing: -0.04em;
-    font-weight: 600;
   }
   .overview-text{
     font-size: 17px;
-    line-height: 120%;
-    letter-spacing: -0.02em;
-    font-weight: 400;
   }
   .overview-btn{
-    font-size: 14.61px;
-    line-height: 23.5px;
-    letter-spacing: -0.2px;
-    font-weight: 400;
-    padding: 11px 22px;
+    height: 46px;
+    padding: 0 22px;
+    font-size: 15px;
+  }
+  .overview-tag .tell-us-star{
+    width: 12.52px;
+    height: 12.52px;
+    font-size: 12.52px;
+    color: #3D3791; /* Blue/500 */
+  }
+  .overview-btn .tell-us-star{
+    width: 20.87px;
+    height: 20.87px;
+    font-size: 20.87px;
   }
 }
 
 @media (max-width: 768px){
   .overview{
     padding: 56px 0;
-    min-height: auto;
   }
   .overview .container{
     justify-content: center;
@@ -216,7 +242,6 @@
   .overview-content{
     width: 90%;
     max-width: 400px;
-    min-height: auto;
     gap: 10px;
     padding: 20px;
     border-radius: 18px;
@@ -225,20 +250,16 @@
   .overview-tag{
     font-size: 9.5px;
     line-height: 20px;
-    letter-spacing: 0.27em;
-    font-weight: 500;
-    padding: 5px 10px;
-    margin-bottom: 0;
   }
-  .overview-star{
-    font-size: 10px;
+  .overview-tag .tell-us-star{
+    width: 12.52px;
+    height: 12.52px;
+    font-size: 12.52px;
+    color: #3D3791; /* Blue/500 */
   }
   .overview-heading{
     font-size: 28px;
     margin-bottom: 10px;
-    line-height: 100%;
-    letter-spacing: -0.04em;
-    font-weight: 600;
   }
   .overview-logo{
     margin-bottom: 10px;
@@ -248,23 +269,22 @@
   }
   .overview-text{
     font-size: 15px;
-    line-height: 120%;
-    letter-spacing: -0.02em;
-    font-weight: 400;
   }
   .overview-btn{
-    padding: 9px 18px;
-    font-size: 13.5px;
-    line-height: 21px;
-    letter-spacing: -0.2px;
-    font-weight: 400;
+    height: 44px;
+    padding: 0 20px;
+    font-size: 14px;
+  }
+  .overview-btn .tell-us-star{
+    width: 20.87px;
+    height: 20.87px;
+    font-size: 20.87px;
   }
 }
 
 @media (max-width: 480px){
   .overview{
     padding: 48px 0;
-    min-height: auto;
   }
   .overview .container{
     justify-content: center;
@@ -275,7 +295,6 @@
   .overview-content{
     width: 85%;
     max-width: 350px;
-    min-height: auto;
     gap: 8px;
     padding: 16px;
     border-radius: 14px;
@@ -284,19 +303,16 @@
   .overview-tag{
     font-size: 9px;
     line-height: 18px;
-    letter-spacing: 0.27em;
-    font-weight: 500;
-    padding: 4px 8px;
   }
-  .overview-star{
-    font-size: 9px;
+  .overview-tag .tell-us-star{
+    width: 12.52px;
+    height: 12.52px;
+    font-size: 12.52px;
+    color: #3D3791; /* Blue/500 */
   }
   .overview-heading{
     font-size: 24px;
     margin-bottom: 8px;
-    line-height: 100%;
-    letter-spacing: -0.04em;
-    font-weight: 600;
   }
   .overview-logo{
     margin-bottom: 8px;
@@ -307,22 +323,22 @@
   .overview-text{
     font-size: 14px;
     line-height: 130%;
-    letter-spacing: -0.02em;
-    font-weight: 400;
   }
   .overview-btn{
-    padding: 8px 16px;
-    font-size: 12.5px;
-    line-height: 20px;
-    letter-spacing: -0.2px;
-    font-weight: 400;
+    height: 40px;
+    padding: 0 18px;
+    font-size: 13px;
+  }
+  .overview-btn .tell-us-star{
+    width: 20.87px;
+    height: 20.87px;
+    font-size: 20.87px;
   }
 }
 
 @media (max-width: 375px){
   .overview{
     padding: 40px 0;
-    min-height: auto;
   }
   .overview .container{
     padding-left: 16px;
@@ -338,10 +354,12 @@
   .overview-tag{
     font-size: 8.5px;
     line-height: 16px;
-    padding: 4px 8px;
   }
-  .overview-star{
-    font-size: 8.5px;
+  .overview-tag .tell-us-star{
+    width: 12.52px;
+    height: 12.52px;
+    font-size: 12.52px;
+    color: #3D3791; /* Blue/500 */
   }
   .overview-heading{
     font-size: 22px;
@@ -358,8 +376,13 @@
     line-height: 130%;
   }
   .overview-btn{
-    padding: 8px 14px;
-    font-size: 12px;
-    line-height: 18px;
+    height: 38px;
+    padding: 0 16px;
+    font-size: 12.5px;
+  }
+  .overview-btn .tell-us-star{
+    width: 20.87px;
+    height: 20.87px;
+    font-size: 20.87px;
   }
 }

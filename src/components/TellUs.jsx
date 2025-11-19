@@ -33,7 +33,7 @@ export default function TellUs(){
               <span className="tell-us-tag-text">TELL US</span>
             </span>
             <h2 className="tell-us-heading">
-              Tell Us<br/>What You Need
+              Tell Us<br/><span style={{whiteSpace: 'nowrap'}}>What You Need</span>
             </h2>
             <p className="tell-us-description">
               Whether it's bulk orders, private<br/>

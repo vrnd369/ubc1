@@ -47,7 +47,6 @@ const PRODUCTS = {
     ]
   },
 
-  /* Masalas page you showed in the screenshot — now includes nutrition so the table renders */
   masalas: {
     id: 'masalas',
     title: 'Masalas',
@@ -56,7 +55,7 @@ const PRODUCTS = {
     description2:
       'Experience the rich flavors of traditional Indian cooking with our premium masala blends.',
     image: imgMasalas,
-    sizes: ['100G', '250G', '500G'],
+    sizes: ['100G', '500G'],
     nutrition: [
       { nutrient: 'Calories', value: '24Kcal', dailyValue: '-' },
       { nutrient: 'Protein', value: '1g', dailyValue: '-' },
@@ -184,13 +183,15 @@ const PRODUCTS = {
 
   'masalas-spices': {
     id: 'masalas-spices',
-    title: 'Masalas & Spices',
+    title: 'Chicken Masala',
+    titleSub: 'by Soil king',
     category: 'Masala',
-    description: 'Authentic blends for every dish',
+    description:
+      'A perfectly balanced blend of aromatic spices that brings out rich, authentic flavor in every chicken dish.',
     description2:
-      'A complete collection of premium masalas and spices for authentic Indian cooking.',
+      'Soil King Chicken Masala adds depth, warmth, and taste your family will love',
     image: imgMasalasAndSpices,
-    sizes: ['100G', '250G', '500G'],
+    sizes: ['100G', '500G'],
     nutrition: [
       { nutrient: 'Calories', value: '24Kcal', dailyValue: '-' },
       { nutrient: 'Protein', value: '1g', dailyValue: '-' },
@@ -212,10 +213,38 @@ const PRODUCTS = {
 
 /* Cards row for "Explore Soil Kings Products" */
 const SCROLLABLE_PRODUCTS = [
-  { id: 'masalas', image: imgMasalas, title: 'Masalas', blurb: 'Authentic blends for every dish', cta: 'Know More', href: '/brands/soil-king' },
-  { id: 'rice', image: imgRice, title: 'Rice', blurb: 'Fragrant grains, rich in tradition', cta: 'Know More', href: '/brands/soil-king' },
-  { id: 'appalams', image: imgAppalams, title: 'Appalams & Crisps', blurb: 'Crispy delights for every meal', cta: 'Know More', href: '/brands/soil-king' },
-  { id: 'pastes', image: imgPastes, title: 'Pastes', blurb: 'Rich flavors for authentic taste', cta: 'Know More', href: '/brands/soil-king' }
+  {
+    id: 'masalas',
+    image: imgMasalas,
+    title: 'Masalas',
+    blurb: 'Authentic blends for every dish',
+    cta: 'Know More',
+    href: '/brands/soil-king'
+  },
+  {
+    id: 'rice',
+    image: imgRice,
+    title: 'Rice',
+    blurb: 'Fragrant grains, rich in tradition',
+    cta: 'Know More',
+    href: '/brands/soil-king'
+  },
+  {
+    id: 'appalams',
+    image: imgAppalams,
+    title: 'Appalams & Crisps',
+    blurb: 'Crispy delights for every meal',
+    cta: 'Know More',
+    href: '/brands/soil-king'
+  },
+  {
+    id: 'pastes',
+    image: imgPastes,
+    title: 'Pastes',
+    blurb: 'Rich flavors for authentic taste',
+    cta: 'Know More',
+    href: '/brands/soil-king'
+  }
 ];
 
 export default function ProductDetail() {
@@ -234,15 +263,11 @@ export default function ProductDetail() {
     const row = rowRef.current;
     if (!row) return;
     const prevent = (e) => {
-      // Only prevent horizontal scrolling, allow vertical scrolling
       if (e.type === 'wheel') {
-        // Check if it's primarily a horizontal scroll (deltaX is larger than deltaY)
         if (Math.abs(e.deltaX) > Math.abs(e.deltaY)) {
           e.preventDefault();
         }
-        // Allow vertical scrolling (deltaY) to pass through to the page
       } else {
-        // For touchmove and keydown, prevent default
         e.preventDefault();
       }
     };
@@ -294,6 +319,40 @@ export default function ProductDetail() {
     );
   }
 
+  // helper to render the multi-line benefit text
+  const renderBenefitLines = (benefit) => {
+    if (product.id === 'chicken-masala') {
+      // exact 4 lines like the reference image
+      const lines = [
+        'Crafted with a selection of premium, hand-picked',
+        'spices, perfectly roasted and ground to deliver',
+        'the rich, traditional taste and aroma essential for',
+        'an unforgettable chicken dish every time.'
+      ];
+      return (
+        <div className="benefit-text">
+          {lines.map((line, idx) => (
+            <p key={idx} className="benefit-line">
+              {line}
+            </p>
+          ))}
+        </div>
+      );
+    }
+
+    // for other products: split by <br/> if present, otherwise single paragraph
+    const parts = benefit.description.split('<br/>');
+    return (
+      <div className="benefit-text">
+        {parts.map((part, idx) => (
+          <p key={idx} className="benefit-line">
+            {part}
+          </p>
+        ))}
+      </div>
+    );
+  };
+
   return (
     <main className="product-detail">
       <section className="product-detail-section">
@@ -311,7 +370,9 @@ export default function ProductDetail() {
               <SectionTag label={product.category.toUpperCase()} />
               <h1 className="product-title">
                 {product.title}
-                {product.titleSub && <span className="product-title-sub">{product.titleSub}</span>}
+                {product.titleSub && (
+                  <span className="product-title-sub">{product.titleSub}</span>
+                )}
               </h1>
 
               <p className="product-description">{product.description}</p>
@@ -342,14 +403,6 @@ export default function ProductDetail() {
                     <h3 className="nutrition-title">Nutritional Information (Per 100g)</h3>
 
                     <table className="nutrition-table">
-                      <thead>
-                        <tr>
-                          <th>Nutrient</th>
-                          <th>Value</th>
-                          <th>% Daily Value</th>
-                        </tr>
-                      </thead>
-
                       <tbody>
                         {product.nutrition.map((item, index) => {
                           const isSub =
@@ -367,6 +420,7 @@ export default function ProductDetail() {
                         })}
                       </tbody>
                     </table>
+                    <div className="divider"></div>
                   </div>
                 </>
               )}
@@ -389,13 +443,19 @@ export default function ProductDetail() {
         <div className="container">
           <div className="why-choose-grid">
             <div className="why-choose-left">
-              <h2 className="why-choose-title">Why Choose Our {product.title}?</h2>
+              <h2 className="why-choose-title">
+                Why Choose
+                <br />
+                Our {product.title}?
+              </h2>
             </div>
+
             <div className="why-choose-right">
               {product.benefits.map((benefit, index) => (
                 <div key={index} className="benefit-item">
-                  <h3 className="benefit-title">Benefits: {benefit.title} - </h3>
-                  <p className="benefit-description">{benefit.description}</p>
+                  <p className="benefit-label">Benefits:</p>
+                  <h3 className="benefit-subtitle">{benefit.title} -</h3>
+                  {renderBenefitLines(benefit)}
                 </div>
               ))}
             </div>
@@ -409,7 +469,7 @@ export default function ProductDetail() {
           <div className="pillars-grid">
             <div className="pillars-left">
               <SectionTag label="★ USP" />
-              <h2 className="pillars-title">The Four Pillars of Our Spice Quality</h2>
+              <h2 className="pillars-title">The Four Pillars<br /><span style={{whiteSpace: 'nowrap'}}>of Our Quality Spice</span></h2>
             </div>
 
             <div className="pillars-right">
@@ -420,8 +480,8 @@ export default function ProductDetail() {
                   </div>
                   <h3 className="pillar-title">Pure & Natural</h3>
                   <p className="pillar-description">
-                    Sourced directly from nature, our spices contain 100% genuine ingredients,
-                    free from any artificial fillers or by-products.
+                    Sourced directly from nature, our spices contain 100% genuine ingredients, free
+                    from any artificial fillers or by-products.
                   </p>
                 </div>
 
@@ -431,7 +491,8 @@ export default function ProductDetail() {
                   </div>
                   <h3 className="pillar-title">Aroma Locked</h3>
                   <p className="pillar-description">
-                    Advanced processing and airtight packs lock in oils for maximum fragrance and flavor.
+                    Advanced processing<br/>and airtight packs lock<br/>in oils for maximum fragrance and
+                    flavor.
                   </p>
                 </div>
 
@@ -441,7 +502,7 @@ export default function ProductDetail() {
                   </div>
                   <h3 className="pillar-title">No Added Preservatives</h3>
                   <p className="pillar-description">
-                    Pure freshness, preserved naturally - no artificial chemicals.
+                    Pure freshness,<br/>preserved naturally -<br/>no artificial chemicals.
                   </p>
                 </div>
 
@@ -451,7 +512,7 @@ export default function ProductDetail() {
                   </div>
                   <h3 className="pillar-title">No Added Colours</h3>
                   <p className="pillar-description">
-                    Vibrant color, naturally - no artificial dyes, just pure spice.
+                    Vibrant color, naturally -<br/>no artificial dyes, just<br/>pure spice.
                   </p>
                 </div>
               </div>
@@ -465,7 +526,10 @@ export default function ProductDetail() {
         <div className="container">
           <div className="prod-head">
             <div>
-              <Link to="/brands/soil-king" style={{ textDecoration: 'none', color: 'inherit' }}>
+              <Link
+                to="/brands/soil-king"
+                style={{ textDecoration: 'none', color: 'inherit' }}
+              >
                 <h2 className="prod-title">
                   Explore Soil Kings
                   <br /> Products
@@ -474,8 +538,16 @@ export default function ProductDetail() {
             </div>
 
             <div className="prod-arrows">
-              <button aria-label="Previous" className="btn icon-btn" onClick={() => slide(-1)}>←</button>
-              <button aria-label="Next" className="btn icon-btn" onClick={() => slide(1)}>→</button>
+              <button
+                aria-label="Previous"
+                className="btn icon-btn"
+                onClick={() => slide(-1)}
+              >
+                ←
+              </button>
+              <button aria-label="Next" className="btn icon-btn" onClick={() => slide(1)}>
+                →
+              </button>
             </div>
           </div>
 
@@ -486,9 +558,15 @@ export default function ProductDetail() {
                   <img src={p.image} alt={p.title} />
                 </div>
                 <div className="brand-prod-body">
-                  <h3 className="brand-prod-name">{p.title}</h3>
-                  <p className="brand-prod-blurb">{p.blurb}</p>
-                  <Link to={p.href} className="chip-link">{p.cta}</Link>
+                  <div className="brand-prod-header">
+                    <div className="brand-prod-text-container">
+                      <h3 className="brand-prod-name">{p.title}</h3>
+                      <p className="brand-prod-blurb">{p.blurb}</p>
+                    </div>
+                    <Link to={p.href} className="chip-link">
+                      {p.cta}
+                    </Link>
+                  </div>
                 </div>
               </article>
             ))}

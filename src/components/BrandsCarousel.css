@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap');
 
 .brands-carousel-section{
-  background: #1F2A6B;
+  background: #1E3A8A; /* Blue/900 */
   color: #FFFFFF;
   padding: 80px 0;
   width: 100%;
@@ -17,25 +17,76 @@
   gap: 40px;
 }
 
+.brands-carousel-arrows {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #F5F5F5; /* Light gray with 100% opacity */
+  border-radius: 999px; /* Pill-shaped */
+  width: 104px;
+  height: 56px;
+  padding: 0;
+  gap: 0;
+  overflow: hidden;
+  border: none;
+  box-sizing: border-box;
+  flex-shrink: 0;
+}
+
+.brands-carousel-arrows .icon-btn {
+  width: 48px;
+  height: 48px;
+  border-radius: 0;
+  background: transparent;
+  color: #0f172a;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  flex: 1;
+  font-size: 20px;
+}
+
+.brands-carousel-arrows .icon-btn:hover {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.brands-carousel-arrows .icon-btn:first-child {
+  color: #111827; /* Darker for left arrow */
+}
+
+.brands-carousel-arrows .icon-btn:last-child {
+  color: #6B7280; /* Lighter gray for right arrow */
+}
+
 .brands-carousel-text{
   flex: 1;
 }
 
 .brands-carousel-tag{
-  background: #1F2A6B;
-  color: #FFFFFF;
+  background: #F5F5F5; /* Button color */
+  color: #323790; /* Text color */
+  opacity: 100%;
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
-  padding: 8px 14px;
+  width: 160px;
+  height: 33px;
+  padding: 0;
   border-radius: 999px;
   font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+  font-weight: 500; /* Medium */
   font-size: 10px;
-  font-weight: 500;
   line-height: 21px;
-  letter-spacing: 0.27em;
+  letter-spacing: 0.4em; /* Increased gap between alphabets to match reference */
   margin-bottom: 28px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: none;
+  box-sizing: border-box;
+  text-align: center;
+  white-space: nowrap;
 }
 
 .brands-carousel-text h2{
@@ -111,9 +162,17 @@
   overflow-x: auto;
   overflow-y: hidden;
   scroll-behavior: smooth;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: none; /* Firefox */
   -ms-overflow-style: none; /* IE and Edge */
+}
+
+.no-user-scroll {
+  touch-action: pan-y;
+}
+
+@supports (scrollbar-width: none) {
+  .brands-carousel-cards-wrapper {
+    scrollbar-width: none; /* Firefox */
+  }
 }
 
 .brands-carousel-cards-wrapper::-webkit-scrollbar {
@@ -195,7 +254,7 @@
   text-align: left;
 }
 
-.brand-carousel-content p + .brand-carousel-btn[data-button-color="#4CAF50"],
+.brand-carousel-content p + .brand-carousel-btn[data-button-color="#008562"],
 .brand-carousel-content p + .brand-carousel-btn[data-button-color="#FFC107"]{
   margin-top: 12px;
 }
@@ -264,7 +323,7 @@
 }
 
 /* Green button - white text */
-.brand-carousel-btn[data-button-color="#4CAF50"]{
+.brand-carousel-btn[data-button-color="#008562"]{
   color: #FFFFFF;
   margin-top: 12px;
 }
@@ -292,11 +351,12 @@
     align-self: flex-end;
   }
   .brands-carousel-tag{
-    font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+    width: 160px;
+    height: 33px;
+    padding: 0;
     font-size: 10px;
-    font-weight: 500;
     line-height: 21px;
-    letter-spacing: 0.27em;
+    letter-spacing: 0.4em;
   }
   .brands-carousel-text h2{
     font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
@@ -321,7 +381,7 @@
     flex-direction: row;
     gap: 24px;
     padding-right: 0;
-    min-width: fit-content;
+    min-width: max-content; /* Compatible alternative to fit-content */
   }
   .brand-carousel-card{
     width: 600px;
@@ -348,7 +408,7 @@
     display: flex;
     flex-direction: row;
     padding-right: 0;
-    min-width: fit-content;
+    min-width: max-content; /* Compatible alternative to fit-content */
   }
   .brand-carousel-card{
     width: 550px;
@@ -379,12 +439,12 @@
     gap: 24px;
   }
   .brands-carousel-tag{
-    font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+    width: 160px;
+    height: 33px;
+    padding: 0;
     font-size: 10px;
-    font-weight: 500;
     line-height: 21px;
-    letter-spacing: 0.27em;
-    padding: 7px 13px;
+    letter-spacing: 0.4em;
     margin-bottom: 24px;
   }
   .brands-carousel-text h2{
@@ -426,7 +486,7 @@
     flex-direction: row;
     gap: 24px;
     padding-right: 20px;
-    min-width: fit-content;
+    min-width: max-content; /* Compatible alternative to fit-content */
   }
   .brand-carousel-card{
     width: calc(100vw - 60px);
@@ -467,7 +527,7 @@
     gap: 8px;
     overflow: visible;
   }
-  .brand-carousel-content p + .brand-carousel-btn[data-button-color="#4CAF50"],
+  .brand-carousel-content p + .brand-carousel-btn[data-button-color="#008562"],
   .brand-carousel-content p + .brand-carousel-btn[data-button-color="#FFC107"]{
     margin-top: 8px;
   }
@@ -518,7 +578,7 @@
   }
   
   /* Green button - white text */
-  .brand-carousel-btn[data-button-color="#4CAF50"]{
+  .brand-carousel-btn[data-button-color="#008562"]{
     color: #FFFFFF;
     margin-top: 8px;
   }
@@ -591,12 +651,12 @@
     overflow-y: visible;
   }
   .brands-carousel-tag{
-    font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+    width: 160px;
+    height: 33px;
+    padding: 0;
     font-size: 10px;
-    font-weight: 500;
     line-height: 21px;
-    letter-spacing: 0.27em;
-    padding: 6px 12px;
+    letter-spacing: 0.4em;
     margin-bottom: 20px;
   }
   .brands-carousel-text h2{
@@ -641,7 +701,7 @@
     flex-direction: row;
     gap: 20px;
     padding-right: 20px;
-    min-width: fit-content;
+    min-width: max-content; /* Compatible alternative to fit-content */
   }
   .brand-carousel-card{
     width: calc(100vw - 60px);
@@ -687,7 +747,7 @@
     gap: 8px;
     overflow: visible;
   }
-  .brand-carousel-content p + .brand-carousel-btn[data-button-color="#4CAF50"],
+  .brand-carousel-content p + .brand-carousel-btn[data-button-color="#008562"],
   .brand-carousel-content p + .brand-carousel-btn[data-button-color="#FFC107"]{
     margin-top: 8px;
   }
@@ -731,7 +791,7 @@
   }
   
   /* Green button - white text */
-  .brand-carousel-btn[data-button-color="#4CAF50"]{
+  .brand-carousel-btn[data-button-color="#008562"]{
     color: #FFFFFF;
     margin-top: 8px;
   }
@@ -758,8 +818,12 @@
     overflow-y: visible;
   }
   .brands-carousel-tag{
-    font-size: 9.5px;
-    padding: 5px 11px;
+    width: 160px;
+    height: 33px;
+    padding: 0;
+    font-size: 10px;
+    line-height: 21px;
+    letter-spacing: 0.4em;
     margin-bottom: 18px;
   }
   .brands-carousel-text h2{
@@ -789,7 +853,7 @@
     gap: 18px;
     flex-direction: row;
     padding-right: 16px;
-    min-width: fit-content;
+    min-width: max-content; /* Compatible alternative to fit-content */
   }
   .brand-carousel-card{
     width: calc(100vw - 48px);

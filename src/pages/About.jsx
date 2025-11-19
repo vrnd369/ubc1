@@ -60,28 +60,24 @@ const NEWS = [
   },
 ];
 
-export default function About(){
-  // Horizontal row ref (no manual scroll; only programmatic)
+export default function About() {
   const rowRef = useRef(null);
 
-  // block wheel/touch/keyboard horizontal scroll
+  // Disable manual horizontal scroll; allow only programmatic scroll via arrows
   useEffect(() => {
     const row = rowRef.current;
     if (!row) return;
 
     const prevent = (e) => {
-      // Only prevent horizontal scrolling, allow vertical scrolling
       if (e.type === 'wheel') {
-        // Check if it's primarily a horizontal scroll (deltaX is larger than deltaY)
         if (Math.abs(e.deltaX) > Math.abs(e.deltaY)) {
           e.preventDefault();
         }
-        // Allow vertical scrolling (deltaY) to pass through to the page
       } else {
-        // For touchmove and keydown, prevent default
         e.preventDefault();
       }
     };
+
     row.addEventListener('wheel', prevent, { passive: false });
     row.addEventListener('touchmove', prevent, { passive: false });
     row.addEventListener('keydown', prevent, { passive: false });
@@ -93,7 +89,6 @@ export default function About(){
     };
   }, []);
 
-  // Calculate one-step width = card width + gap
   const getStep = () => {
     const row = rowRef.current;
     if (!row) return 0;
@@ -101,7 +96,6 @@ export default function About(){
     const style = window.getComputedStyle(row);
     const gap = parseFloat(style.columnGap || style.gap || '0') || 0;
     const w = (card?.offsetWidth || 0) + gap;
-    // Fallback if something is off
     return w || Math.round(row.clientWidth * 0.9);
   };
 
@@ -126,10 +120,12 @@ export default function About(){
         <div className="container">
           <SectionTag label="★ LEADERS" />
           <h2 className="about-leaders-heading">Who Were the Leaders</h2>
-          <p className="about-leaders-subtitle">Carrying forward a legacy of values, vision, and unity.</p>
+          <p className="about-leaders-subtitle">
+            Carrying forward a legacy of values, vision, and unity.
+          </p>
 
           <div className="leaders-grid">
-            {leaders.map(l => (
+            {leaders.map((l) => (
               <div key={l.id} className="leader-card">
                 <div className="leader-image-wrapper">
                   <img src={l.image} alt={l.name} className="leader-image" />
@@ -149,14 +145,18 @@ export default function About(){
         <div className="container">
           <div className="story-content-grid">
             <div className="story-left">
-              <h2 className="story-heading"><span className="story-heading-line1">Our Founding Story:</span><br/><span className="story-heading-line2">A Legacy of Values</span></h2>
+              <h2 className="story-heading">
+                <span className="story-heading-line1">Our Founding Story:</span>
+                <br />
+                <span className="story-heading-line2">A Legacy of Values</span>
+              </h2>
             </div>
             <div className="story-right">
               <p className="story-text">
                 The United Brothers Company (UBC) carries forward the vision of two remarkable leaders:
                 Mr. Jameel Khan, the grandfather, and Mr. Taher Khan, the father. For over eight decades,
                 through the parent company Char Bhai (Four Brothers), they successfully managed businesses in
-                sectors like tobacco, real estate, and technology, all while upholding exceptional values.
+                sectors like tobacco, real estate, and technology, all while upholding exceptional values.<br />
                 Their lifelong principle was simple yet profound: "Never differ in weight. Never cut down on
                 quality. Always give what you would prefer for yourself and your family because customers are our family."
               </p>
@@ -176,8 +176,18 @@ export default function About(){
       <section className="about-vision section">
         <div className="container">
           <span className="vision-badge" aria-label="Vision">
-            <svg className="vision-eye-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z" fill="white"/>
+            <svg
+              className="vision-eye-icon"
+              width="14"
+              height="14"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"
+                fill="white"
+              />
             </svg>
             VISION
           </span>
@@ -185,15 +195,17 @@ export default function About(){
           <div className="vision-grid">
             <div className="vision-left">
               <h2 className="vision-heading">
-                <span className="vision-heading-line1">The Thought</span><br/><span className="vision-heading-line2">Behind Starting UBC</span>
+                <span className="vision-heading-line1">The Thought</span>
+                <br />
+                <span className="vision-heading-line2">Behind Starting UBC</span>
               </h2>
             </div>
 
             <div className="vision-right">
               <p className="vision-text lead">
-                United Brothers Company was founded post-COVID,in<br/>2021, with a clear purpose: to sell pure food.
-                The pandemic<br/>was a turning point; it reminded us that good food means<br/>good health, and health can
-                only be maintained with<br/>uncompromised quality.
+                United Brothers Company was founded post-COVID, in 2021, with a clear purpose: to sell pure food.
+                The pandemic was a turning point; it reminded us that good food means good health, and health can
+                only be maintained with uncompromised quality.
               </p>
               <p className="vision-text muted">
                 Observing how earlier generations were stronger and healthier, we realized that their secret is simple:
@@ -210,8 +222,18 @@ export default function About(){
       <section className="about-mission section">
         <div className="container">
           <span className="mission-badge" aria-label="Mission">
-            <svg className="mission-eye-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z" fill="white"/>
+            <svg
+              className="mission-eye-icon"
+              width="14"
+              height="14"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"
+                fill="white"
+              />
             </svg>
             MISSION
           </span>
@@ -219,7 +241,9 @@ export default function About(){
           <div className="mission-grid">
             <div className="mission-left">
               <h2 className="mission-heading">
-                <span className="mission-heading-line1">Our Goal for</span><br/><span className="mission-heading-line2">the Coming Years</span>
+                <span className="mission-heading-line1">Our Goal for</span>
+                <br />
+                <span className="mission-heading-line2">the Coming Years</span>
               </h2>
             </div>
 
@@ -242,8 +266,18 @@ export default function About(){
       <section className="about-infra section">
         <div className="container">
           <span className="infra-badge" aria-label="Leaders">
-            <svg className="leaders-star-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="#2C36A6"/>
+            <svg
+              className="leaders-star-icon"
+              width="14"
+              height="14"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+                fill="#2C36A6"
+              />
             </svg>
             LEADERS
           </span>
@@ -251,7 +285,9 @@ export default function About(){
           <div className="infra-grid">
             <div className="infra-left">
               <h2 className="infra-heading">
-                <span className="infra-heading-line1">Infrastructure</span><br/><span className="infra-heading-line2">and Facilities</span>
+                <span className="infra-heading-line1">Infrastructure</span>
+                <br />
+                <span className="infra-heading-line2">and Facilities</span>
               </h2>
             </div>
 
@@ -261,8 +297,10 @@ export default function About(){
                 <h3 className="infra-title">Manufacturing Facility</h3>
                 <p className="infra-text">
                   Over 50,000 sq. ft. of production space equipped with advanced technology,
-                  providing the scale and precision necessary <span className="infra-text-muted">to meet global demand while maintaining
-                  our high standards of excellence.</span>
+                  providing the scale and precision necessary{' '}
+                  <span className="infra-text-muted">
+                    to meet global demand while maintaining our high standards of excellence.
+                  </span>
                 </p>
                 <div className="infra-divider" />
               </div>
@@ -272,7 +310,10 @@ export default function About(){
                 <h3 className="infra-title">In-House Laboratory</h3>
                 <p className="infra-text">
                   A dedicated, state-of-the-art facility focused on rigorous quality control and food
-                  safety protocols, <span className="infra-text-muted">ensuring every batch consistently meets and exceeds both regulatory and customer expectations.</span>
+                  safety protocols,{' '}
+                  <span className="infra-text-muted">
+                    ensuring every batch consistently meets and exceeds both regulatory and customer expectations.
+                  </span>
                 </p>
                 <div className="infra-divider" />
               </div>
@@ -282,7 +323,11 @@ export default function About(){
                 <h3 className="infra-title">Office Space</h3>
                 <p className="infra-text">
                   A vibrant and inspiring 7,500 sq. ft. workspace, designed to foster creativity and teamwork.
-                  <span className="infra-text-muted"> Co-located with our factory, this space facilitates seamless collaboration between our production and corporate teams.</span>
+                  <span className="infra-text-muted">
+                    {' '}
+                    Co-located with our factory, this space facilitates seamless collaboration between our production
+                    and corporate teams.
+                  </span>
                 </p>
                 <div className="infra-divider" />
               </div>
@@ -293,7 +338,10 @@ export default function About(){
                 <p className="infra-text">
                   Our future headquarters will serve as a corporate office, a creative hub with an in-house
                   studio for product shoots, and a center for employee well-being,
-                  <span className="infra-text-muted"> reflecting our belief that great work happens in great vibes.</span>
+                  <span className="infra-text-muted">
+                    {' '}
+                    reflecting our belief that great work happens in great vibes.
+                  </span>
                 </p>
               </div>
             </div>
@@ -306,8 +354,14 @@ export default function About(){
         <div className="container">
           <div className="cert-grid">
             <div className="cert-left">
-              <span className="cert-badge" aria-label="Certification">★ CERTIFICATION</span>
-              <h2 className="cert-heading"><span className="cert-heading-line1">Our Commitment</span><br/><span className="cert-heading-line2">to Quality</span></h2>
+              <span className="cert-badge" aria-label="Certification">
+                ★ CERTIFICATION
+              </span>
+              <h2 className="cert-heading">
+                <span className="cert-heading-line1">Our Commitment</span>
+                <br />
+                <span className="cert-heading-line2">to Quality</span>
+              </h2>
               <p className="cert-subtitle">A promise of purity, safety, and trust.</p>
             </div>
 
@@ -342,52 +396,66 @@ export default function About(){
       <section className="about-sustain section">
         <div className="container">
           <span className="sustain-badge" aria-label="Leaders">
-            <svg className="leaders-star-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="#2C36A6"/>
+            <svg
+              className="leaders-star-icon"
+              width="14"
+              height="14"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+                fill="#2C36A6"
+              />
             </svg>
             LEADERS
           </span>
 
-        <div className="sustain-grid">
-          <div className="sustain-left">
-            <h2 className="sustain-heading"><span className="sustain-heading-line1">Sustainability</span><br/><span className="sustain-heading-line2">Initiatives</span></h2>
-            <p className="sustain-subtitle">
-              UBC is committed to serving not just its customers, but also the planet.
-            </p>
+          <div className="sustain-grid">
+            <div className="sustain-left">
+              <h2 className="sustain-heading">
+                <span className="sustain-heading-line1">Sustainability</span>
+                <br />
+                <span className="sustain-heading-line2">Initiatives</span>
+              </h2>
+              <p className="sustain-subtitle">
+                UBC is committed to serving not just its customers, but also the planet.
+              </p>
+            </div>
+
+            <div className="sustain-right">
+              <div className="sustain-item">
+                <div className="sustain-idx">(01)</div>
+                <h3 className="sustain-title">Ethical Sourcing</h3>
+                <p className="sustain-text">
+                  Partnering with farmers and suppliers who follow sustainable and ethical methods.
+                </p>
+                <div className="sustain-divider" />
+              </div>
+
+              <div className="sustain-item">
+                <div className="sustain-idx">(02)</div>
+                <h3 className="sustain-title">Waste Management</h3>
+                <p className="sustain-text">
+                  Reducing food waste and recycling by-products wherever possible.
+                </p>
+                <div className="sustain-divider" />
+              </div>
+
+              <div className="sustain-item">
+                <div className="sustain-idx">(03)</div>
+                <h3 className="sustain-title">Community Engagement</h3>
+                <p className="sustain-text">
+                  Creating employment and supporting farmer communities to build sustainable livelihoods.
+                </p>
+              </div>
+            </div>
           </div>
-
-          <div className="sustain-right">
-            <div className="sustain-item">
-              <div className="sustain-idx">(01)</div>
-              <h3 className="sustain-title">Ethical Sourcing</h3>
-              <p className="sustain-text">
-                Partnering with farmers and suppliers who follow sustainable and ethical methods.
-              </p>
-              <div className="sustain-divider" />
-            </div>
-
-            <div className="sustain-item">
-              <div className="sustain-idx">(02)</div>
-              <h3 className="sustain-title">Waste Management</h3>
-              <p className="sustain-text">
-                Reducing food waste and recycling by-products wherever possible.
-              </p>
-              <div className="sustain-divider" />
-            </div>
-
-            <div className="sustain-item">
-              <div className="sustain-idx">(03)</div>
-              <h3 className="sustain-title">Community Engagement</h3>
-              <p className="sustain-text">
-                Creating employment and supporting farmer communities to build sustainable livelihoods.
-              </p>
-            </div>
-          </div>
-        </div>
         </div>
       </section>
 
-      {/* Media & News — one-line; NO manual scroll, only buttons */}
+      {/* Media & News */}
       <section className="about-news section">
         <div className="container">
           <div className="news-head">
@@ -395,7 +463,8 @@ export default function About(){
               <span className="news-badge">★ NEWS</span>
               <h2 className="news-title">Media & News</h2>
               <p className="news-subtitle">
-                From new launches to community initiatives, stay connected<br className="hide-sm"/>
+                From new launches to community initiatives, stay connected
+                <br className="hide-sm" />
                 with everything happening at United Brothers Company.
               </p>
             </div>
@@ -403,8 +472,20 @@ export default function About(){
             <div className="news-ctas">
               <button className="btn btn-light">View all</button>
               <div className="news-arrows">
-                <button className="btn icon-btn" aria-label="Previous" onClick={() => scrollByStep(-1)}>←</button>
-                <button className="btn icon-btn" aria-label="Next" onClick={() => scrollByStep(1)}>→</button>
+                <button
+                  className="btn icon-btn"
+                  aria-label="Previous"
+                  onClick={() => scrollByStep(-1)}
+                >
+                  ←
+                </button>
+                <button
+                  className="btn icon-btn"
+                  aria-label="Next"
+                  onClick={() => scrollByStep(1)}
+                >
+                  →
+                </button>
               </div>
             </div>
           </div>
@@ -412,9 +493,9 @@ export default function About(){
           <div
             className="news-row no-user-scroll"
             ref={rowRef}
-            tabIndex={-1} /* avoid keyboard scroll */
+            tabIndex={-1}
           >
-            {NEWS.map(n => (
+            {NEWS.map((n) => (
               <article key={n.id} className="news-card">
                 <div className="news-media">
                   <img src={n.image} alt={n.title} />

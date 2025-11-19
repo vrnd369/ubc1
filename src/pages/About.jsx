@@ -156,7 +156,7 @@ export default function About(){
                 The United Brothers Company (UBC) carries forward the vision of two remarkable leaders:
                 Mr. Jameel Khan, the grandfather, and Mr. Taher Khan, the father. For over eight decades,
                 through the parent company Char Bhai (Four Brothers), they successfully managed businesses in
-                sectors like tobacco, real estate, and technology, all while upholding exceptional values.
+                sectors like tobacco, real estate, and technology, all while upholding exceptional values.<br />
                 Their lifelong principle was simple yet profound: "Never differ in weight. Never cut down on
                 quality. Always give what you would prefer for yourself and your family because customers are our family."
               </p>
@@ -225,8 +225,8 @@ export default function About(){
 
             <div className="mission-right">
               <p className="mission-text lead">
-                Looking ahead, our mission is to earn and safeguard customer trust. We believe quality and price
-                go hand in hand: with quality comes price.
+                Looking ahead, our mission is to earn and safeguard<br />customer trust. We believe quality and price
+                go hand in<br />hand: with quality comes price.
               </p>
               <p className="mission-text muted">
                 While our products may cost slightly more than competitors’, they are never exorbitantly priced.

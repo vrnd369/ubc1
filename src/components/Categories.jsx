@@ -89,8 +89,6 @@ const CATEGORIES = [
 
 export default function Categories({ selectedBrand = 'All' }){
   const [active, setActive] = React.useState('All');
-  const [isDropdownOpen, setIsDropdownOpen] = React.useState(false);
-  const dropdownRef = React.useRef(null);
 
   const visible = React.useMemo(() => {
     let filtered = CATEGORIES;
@@ -108,23 +106,6 @@ export default function Categories({ selectedBrand = 'All' }){
     return filtered;
   }, [active, selectedBrand]);
 
-  // Close dropdown when clicking outside
-  React.useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
-        setIsDropdownOpen(false);
-      }
-    };
-
-    if (isDropdownOpen) {
-      document.addEventListener('mousedown', handleClickOutside);
-    }
-
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
-  }, [isDropdownOpen]);
-
   return (
     <section id="products" className="section categories-section" aria-labelledby="categories-heading">
       <div className="container">
@@ -133,35 +114,19 @@ export default function Categories({ selectedBrand = 'All' }){
           Explore our finest products<br/>crafted <span className="playfair-text">for</span> everyday flavor
         </h2>
 
-        <div className="categories-dropdown-wrapper" ref={dropdownRef}>
-          <button 
-            className={`categories-dropdown-btn ${isDropdownOpen ? 'open' : ''}`}
-            onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-            aria-expanded={isDropdownOpen}
-            aria-haspopup="true"
-          >
-            <span>{active}</span>
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M4 6L8 10L12 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
-          </button>
-          <div className={`categories-dropdown-menu ${isDropdownOpen ? 'open' : ''}`}>
-            {chips.map(c => (
-              <button
-                key={c}
-                className={'category-dropdown-item' + (active === c ? ' active' : '')}
-                onClick={() => {
-                  setActive(c);
-                  setIsDropdownOpen(false);
-                }}
-                role="tab"
-                aria-selected={active === c}
-                aria-controls="categories-grid"
-              >
-                {c}
-              </button>
-            ))}
-          </div>
+        <div className="categories-buttons-wrapper">
+          {chips.map(c => (
+            <button
+              key={c}
+              className={`category-button ${active === c ? 'active' : ''}`}
+              onClick={() => setActive(c)}
+              role="tab"
+              aria-selected={active === c}
+              aria-controls="categories-grid"
+            >
+              {c}
+            </button>
+          ))}
         </div>
 
         <div id="categories-grid" className="grid grid-3 cards" role="region" aria-live="polite">

@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './BrandsCarousel.css';
 import soilKingLogo from '../assets/Soil King.png';
@@ -23,27 +23,47 @@ const BrandCard = ({ brandName, title, description, buttonColor, logoIcon }) => 
 );
 
 export default function BrandsCarousel(){
-  const cardsWrapperRef = useRef(null);
+  const rowRef = useRef(null);
 
-  const scrollCards = (direction) => {
-    const wrapper = cardsWrapperRef.current;
-    if (!wrapper) return;
+  // Block manual horizontal scroll (allow vertical scroll)
+  useEffect(() => {
+    const row = rowRef.current;
+    if (!row) return;
 
-    // Get the first card element to calculate its width
-    const firstCard = wrapper.querySelector('.brand-carousel-card');
-    if (!firstCard) return;
+    const onWheel = (e) => {
+      if (Math.abs(e.deltaX) > Math.abs(e.deltaY)) {
+        e.preventDefault();
+      }
+    };
 
-    // Get computed styles for gap
-    const cardsContainer = wrapper.querySelector('.brands-carousel-cards');
-    const gap = parseInt(window.getComputedStyle(cardsContainer).gap) || 32;
-    
-    // Calculate scroll amount: one card width + gap
-    const cardWidth = firstCard.offsetWidth;
-    const scrollAmount = cardWidth + gap;
-    
-    wrapper.scrollBy({
-      left: direction * scrollAmount,
-      behavior: 'smooth'
+    row.addEventListener("wheel", onWheel, { passive: false });
+
+    return () => {
+      row.removeEventListener("wheel", onWheel);
+    };
+  }, []);
+
+  // How far to slide (exactly one card + the gap)
+  const stepWidth = () => {
+    const row = rowRef.current;
+    if (!row) return 0;
+
+    const card = row.querySelector(".brand-carousel-card");
+    if (!card) return 0;
+
+    const style = window.getComputedStyle(row);
+    const gap = parseFloat(style.columnGap || style.gap || "0") || 0;
+
+    return card.offsetWidth + gap;
+  };
+
+  const slide = (dir = 1) => {
+    const row = rowRef.current;
+    if (!row) return;
+
+    row.scrollBy({
+      left: dir * stepWidth(),
+      behavior: "smooth",
     });
   };
 
@@ -58,48 +78,46 @@ export default function BrandsCarousel(){
               Rooted in authenticity, our brands deliver<br/>taste, tradition, and trust to millions
             </p>
           </div>
-          <div className="brands-carousel-nav">
-            <button 
-              className="nav-arrow" 
+          <div className="brands-carousel-arrows">
+            <button
               aria-label="Previous"
-              onClick={() => scrollCards(-1)}
+              className="btn icon-btn"
+              onClick={() => slide(-1)}
+              type="button"
             >
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M15 18l-6-6 6-6"/>
-              </svg>
+              ←
             </button>
-            <button 
-              className="nav-arrow" 
+            <button
               aria-label="Next"
-              onClick={() => scrollCards(1)}
+              className="btn icon-btn"
+              onClick={() => slide(1)}
+              type="button"
             >
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M9 18l6-6-6-6"/>
-              </svg>
+              →
             </button>
           </div>
         </div>
-      </div>
-      <div className="brands-carousel-cards-wrapper" ref={cardsWrapperRef}>
-        <div className="brands-carousel-cards">
-          <BrandCard
-            brandName="SOIL KING"
-            title={<>Our Legacy<br/>in Every Brand</>}
-            description={<>With Soil King, we celebrate tradition and taste<br/>—delivering carefully crafted products that<br/>families trust every day.</>}
-            buttonColor="#4CAF50"
-            logoIcon={
-              <img src={soilKingLogo} alt="SOIL KING" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
-            }
-          />
-          <BrandCard
-            brandName="SUN DROP"
-            title={<>The Fresh Start<br/>You Deserve</>}
-            description={<>With Sun Drop, every product carries the<br/>warmth of the sun and the richness of earth<br/>—created to uplift your meals and your day.</>}
-            buttonColor="#FFC107"
-            logoIcon={
-              <img src={sunDropLogo} alt="SUN DROP" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
-            }
-          />
+        <div className="brands-carousel-cards-wrapper no-user-scroll" ref={rowRef}>
+          <div className="brands-carousel-cards">
+            <BrandCard
+              brandName="SOIL KING"
+              title={<>Our Legacy<br/>in Every Brand</>}
+              description={<>With Soil King, we celebrate tradition and taste<br/>—delivering carefully crafted products that<br/>families trust every day.</>}
+              buttonColor="#008562"
+              logoIcon={
+                <img src={soilKingLogo} alt="SOIL KING" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
+              }
+            />
+            <BrandCard
+              brandName="SUN DROP"
+              title={<>The Fresh Start<br/>You Deserve</>}
+              description={<>With Sun Drop, every product carries the<br/>warmth of the sun and the richness of earth<br/>—created to uplift your meals and your day.</>}
+              buttonColor="#FFC107"
+              logoIcon={
+                <img src={sunDropLogo} alt="SUN DROP" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
+              }
+            />
+          </div>
         </div>
       </div>
     </section>

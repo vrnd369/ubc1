@@ -22,20 +22,23 @@
   align-items: center;
   justify-content: center;
   gap: 6px;
-  width: 99.41px;
+  width: 100px;
   height: 33px;
   padding: 0;
   border-radius: 999px;
   font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
-  font-weight: 500;
+  font-weight: 500; /* Medium */
   font-size: 10px;
   line-height: 21px;
-  letter-spacing: 0.27em;
-  background:#2036c9;
-  color: #ffffff;
-  border: 1px solid #2C36A6;
+  letter-spacing: 0.4em; /* Increased gap between alphabets to match reference */
+  background: #1E3A8A; /* Blue/900 */
+  color: #FFFFFF;
+  opacity: 100%;
+  border: none;
   margin-bottom: 24px;
   white-space: nowrap;
+  box-sizing: border-box;
+  text-align: center;
 }
 
 /* Heading + subtitle */

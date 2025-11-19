@@ -11,7 +11,7 @@ import Products from './pages/Products';
 import ProductDetail from './pages/ProductDetail';
 import Contact from './pages/Contact';
 import Careers from './pages/Careers';
-import Prototype from './pages/Prototype';
+
 import './App.css';
 
 export default function App(){
@@ -29,7 +29,7 @@ export default function App(){
         <Route path="/product/:id" element={<ProductDetail />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/careers" element={<Careers />} />
-        <Route path="/prototype" element={<Prototype />} />
+     
       </Routes>
       <Footer />
     </div>

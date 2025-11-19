@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink, useLocation } from 'react-router-dom';
 import './Navbar.css';
 import logo from '../assets/Logo.png';
 import soilKingIcon from '../assets/soilkingicon.png';
@@ -10,10 +10,15 @@ import appalamIcon from '../assets/appalam.png';
 import pasteIcon from '../assets/paste.png';
 
 export default function Navbar(){
+  const location = useLocation();
   const [isScrolled, setIsScrolled] = useState(false);
   const [openDropdown, setOpenDropdown] = useState(null); // 'brands' | 'products' | null
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const leaveTimeoutRef = useRef(null);
+
+  // Check if current route matches brands or products
+  const isBrandsActive = location.pathname.startsWith('/brands');
+  const isProductsActive = location.pathname.startsWith('/products') || location.pathname.startsWith('/product');
 
   useEffect(() => {
     const onScroll = () => setIsScrolled(window.scrollY > 50);
@@ -82,11 +87,11 @@ export default function Navbar(){
             <NavLink to="/about" onClick={closeMobileMenu}>About Us</NavLink>
 
             <div
-              className="dropdown"
+              className={`dropdown ${isBrandsActive ? 'active' : ''}`}
               onMouseEnter={() => handleMouseEnter('brands')}
               onMouseLeave={handleMouseLeave}
             >
-              <span onClick={(e) => toggleDropdown('brands', e)} className="dropdown-trigger">
+              <span onClick={(e) => toggleDropdown('brands', e)} className={`dropdown-trigger ${isBrandsActive ? 'active' : ''}`}>
                 Our Brands ▾
               </span>
               <div
@@ -106,11 +111,11 @@ export default function Navbar(){
             </div>
 
             <div
-              className="dropdown"
+              className={`dropdown ${isProductsActive ? 'active' : ''}`}
               onMouseEnter={() => handleMouseEnter('products')}
               onMouseLeave={handleMouseLeave}
             >
-              <span onClick={(e) => toggleDropdown('products', e)} className="dropdown-trigger">
+              <span onClick={(e) => toggleDropdown('products', e)} className={`dropdown-trigger ${isProductsActive ? 'active' : ''}`}>
                 Products ▾
               </span>
               <div

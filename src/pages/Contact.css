@@ -50,7 +50,7 @@
   font-size: 10px !important;
   line-height: 21px !important;
   letter-spacing: 0.27em !important;
-  color: #6B7280 !important;
+  color: #191D23 !important;
   text-transform: uppercase !important;
 }
 
@@ -162,23 +162,26 @@
   position: absolute;
   bottom: 24px;
   right: 24px;
-  background: #1F2A6B;
+  background: #1E3A8A; /* Blue/900 */
   color: #FFFFFF;
   padding: 12px 24px;
   border-radius: 999px;
   border: none;
-  font-weight: 600;
+  font-family: Arial, sans-serif;
+  font-weight: 400; /* Regular */
   font-size: 14px;
+  line-height: 22.5px;
+  letter-spacing: -0.19px;
   cursor: pointer;
   transition: all 0.2s ease;
-  box-shadow: 0 4px 12px rgba(31, 42, 107, 0.3);
+  box-shadow: 0 4px 12px rgba(30, 58, 138, 0.3);
   z-index: 10;
 }
 
 .get-directions-btn:hover {
-  background: #3730A3;
+  background: #1E40AF; /* Slightly lighter Blue/800 */
   transform: translateY(-1px);
-  box-shadow: 0 6px 16px rgba(31, 42, 107, 0.4);
+  box-shadow: 0 6px 16px rgba(30, 58, 138, 0.4);
 }
 
 .get-directions-btn:active {
@@ -218,10 +221,10 @@
   }
   
   .contact-banner .tag {
-    width: 152px !important;
-    height: 31px !important;
-    padding: 0 13px !important;
-    gap: 7px !important;
+    width: 160px !important;
+    height: 33px !important;
+    padding: 0 14px !important;
+    gap: 8px !important;
   }
   
   .contact-banner .contact-tag-star {
@@ -235,7 +238,7 @@
     font-size: 9.5px !important;
     line-height: 19.95px !important;
     letter-spacing: 0.27em !important;
-    color: #6B7280 !important;
+    color: #191D23 !important;
     text-transform: uppercase !important;
   }
   
@@ -301,10 +304,10 @@
   }
   
   .contact-banner .tag {
-    width: 144px !important;
-    height: 30px !important;
-    padding: 0 12px !important;
-    gap: 6.5px !important;
+    width: 160px !important;
+    height: 33px !important;
+    padding: 0 14px !important;
+    gap: 8px !important;
   }
   
   .contact-banner .contact-tag-star {
@@ -318,7 +321,7 @@
     font-size: 9px !important;
     line-height: 18.9px !important;
     letter-spacing: 0.27em !important;
-    color: #6B7280 !important;
+    color: #191D23 !important;
     text-transform: uppercase !important;
   }
   
@@ -418,10 +421,10 @@
   }
   
   .contact-banner .tag {
-    width: 136px !important;
-    height: 28px !important;
-    padding: 0 11px !important;
-    gap: 6px !important;
+    width: 160px !important;
+    height: 33px !important;
+    padding: 0 14px !important;
+    gap: 8px !important;
   }
   
   .contact-banner .contact-tag-star {
@@ -435,7 +438,7 @@
     font-size: 8.5px !important;
     line-height: 17.85px !important;
     letter-spacing: 0.27em !important;
-    color: #6B7280 !important;
+    color: #191D23 !important;
     text-transform: uppercase !important;
   }
   
@@ -493,10 +496,10 @@
   }
   
   .contact-banner .tag {
-    width: 128px !important;
-    height: 26px !important;
-    padding: 0 10px !important;
-    gap: 5.5px !important;
+    width: 160px !important;
+    height: 33px !important;
+    padding: 0 14px !important;
+    gap: 8px !important;
   }
   
   .contact-banner .contact-tag-star {
@@ -510,7 +513,7 @@
     font-size: 8px !important;
     line-height: 16.8px !important;
     letter-spacing: 0.27em !important;
-    color: #6B7280 !important;
+    color: #191D23 !important;
     text-transform: uppercase !important;
   }
   
@@ -594,10 +597,10 @@
   }
   
   .contact-banner .tag {
-    width: 120px !important;
-    height: 25px !important;
-    padding: 0 9px !important;
-    gap: 5px !important;
+    width: 160px !important;
+    height: 33px !important;
+    padding: 0 14px !important;
+    gap: 8px !important;
   }
   
   .contact-banner .contact-tag-star {
@@ -611,7 +614,7 @@
     font-size: 7.5px !important;
     line-height: 15.75px !important;
     letter-spacing: 0.27em !important;
-    color: #6B7280 !important;
+    color: #191D23 !important;
     text-transform: uppercase !important;
   }
   

@@ -10,15 +10,7 @@
   justify-content: flex-start;
   overflow: hidden !important;
   margin: 0 !important;
-  margin-top: 0 !important;
-  margin-left: 0 !important;
-  margin-right: 0 !important;
-  margin-bottom: 0 !important;
   padding: 0 !important;
-  padding-top: 0 !important;
-  padding-bottom: 0 !important;
-  padding-left: 0 !important;
-  padding-right: 0 !important;
   left: 0 !important;
   right: 0 !important;
   background: #000 !important;
@@ -74,11 +66,7 @@ main,
   max-width: 100% !important;
   min-height: 100% !important;
   margin: 0 !important;
-  margin-left: 0 !important;
-  margin-right: 0 !important;
   padding: 0 !important;
-  padding-left: 0 !important;
-  padding-right: 0 !important;
   z-index: 0 !important;
   overflow: visible !important;
   background: transparent !important;
@@ -89,12 +77,11 @@ main,
   justify-content: center;
 }
 
-/* Video fill */
+/* Video fill (parallax target) */
 .hero-video {
   position: absolute !important;
   top: 0 !important;
   left: 50% !important;
-  transform: translateX(-50%) translateZ(0) !important;
   width: 100% !important;
   height: 100% !important;
   min-width: 100% !important;
@@ -105,16 +92,15 @@ main,
   object-position: center center !important;
   pointer-events: none !important;
   margin: 0 !important;
-  margin-left: 0 !important;
-  margin-right: 0 !important;
   padding: 0 !important;
-  padding-left: 0 !important;
-  padding-right: 0 !important;
   display: block !important;
   background: transparent !important;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   box-sizing: border-box !important;
+
+  /* Parallax performance */
+  will-change: transform;
 }
 
 /* Optional overlay */
@@ -127,20 +113,18 @@ main,
   min-height: 100%;
   background: transparent;
   z-index: 1;
-  margin-left: 0 !important;
-  padding-left: 0 !important;
 }
 
 /* Inner content */
 .hero-inner {
   position: relative;
-  padding: 50px 0 50px 15vw !important;
-  max-width: 977px !important;
+  padding: 50px 0 50px 163px !important;
+  max-width: 814px !important;
   width: 814px !important;
+  min-height: 764px !important;
+  height: 764px !important;
   margin: 0 !important;
-  margin-left: 0 !important;
   margin-right: auto !important;
-  margin-top: 0 !important;
   text-align: left;
   z-index: 2;
   background: transparent !important;
@@ -150,37 +134,35 @@ main,
 /* Override container styles for hero-inner */
 .hero-inner.container,
 .container.hero-inner {
-  max-width: 977px !important;
+  max-width: 814px !important;
   width: 814px !important;
+  min-height: 764px !important;
+  height: 764px !important;
   margin: 0 !important;
-  margin-left: 0 !important;
   margin-right: auto !important;
-  padding: 50px 0 50px 15vw !important;
-  padding-left: 15vw !important;
+  padding: 50px 0 50px 163px !important;
+  padding-left: 163px !important;
   padding-right: 0 !important;
 }
 
 /* Override global container class for hero */
 .hero .container.hero-inner,
 .hero .hero-inner.container {
-  max-width: 977px !important;
+  max-width: 814px !important;
   width: 814px !important;
+  min-height: 764px !important;
+  height: 764px !important;
   margin: 0 !important;
-  margin-left: 0 !important;
   margin-right: auto !important;
-  padding: 50px 0 50px 15vw !important;
-  padding-left: 15vw !important;
+  padding: 50px 0 50px 163px !important;
+  padding-left: 163px !important;
   padding-right: 0 !important;
 }
 
-.hero .container { 
+.hero .container {
   background: transparent !important;
   margin: 0 !important;
-  margin-left: 0 !important;
-  margin-right: 0 !important;
   padding: 0 !important;
-  padding-left: 0 !important;
-  padding-right: 0 !important;
   max-width: none !important;
 }
 
@@ -188,26 +170,25 @@ main,
   color: #fff;
   text-shadow: 0 4px 20px rgba(0, 0, 0, .5), 0 2px 10px rgba(0, 0, 0, .3);
   margin-bottom: 24px;
-  /* margin-top: -55px; */
   font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
   font-size: 88px;
   font-weight: 600;
   letter-spacing: -0.06em;
   line-height: 0.87;
-  /* margin-bottom: 250px; */
+  text-align: left;
 }
 
 .hero .lead {
   color: #fff;
   max-width: 814px;
   width: 100%;
-  /* margin-bottom: 240px; */
   font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
   font-size: 18px;
   font-weight: 400;
   line-height: normal;
   letter-spacing: -0.02em;
   text-shadow: 0 2px 10px rgba(0, 0, 0, .4);
+  text-align: left;
 }
 
 .hero-actions {
@@ -233,7 +214,7 @@ main,
   letter-spacing: -0.19px;
   text-decoration: none;
   transition: transform .15s ease, box-shadow .15s ease, background-color .15s ease, color .15s ease, border-color .15s ease;
-  background: #FFFFFF;
+  background: #ffffff;
   color: #111827;
   border: none;
   box-shadow: 0 4px 12px rgba(0, 0, 0, .15);
@@ -262,10 +243,12 @@ main,
   .hero-inner,
   .hero-inner.container,
   .container.hero-inner {
-    padding-left: 15vw !important;
-    max-width: 977px !important;
+    padding-left: 163px !important;
+    padding-top: 50px !important;
+    max-width: 814px !important;
     width: 814px !important;
-    margin-left: 0 !important;
+    min-height: 764px !important;
+    height: 764px !important;
     margin-right: auto !important;
   }
 }
@@ -274,10 +257,12 @@ main,
   .hero-inner,
   .hero-inner.container,
   .container.hero-inner {
-    padding-left: 15vw !important;
-    width: calc(100% - 40px) !important;
+    padding-left: 163px !important;
+    padding-top: 50px !important;
+    width: calc(100% - 326px) !important;
     max-width: 814px !important;
-    margin-left: 0 !important;
+    min-height: 764px !important;
+    height: auto !important;
     margin-right: auto !important;
   }
 }
@@ -289,27 +274,25 @@ main,
     padding-left: 10vw !important;
     width: calc(100% - 40px) !important;
     max-width: 100% !important;
-    margin-left: 0 !important;
     margin-right: auto !important;
   }
-  
+
   .hero h1 {
     font-size: 64px;
     line-height: 0.87;
     letter-spacing: -0.06em;
     font-weight: 600;
   }
-  
+
   .hero .lead {
     font-size: 17px;
-    font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
     font-weight: 400;
     line-height: normal;
     letter-spacing: -0.02em;
   }
-  
-  .hero .btn, .hero .btn.ghost {
-    font-family: Arial, sans-serif;
+
+  .hero .btn,
+  .hero .btn.ghost {
     font-size: 14px;
     font-weight: 400;
     line-height: 22.5px;
@@ -318,336 +301,404 @@ main,
 }
 
 @media (max-width: 768px) {
-  /* Remove all margins from hero section and video elements */
-  .hero { 
-    min-height: 100vh;
-    height: 100vh !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    min-width: 100% !important;
-    left: 0 !important;
-    right: 0 !important;
-    margin: 0 !important;
-    margin-top: 0 !important;
-    margin-bottom: 0 !important;
+  /* Ensure no white space shows through from parent elements on mobile */
+  body .hero,
+  #root .hero,
+  .App .hero,
+  main .hero,
+  .home .hero {
+    background: transparent !important;
     margin-left: 0 !important;
     margin-right: 0 !important;
-    padding: 0 !important;
-    padding-top: 0 !important;
-    padding-bottom: 0 !important;
     padding-left: 0 !important;
     padding-right: 0 !important;
+  }
+
+  .hero {
+    min-height: auto !important;
+    height: auto !important;
+    max-height: none !important;
+    width: 100vw !important;
+    max-width: 100vw !important;
+    min-width: 100vw !important;
+    margin: 0 !important;
+    padding: 0 !important;
     overflow: hidden !important;
     position: relative !important;
-    background: #000 !important;
+    background: transparent !important;
     box-sizing: border-box !important;
+    display: flex !important;
+    align-items: flex-start !important;
+    justify-content: flex-start !important;
+    left: 0 !important;
+    right: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
   }
-  
-  /* Remove gap between hero and next section */
-  .hero + section:not(.promise-section),
-  .hero + .section:not(.promise-section) {
-    margin-top: 0 !important;
-    padding-top: 0 !important;
-  }
-  
-  /* Allow margin-top for promise-section (Our Brands) in mobile */
+
+  /* Allow margin-top for promise-section (Our Brands) in mobile - minimal spacing */
   .hero + .promise-section {
-    margin-top: 48px !important;
+    margin-top: 0px !important;
     padding-top: 0 !important;
   }
-  
-  /* Video wrapper - no margins */
+
+  /* Video wrapper - covers full area on mobile */
   .hero-video-wrapper {
     position: absolute !important;
     top: 0 !important;
     left: 0 !important;
     right: 0 !important;
     bottom: 0 !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    min-width: 100% !important;
+    width: 100vw !important;
     height: 100% !important;
+    min-width: 100vw !important;
+    max-width: 100vw !important;
     min-height: 100% !important;
     margin: 0 !important;
-    margin-top: 0 !important;
-    margin-bottom: 0 !important;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
     padding: 0 !important;
-    padding-top: 0 !important;
-    padding-bottom: 0 !important;
-    padding-left: 0 !important;
-    padding-right: 0 !important;
     overflow: hidden !important;
     z-index: 0 !important;
-    background: transparent !important;
     -webkit-transform: translateZ(0);
     transform: translateZ(0);
     box-sizing: border-box !important;
+    background: transparent !important;
   }
-  
-  /* Video element - fit to mobile viewport */
+
+  /* Static video on mobile (parallax disabled in JS) - covers full area */
   .hero-video {
     position: absolute !important;
     top: 0 !important;
     left: 0 !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    min-width: 100% !important;
+    width: 100vw !important;
     height: 100% !important;
+    min-width: 100vw !important;
     min-height: 100% !important;
+    max-width: 100vw !important;
     max-height: 100% !important;
     object-fit: cover !important;
-    object-position: center top !important;
-    display: block !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-    z-index: 0 !important;
+    object-position: center 30% !important;
     margin: 0 !important;
-    margin-top: 0 !important;
-    margin-bottom: 0 !important;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
     padding: 0 !important;
-    padding-top: 0 !important;
-    padding-bottom: 0 !important;
-    padding-left: 0 !important;
-    padding-right: 0 !important;
-    -webkit-transform: translateZ(0);
-    transform: translateZ(0);
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-    box-sizing: border-box !important;
+    -webkit-transform: translateZ(0) !important;
+    transform: translateZ(0) !important;
   }
-  
-  /* Overlay - no margins */
+
   .hero-overlay {
     position: absolute !important;
     top: 0 !important;
     left: 0 !important;
     right: 0 !important;
     bottom: 0 !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    min-width: 100% !important;
+    width: 100vw !important;
     height: 100% !important;
+    min-width: 100vw !important;
+    max-width: 100vw !important;
     min-height: 100% !important;
     margin: 0 !important;
-    margin-top: 0 !important;
-    margin-bottom: 0 !important;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
     padding: 0 !important;
-    padding-top: 0 !important;
-    padding-bottom: 0 !important;
-    padding-left: 0 !important;
-    padding-right: 0 !important;
     z-index: 1 !important;
     box-sizing: border-box !important;
+    background: transparent !important;
   }
-  
-  .hero-inner { 
-    padding: 60px 20px !important;
+
+  .hero-inner {
+    padding: 150px 0 50px 20px !important;
     width: 100% !important;
     max-width: 100% !important;
-    left: 0 !important;
-    right: 0 !important;
-    margin: 0 auto !important;
+    margin: 0 !important;
     margin-left: 0 !important;
     margin-right: 0 !important;
-    margin-top: 0 !important;
-    padding-left: 20px !important;
-    padding-right: 20px !important;
+    margin-bottom: 0 !important;
     box-sizing: border-box !important;
     position: relative !important;
     z-index: 2 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-start !important;
+    align-items: flex-start !important;
+    align-content: flex-start !important;
+    text-align: left !important;
+    left: 0 !important;
+    right: 0 !important;
+    overflow: visible !important;
   }
-  
+
+  /* Override higher specificity selectors for mobile */
+  .hero-inner.container,
+  .container.hero-inner,
+  .hero .container.hero-inner,
+  .hero .hero-inner.container {
+    padding: 150px 0 50px 20px !important;
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 100% !important;
+    min-height: auto !important;
+    height: auto !important;
+  }
+
   .hero .container {
     width: 100% !important;
     max-width: 100% !important;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-    padding-left: 20px !important;
-    padding-right: 20px !important;
+    margin: 0 !important;
+    padding: 0 !important;
   }
-  
-  .hero-actions { 
-    margin-bottom: 24px; 
-    margin-top: 24px;
-  }
-  
-  .hero h1 { 
-    font-size: 48px; 
-    line-height: 0.87; 
+
+  .hero h1 {
+    font-size: 48px;
+    line-height: 1.1;
     letter-spacing: -0.06em;
     font-weight: 600;
-    margin-bottom: 20px; 
+    margin-bottom: 24px;
+    margin-top: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    width: 100%;
+    text-align: left !important;
+    color: #fff;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, .5), 0 2px 10px rgba(0, 0, 0, .3);
+    align-self: flex-start !important;
   }
-  
-  .hero .lead { 
-    font-size: 16px; 
-    font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+
+  .hero .lead {
+    font-size: 16px;
     font-weight: 400;
-    line-height: normal;
+    line-height: 1.5;
     letter-spacing: -0.02em;
-    margin-bottom: 24px; 
+    margin-bottom: 0;
+    margin-top: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    width: 100%;
+    max-width: 100%;
+    text-align: left !important;
+    color: #fff;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, .4);
+    align-self: flex-start !important;
   }
-  
-  .hero-actions { 
-    flex-direction: column; 
-    gap: 12px; 
+
+  .hero-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+    margin-top: 24px;
+    margin-bottom: 0;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    padding-bottom: 40px;
+    align-self: flex-start !important;
   }
-  
-  .hero .btn, .hero .btn.ghost {
-    width: 100%; 
-    justify-content: center; 
-    padding: 14px 24px; 
-    font-family: Arial, sans-serif;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 22.5px;
-    letter-spacing: -0.19px;
+
+  .hero .btn,
+  .hero .btn.ghost {
+    width: 100%;
+    justify-content: center;
+    padding: 12px 20px;
+    text-align: center;
   }
 }
 
 @media (max-width: 600px) {
   .hero + .promise-section {
-    margin-top: 40px !important;
+    margin-top: 0px !important;
+  }
+
+  .hero-inner {
+    padding: 150px 0 50px 20px !important;
+  }
+
+  /* Override higher specificity selectors for mobile */
+  .hero-inner.container,
+  .container.hero-inner,
+  .hero .container.hero-inner,
+  .hero .hero-inner.container {
+    padding: 150px 0 50px 20px !important;
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .hero h1 {
+    font-size: 42px;
+    line-height: 1.1;
+    margin-bottom: 24px;
+    margin-top: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    text-align: left !important;
+    align-self: flex-start !important;
+  }
+
+  .hero .lead {
+    font-size: 15px;
+    line-height: 1.5;
+    margin-bottom: 0;
+    margin-top: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    text-align: left !important;
+    align-self: flex-start !important;
+  }
+
+  .hero-actions {
+    margin-top: 24px;
+    padding-bottom: 35px;
   }
 }
 
 @media (max-width: 480px) {
   .hero + .promise-section {
-    margin-top: 36px !important;
+    margin-top: 0px !important;
   }
-  
-  /* Small mobile - remove all margins */
-  /* Small mobile - remove all margins */
-  .hero { 
-    min-height: 100vh;
-    height: 100vh !important;
+
+  .hero-inner {
+    padding: 150px 0 50px 20px !important;
     width: 100% !important;
     max-width: 100% !important;
-    min-width: 100% !important;
-    margin: 0 !important;
-    margin-top: 0 !important;
-    margin-bottom: 0 !important;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-    padding: 0 !important;
-    padding-top: 0 !important;
-    padding-bottom: 0 !important;
-    padding-left: 0 !important;
-    padding-right: 0 !important;
   }
-  
-  .hero-video-wrapper {
-    left: 0 !important;
+
+  /* Override higher specificity selectors for mobile */
+  .hero-inner.container,
+  .container.hero-inner,
+  .hero .container.hero-inner,
+  .hero .hero-inner.container {
+    padding: 150px 0 50px 20px !important;
+    margin-right: 0 !important;
+    margin-left: 0 !important;
     width: 100% !important;
     max-width: 100% !important;
-    min-width: 100% !important;
-    height: 100% !important;
-    min-height: 100% !important;
-    margin: 0 !important;
-    margin-top: 0 !important;
-    margin-bottom: 0 !important;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-    padding: 0 !important;
-    padding-top: 0 !important;
-    padding-bottom: 0 !important;
-    padding-left: 0 !important;
-    padding-right: 0 !important;
-    overflow: hidden !important;
   }
-  
-  .hero-video {
-    left: 0 !important;
-    top: 0 !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    min-width: 100% !important;
-    height: 100% !important;
-    min-height: 100% !important;
-    max-height: 100% !important;
-    object-fit: cover !important;
-    object-position: center top !important;
-    margin: 0 !important;
-    margin-top: 0 !important;
-    margin-bottom: 0 !important;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-    padding: 0 !important;
-    padding-top: 0 !important;
-    padding-bottom: 0 !important;
-    padding-left: 0 !important;
-    padding-right: 0 !important;
-  }
-  
-  .hero-overlay {
-    height: 100% !important;
-    min-height: 100% !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    min-width: 100% !important;
-    margin: 0 !important;
-    margin-top: 0 !important;
-    margin-bottom: 0 !important;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-    padding: 0 !important;
-    padding-top: 0 !important;
-    padding-bottom: 0 !important;
-    padding-left: 0 !important;
-    padding-right: 0 !important;
-  }
-  
-  .hero-inner { 
-    padding: 40px 16px !important;
-    padding-left: 16px !important;
-    padding-right: 16px !important;
-  }
-  
+
   .hero .container {
-    padding-left: 16px !important;
-    padding-right: 16px !important;
+    padding: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
   }
-  
-  .hero-actions { 
-    margin-bottom: 20px; 
-    margin-top: 20px;
+
+  .hero h1 {
+    font-size: 36px;
+    line-height: 1.1;
+    margin-bottom: 24px;
+    margin-top: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    width: 100%;
+    text-align: left !important;
+    align-self: flex-start !important;
   }
-  
-  .hero h1 { 
-    font-size: 36px; 
-    line-height: 0.87; 
-    letter-spacing: -0.06em;
-    font-weight: 600;
-    margin-bottom: 16px; 
+
+  .hero .lead {
+    font-size: 15px;
+    line-height: 1.5;
+    margin-bottom: 0;
+    margin-top: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    width: 100%;
+    text-align: left !important;
+    align-self: flex-start !important;
   }
-  
-  .hero .lead { 
-    font-size: 15px; 
-    font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
-    font-weight: 400;
-    line-height: normal;
-    letter-spacing: -0.02em;
-    margin-bottom: 20px; 
+
+  .hero-actions {
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+    margin-top: 24px;
+    margin-bottom: 0;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    padding-bottom: 30px;
+    align-self: flex-start !important;
   }
-  
-  .hero .btn, .hero .btn.ghost { 
-    padding: 12px 20px; 
-    font-family: Arial, sans-serif;
+
+  .hero .btn,
+  .hero .btn.ghost {
+    width: 100%;
+    padding: 12px 20px;
     font-size: 14px;
-    font-weight: 400;
-    line-height: 22.5px;
-    letter-spacing: -0.19px;
+    justify-content: center;
+    text-align: center;
   }
 }
 
 @media (max-width: 375px) {
   .hero + .promise-section {
-    margin-top: 32px !important;
+    margin-top: 0px !important;
+  }
+
+  .hero-inner {
+    padding: 150px 0 50px 16px !important;
+  }
+
+  /* Override higher specificity selectors for mobile */
+  .hero-inner.container,
+  .container.hero-inner,
+  .hero .container.hero-inner,
+  .hero .hero-inner.container {
+    padding: 150px 0 50px 16px !important;
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .hero h1 {
+    font-size: 32px;
+    line-height: 1.15;
+    margin-bottom: 24px;
+    margin-top: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    text-align: left !important;
+    align-self: flex-start !important;
+  }
+
+  .hero .lead {
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 0;
+    margin-top: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    text-align: left !important;
+    align-self: flex-start !important;
+  }
+
+  .hero-actions {
+    margin-top: 24px;
+    gap: 8px;
+    padding-bottom: 25px;
+    align-self: flex-start !important;
+  }
+
+  .hero .btn,
+  .hero .btn.ghost {
+    padding: 12px 18px;
+    font-size: 13px;
   }
 }

@@ -500,6 +500,10 @@
 
 /* Tablets */
 @media (max-width: 768px) {
+  .container {
+    padding: 0 20px;
+  }
+
   .brand-hero {
     padding-top: 180px;
     min-height: 90vh;
@@ -512,20 +516,70 @@
 
   .brand-hero__inner {
     margin-top: 60px;
+    text-align: left !important;
+  }
+
+  .brand-hero__title {
+    text-align: left !important;
+  }
+
+  .brand-hero__lead {
+    text-align: left !important;
+    margin-left: 0;
+    margin-right: auto;
   }
 
   .eyebrow {
     font-size: 9px;
     height: 30px;
+    margin-left: 0 !important;
+    margin-right: auto !important;
   }
 
   .brand-copy {
     font-size: 19px;
+    text-align: left !important;
+  }
+
+  .brand-title {
+    text-align: left !important;
   }
 
   .btn-primary {
     font-size: 13px;
     line-height: 20.5px;
+  }
+
+  .brand-section {
+    padding: 56px 0;
+  }
+
+  .brand-products {
+    padding: 56px 0;
+  }
+
+  .prod-head {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 20px;
+  }
+
+  .prod-title {
+    text-align: left !important;
+    margin: 0;
+  }
+
+  .prod-arrows {
+    width: 104px;
+    height: 40px;
+  }
+
+  .icon-btn {
+    width: 48px;
+    height: 40px;
+    font-size: 24px;
   }
 
   .brand-prod-row {
@@ -559,6 +613,18 @@
     min-height: 108px;
   }
 
+  .brand-prod-text-container {
+    text-align: left !important;
+  }
+
+  .brand-prod-name {
+    text-align: left !important;
+  }
+
+  .brand-prod-blurb {
+    text-align: left !important;
+  }
+
   .chip-link {
     width: 92px;
     min-width: 92px;
@@ -573,6 +639,10 @@
 
 /* Mobile */
 @media (max-width: 640px) {
+  .container {
+    padding: 0 20px;
+  }
+
   .brand-hero {
     min-height: 85vh;
     padding-top: 160px;
@@ -585,25 +655,71 @@
 
   .brand-hero__title {
     font-size: clamp(28px, 7vw, 36px);
+    text-align: left !important;
   }
 
   .brand-hero__lead {
     font-size: 14px;
     margin-bottom: 20px;
+    text-align: left !important;
+  }
+
+  .brand-hero__inner {
+    text-align: left !important;
   }
 
   .eyebrow {
     font-size: 8px;
     height: 26px;
+    margin-left: 0 !important;
+    margin-right: auto !important;
   }
 
   .brand-copy {
     font-size: 18px;
+    text-align: left !important;
+  }
+
+  .brand-title {
+    text-align: left !important;
   }
 
   .btn-primary {
     font-size: 12px;
     line-height: 19.5px;
+  }
+
+  .brand-section {
+    padding: 48px 0;
+  }
+
+  .brand-products {
+    padding: 48px 0;
+  }
+
+  .prod-head {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    margin-bottom: 24px;
+  }
+
+  .prod-title {
+    text-align: left !important;
+    margin: 0;
+    width: 100%;
+  }
+
+  .prod-arrows {
+    align-self: flex-end;
+    width: 104px;
+    height: 40px;
+  }
+
+  .icon-btn {
+    width: 48px;
+    height: 40px;
+    font-size: 24px;
   }
 
   .brand-prod-row {
@@ -612,17 +728,19 @@
 
   /* 1 card per row */
   .brand-prod-card {
-    flex: 0 0 100%;
-    width: 100%;
-    max-width: 418px;
-    height: 428px;
-    min-height: 428px;
-    margin: 0 auto;
+    flex: 0 0 calc(100% - 32px);
+    width: calc(100% - 32px);
+    max-width: 100%;
+    height: auto;
+    min-height: 380px;
+    margin: 0;
+    aspect-ratio: 418 / 428;
   }
 
   .brand-prod-media {
-    height: 240px;
+    height: auto;
     min-height: 240px;
+    flex: 1;
     padding: 0;
     overflow: hidden;
   }
@@ -635,16 +753,29 @@
 
   .brand-prod-body {
     height: auto;
-    min-height: 108px;
-    padding: 18px 20px 20px;
+    min-height: 100px;
+    padding: 16px 20px 20px;
+  }
+
+  .brand-prod-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .brand-prod-text-container {
+    width: 100%;
+    text-align: left !important;
   }
 
   .brand-prod-name {
     font-size: 18px;
+    text-align: left !important;
   }
 
   .brand-prod-blurb {
     font-size: 12px;
+    text-align: left !important;
   }
 
   .chip-link {
@@ -656,6 +787,7 @@
     max-height: 34px;
     padding: 0;
     font-size: 12px;
+    align-self: flex-start;
   }
 
   .hide-sm {
@@ -665,6 +797,10 @@
 
 /* Extra small phones */
 @media (max-width: 480px) {
+  .container {
+    padding: 0 16px;
+  }
+
   .brand-hero {
     min-height: 80vh;
     padding-top: 140px;
@@ -677,26 +813,78 @@
   .brand-hero__title {
     font-size: 28px;
     margin-bottom: 12px;
+    text-align: left !important;
   }
 
   .brand-hero__lead {
     font-size: 13px;
+    text-align: left !important;
+  }
+
+  .brand-hero__inner {
+    text-align: left !important;
   }
 
   .eyebrow {
     font-size: 7.5px;
     height: 24px;
+    margin-left: 0 !important;
+    margin-right: auto !important;
   }
 
   .brand-copy {
     font-size: 17px;
+    text-align: left !important;
+  }
+
+  .brand-title {
+    text-align: left !important;
+  }
+
+  .brand-section {
+    padding: 40px 0;
+  }
+
+  .brand-products {
+    padding: 40px 0;
+  }
+
+  .prod-head {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 20px;
+  }
+
+  .prod-title {
+    text-align: left !important;
+    font-size: 28px;
+    margin: 0;
+    width: 100%;
+  }
+
+  .prod-arrows {
+    align-self: flex-end;
+    width: 104px;
+    height: 40px;
+  }
+
+  .icon-btn {
+    width: 48px;
+    height: 40px;
+    font-size: 24px;
+  }
+
+  .brand-prod-row {
+    --gap: 12px;
   }
 
   .brand-prod-card {
+    flex: 0 0 calc(100% - 24px);
+    width: calc(100% - 24px);
     max-width: 100%;
-    width: 100%;
     height: auto;
-    min-height: 380px;
+    min-height: 360px;
     aspect-ratio: 418 / 428;
   }
 
@@ -717,14 +905,28 @@
   .brand-prod-body {
     height: auto;
     min-height: 100px;
+    padding: 14px 16px 18px;
+  }
+
+  .brand-prod-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .brand-prod-text-container {
+    width: 100%;
+    text-align: left !important;
   }
 
   .brand-prod-name {
     font-size: 16px;
+    text-align: left !important;
   }
 
   .brand-prod-blurb {
     font-size: 11px;
+    text-align: left !important;
   }
 
   .chip-link {
@@ -736,5 +938,6 @@
     max-height: 32px;
     padding: 0;
     font-size: 11.5px;
+    align-self: flex-start;
   }
 }

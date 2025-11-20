@@ -647,6 +647,7 @@
 
 @media (max-width:768px){
   .product-detail-section{padding:120px 0 60px}
+  .product-detail-section .container{padding:0 20px}
   .product-detail-grid{grid-template-columns:1fr;gap:40px}
   .product-image-wrapper{
     position:relative;
@@ -667,7 +668,57 @@
     aspect-ratio:586/575;
     max-height:575px;
   }
-  .product-details{max-height:none;overflow-y:visible;padding-right:0}
+  .product-details{
+    max-height:none;
+    overflow-y:visible;
+    padding-right:0;
+    text-align:left !important;
+  }
+  .product-details .tag{
+    margin-left:0 !important;
+    margin-right:auto !important;
+  }
+  .product-title{
+    width:100% !important;
+    height:auto !important;
+    font-size:36px;
+    text-align:left !important;
+  }
+  .product-title-sub{
+    font-size:32px;
+    text-align:left !important;
+  }
+  .product-description,
+  .product-description-2{
+    width:100% !important;
+    height:auto !important;
+    text-align:left !important;
+    font-size:16px;
+  }
+  .divider{
+    width:100% !important;
+    min-width:100% !important;
+    max-width:100% !important;
+  }
+  .sizes-title{
+    width:100% !important;
+    height:auto !important;
+    white-space:normal;
+    text-align:left !important;
+  }
+  .nutrition-title{
+    width:100% !important;
+    height:auto !important;
+    text-align:left !important;
+  }
+  .nutrition-table{
+    width:100% !important;
+    font-size:14px;
+  }
+  .nutrition-table td{
+    padding:12px 8px;
+    font-size:16px;
+  }
 
   .why-choose-section{min-height:100vh;height:auto;padding:60px 0}
   .why-choose-section .container{padding:60px 24px}
@@ -695,15 +746,63 @@
   }
 
   .four-pillars-section{padding:60px 0}
+  .four-pillars-section .container{padding:0 20px}
   .pillars-grid{grid-template-columns:1fr;gap:48px}
+  .pillars-left{
+    margin-left:0 !important;
+    text-align:left !important;
+  }
+  .pillars-left .tag{
+    margin-left:0 !important;
+    margin-right:auto !important;
+  }
+  .pillars-title{
+    text-align:left !important;
+    width:100% !important;
+  }
+  .pillars-right{
+    padding-top:0;
+    text-align:left !important;
+  }
   .pillars-grid-items{grid-template-columns:1fr;gap:40px}
-  .pillar-item{gap:16px}
+  .pillar-item{
+    gap:16px;
+    text-align:left !important;
+  }
+  .pillar-title{
+    width:100% !important;
+    height:auto !important;
+    text-align:left !important;
+  }
+  .pillar-description{
+    width:100% !important;
+    height:auto !important;
+    text-align:left !important;
+  }
   .pillar-icon{width:41.86px;height:41.66px}
   .pillar-icon img{width:41.86px;height:41.66px}
 
   .product-detail-products{padding:60px 0}
-  .prod-head{flex-direction:column;align-items:flex-start;gap:16px}
-  .prod-arrows{align-self:flex-end}
+  .product-detail-products .container{padding:0 20px}
+  .prod-head{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:16px;
+  }
+  .prod-title{
+    text-align:left !important;
+    width:100%;
+  }
+  .prod-arrows{
+    align-self:flex-end;
+    width:104px;
+    height:40px;
+  }
+  .btn.icon-btn{
+    width:48px;
+    height:40px;
+    font-size:24px;
+  }
   .brand-prod-row{--gap:20px}
   .brand-prod-card{
     flex:0 0 calc((100% - var(--gap)) / 2);
@@ -742,6 +841,8 @@
 
 /* Mobile */
 @media (max-width:640px){
+  .product-detail-section .container{padding:0 20px}
+  .product-detail-section{padding:100px 0 48px}
   .product-image-card{
     padding:28px 20px;
     max-width:100%;
@@ -752,8 +853,38 @@
     height:auto;
     aspect-ratio:586/575;
   }
+  .product-title{
+    font-size:32px;
+  }
+  .product-title-sub{
+    font-size:28px;
+  }
+  .product-description,
+  .product-description-2{
+    font-size:15px;
+  }
+  .size-btn{
+    font-size:16px;
+    width:80px;
+    height:40px;
+  }
+  .nutrition-table td{
+    font-size:15px;
+    padding:10px 6px;
+  }
+  .why-choose-section .container{padding:48px 20px}
+  .four-pillars-section{padding:48px 0}
+  .four-pillars-section .container{padding:0 20px}
   .pillar-icon{width:41.86px;height:41.66px}
   .pillar-icon img{width:41.86px;height:41.66px}
+  .pillar-title{
+    font-size:20px;
+  }
+  .pillar-description{
+    font-size:18px;
+  }
+  .product-detail-products{padding:48px 0}
+  .product-detail-products .container{padding:0 20px}
 
   .brand-prod-row{--gap:16px}
   /* 1 card per row */
@@ -781,8 +912,23 @@
     min-height:108px;
     padding:18px 20px 20px;
   }
-  .brand-prod-name{font-size:18px}
-  .brand-prod-blurb{font-size:12px}
+  .brand-prod-header{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:12px;
+  }
+  .brand-prod-text-container{
+    text-align:left !important;
+    width:100%;
+  }
+  .brand-prod-name{
+    font-size:18px;
+    text-align:left !important;
+  }
+  .brand-prod-blurb{
+    font-size:12px;
+    text-align:left !important;
+  }
   .chip-link{
     width:88px;
     min-width:88px;
@@ -792,10 +938,13 @@
     max-height:34px;
     padding:0;
     font-size:12px;
+    align-self:flex-start;
   }
 }
 
 @media (max-width:480px){
+  .product-detail-section .container{padding:0 16px}
+  .product-detail-section{padding:90px 0 40px}
   .product-image-card{
     padding:24px 16px;
     max-width:100%;
@@ -806,10 +955,26 @@
     height:auto;
     aspect-ratio:586/575;
   }
-  .pillar-icon{width:41.86px;height:41.66px}
-  .pillar-icon img{width:41.86px;height:41.66px}
-
-  .why-choose-section .container{padding:40px 20px}
+  .product-title{
+    font-size:28px;
+  }
+  .product-title-sub{
+    font-size:24px;
+  }
+  .product-description,
+  .product-description-2{
+    font-size:14px;
+  }
+  .size-btn{
+    font-size:15px;
+    width:75px;
+    height:38px;
+  }
+  .nutrition-table td{
+    font-size:14px;
+    padding:8px 4px;
+  }
+  .why-choose-section .container{padding:40px 16px}
   .why-choose-title{
     font-family:'Ag H','Inter',ui-sans-serif,system-ui,-apple-system,sans-serif;
     font-size:28px;
@@ -819,18 +984,33 @@
     max-width:100%;
     height:auto;
     min-height:70px;
+    text-align:left !important;
   }
   .benefit-item{
     width:100%;
     max-width:100%;
     height:auto;
     min-height:160px;
+    text-align:left !important;
   }
   .benefit-label,
   .benefit-subtitle,
   .benefit-line{
     font-size:18px;
+    text-align:left !important;
   }
+  .four-pillars-section{padding:40px 0}
+  .four-pillars-section .container{padding:0 16px}
+  .pillar-icon{width:41.86px;height:41.66px}
+  .pillar-icon img{width:41.86px;height:41.66px}
+  .pillar-title{
+    font-size:18px;
+  }
+  .pillar-description{
+    font-size:16px;
+  }
+  .product-detail-products{padding:40px 0}
+  .product-detail-products .container{padding:0 16px}
   .brand-prod-card{
     max-width:100%;
     width:100%;

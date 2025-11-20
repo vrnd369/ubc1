@@ -262,7 +262,7 @@
   .nav-links a, .nav-links .dropdown{
     width:100%; padding:12px 0; border-bottom:1px solid rgba(229,231,235,.5);
     font-size:14px; 
-    line-height:21px;
+    line-height:21px;  
     display:block; box-sizing:border-box;
     font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
     font-weight: 400; /* Regular */
@@ -273,7 +273,7 @@
     margin-top: 16px;
     width: 154px;
     height: 47px;
-    padding: 0;
+    padding: 10px;
     border-bottom: none;
     text-align: center;
     border-radius: 999px;

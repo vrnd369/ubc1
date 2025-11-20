@@ -86,6 +86,51 @@
   align-self: flex-start !important;
 }
 
+/* Desktop-only alignment fixes for perfect tag alignment with WHY section */
+@media (min-width: 769px) {
+  /* Ensure container has exact same max-width and padding as WHY section for perfect alignment */
+  .promise-section .container {
+    max-width: 1200px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding-left: 24px !important;
+    padding-right: 24px !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Remove all margins and padding from nested containers */
+  .promise-content {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .promise-left {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Force tag to align exactly with container padding-left */
+  .tag.promise-tag,
+  .promise-tag {
+    margin-left: 0 !important;
+    margin-right: auto !important;
+    margin-top: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    box-sizing: border-box !important;
+    position: relative !important;
+    left: 0 !important;
+  }
+}
+
 /* Heading */
 .promise-left h2,
 .promise-heading{
@@ -141,8 +186,11 @@
     overflow: hidden;
   }
   
+  /* Keep max-width 1200px for alignment with WHY section */
   .promise-section .container {
-    max-width: 1440px;
+    max-width: 1200px !important;
+    padding-left: 24px !important;
+    padding-right: 24px !important;
   }
   
   .promise-content {
@@ -230,6 +278,15 @@
   .promise-section .container {
     max-width: 100%;
     padding: 0 24px;
+  }
+}
+
+/* Desktop: Ensure alignment with WHY section between 769px-1439px */
+@media (min-width: 769px) and (max-width: 1439px) {
+  .promise-section .container {
+    max-width: 1200px !important;
+    padding-left: 24px !important;
+    padding-right: 24px !important;
   }
 }
 

@@ -12,7 +12,7 @@ const BrandCard = ({ brandName, title, description, buttonColor, logoIcon }) => 
       </div>
     </div>
     <div className="brand-carousel-content">
-      <small className="brand-carousel-tag">/ {brandName}</small>
+      <small className="brand-carousel-tag"><span className="brand-carousel-slash">/</span> {brandName}</small>
       <h3>{title}</h3>
       <p>{description}</p>
       <Link to="/brands" className="brand-carousel-btn" style={{ backgroundColor: buttonColor }} data-button-color={buttonColor}>
@@ -78,6 +78,8 @@ export default function BrandsCarousel(){
               Rooted in authenticity, our brands deliver<br/>taste, tradition, and trust to millions
             </p>
           </div>
+        </div>
+        <div className="brands-carousel-controls">
           <div className="brands-carousel-arrows">
             <button
               aria-label="Previous"
@@ -102,7 +104,7 @@ export default function BrandsCarousel(){
             <BrandCard
               brandName="SOIL KING"
               title={<>Our Legacy<br/>in Every Brand</>}
-              description={<>With Soil King, we celebrate tradition and taste<br/>—delivering carefully crafted products that<br/>families trust every day.</>}
+              description={<>With Soil King, we celebrate tradition and taste<br/>— delivering carefully crafted products that<br/>families trust every day.</>}
               buttonColor="#008562"
               logoIcon={
                 <img src={soilKingLogo} alt="SOIL KING" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
@@ -111,7 +113,7 @@ export default function BrandsCarousel(){
             <BrandCard
               brandName="SUN DROP"
               title={<>The Fresh Start<br/>You Deserve</>}
-              description={<>With Sun Drop, every product carries the<br/>warmth of the sun and the richness of earth<br/>—created to uplift your meals and your day.</>}
+              description={<>With Sun Drop, every product carries the<br/>warmth of the sun and the richness of earth<br/>— created to uplift your meals and your day.</>}
               buttonColor="#FFC107"
               logoIcon={
                 <img src={sunDropLogo} alt="SUN DROP" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />

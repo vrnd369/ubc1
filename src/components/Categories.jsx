@@ -13,12 +13,10 @@ import imgAppalams from '../assets/appalam.png';
 
 const chips = [
   'All',
-  'Pastes & Ready Mix',
-  'Spices',
   'Masalas & Spices',
-  'Masalas',
   'Rice',
   'Appalams & Crisps',
+  'Pastes & Ready Mix',
 ];
 
 /**

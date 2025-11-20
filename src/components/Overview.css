@@ -40,7 +40,7 @@
   gap: 95px;
   max-width: 1440px;
   margin: 0 auto;
-  padding: 0;
+  padding: 120px 0 0 10px; /* Added Y: 120px (top), X: 10px (left) */
   box-sizing: border-box;
   width: 1036px;
   height: auto;
@@ -48,14 +48,14 @@
 }
 
 .overview-content{
-  width: 606.4px;
-  min-height: 529px;
+  width: 511px; /* Changed from 606.4px to 511px (Hug) */
+  min-height: 602.4px; /* Changed from 529px to 602.4px (Hug) */
   background: rgba(255, 255, 255, 0.8);
-  border-radius: 24px;
-  padding: 48px;
+  border-radius: 25.04px; /* Changed from 24px to 25.04px */
+  padding: 35px 52px; /* Changed from 48px to vertical: 35px, horizontal: 52px */
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 33px; /* Changed from 20px to 33px */
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   margin: 0;
   align-items: flex-start;

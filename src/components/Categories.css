@@ -72,12 +72,15 @@
 /* ---- Categories Buttons ---- */
 .categories-buttons-wrapper{
   display: flex;
+  flex-direction: row; /* Horizontal flow */
   flex-wrap: wrap;
-  gap: 12px;
-  align-items: center;
+  gap: 8px; /* Gap: 8 units */
+  align-items: flex-start; /* Top-left alignment */
   justify-content: flex-start;
-  width: 1029px;
-  height: 74px;
+  width: fit-content; /* Hug width (1029) */
+  max-width: 1029px;
+  min-height: 74px; /* Hug height (74) */
+  padding: 8px; /* Padding: 8 units (horizontal and vertical) */
   margin-top: 8px;
   margin-bottom: 24px;
   box-sizing: border-box;
@@ -85,19 +88,19 @@
 
 .category-button{
   background: #FFFFFF; /* White background for inactive state */
-  color: #737373; /* Neutral/500 */
+  color: #737373; /* Neutral/500 - dark gray text */
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  height: 33px;
+  height: 58px;
   padding: 0 18px;
-  border-radius: 999px;
+  border-radius: 999px; /* Pill-shaped */
   font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
   font-weight: 500; /* Medium */
   font-size: 18px;
   line-height: 100%;
   letter-spacing: -1.5px;
-  border: none;
+  border: 1px solid #E5E7EB; /* Light gray border for unselected state */
   box-sizing: border-box;
   white-space: nowrap;
   cursor: pointer;
@@ -107,16 +110,19 @@
 }
 
 .category-button:hover{
-  background: #F5F5F5;
+  background: #F9FAFB;
+  border-color: #D1D5DB;
 }
 
 .category-button.active{
-  background: #EAE9FF; /* Light purple/lavender for active state */
-  color: #737373; /* Neutral/500 */
+  background: #EAE9FF; /* Light lavender-gray for active state */
+  color: #737373; /* Dark gray text */
+  border: 1px solid #EAE9FF; /* Match border to background */
 }
 
 .category-button.active:hover{
   background: #DAD7FF;
+  border-color: #DAD7FF;
 }
 
 /* ---- Grid ---- */
@@ -304,14 +310,15 @@
     width: 100%;
     max-width: 1029px;
     height: auto;
-    min-height: 60px;
-    gap: 10px;
+    min-height: 74px;
+    gap: 8px;
+    padding: 8px;
   }
   
   .category-button{
-    height: 32px;
-    padding: 0 16px;
-    font-size: 16px;
+    height: 58px;
+    padding: 0 18px;
+    font-size: 18px;
     line-height: 100%;
     letter-spacing: -1.5px;
     font-weight: 500;
@@ -372,6 +379,14 @@
     height: auto;
     min-height: 56px;
     gap: 10px;
+    padding: 8px 0;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 8px;
+    justify-content: flex-start;
+    align-items: flex-start;
+    align-content: flex-start;
+    box-sizing: border-box;
   }
   
   .category-button{
@@ -381,6 +396,11 @@
     line-height: 100%;
     letter-spacing: -1.5px;
     font-weight: 500;
+    flex-shrink: 0;
+    margin: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
   }
   .grid-3{ grid-template-columns: 1fr; } /* 1/row on mobile */
   .category-card-head{ min-height: 180px; }
@@ -450,17 +470,30 @@
     width: 100%;
     max-width: 100%;
     height: auto;
-    min-height: 50px;
+    min-height: 74px;
     gap: 8px;
+    padding: 8px 0;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 8px;
+    justify-content: flex-start;
+    align-items: flex-start;
+    align-content: flex-start;
+    box-sizing: border-box;
   }
   
   .category-button{
-    height: 30px;
-    padding: 0 12px;
-    font-size: 14px;
+    height: 58px;
+    padding: 0 18px;
+    font-size: 18px;
     line-height: 100%;
     letter-spacing: -1.5px;
     font-weight: 500;
+    flex-shrink: 0;
+    margin: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
   }
   .category-card-bar{
     padding: 18px 20px 20px;

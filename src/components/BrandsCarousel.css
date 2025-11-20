@@ -9,22 +9,104 @@
   overflow-y: visible;
 }
 
+.brands-carousel-section .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  text-align: left;
+}
+
 .brands-carousel-header{
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: flex-start;
   margin-bottom: 48px;
   gap: 40px;
+  margin-left: 0;
+  padding-left: 0;
+}
+
+/* Desktop-only alignment fixes for perfect tag alignment */
+@media (min-width: 769px) {
+  /* Ensure container has exact same padding as WHY section */
+  .brands-carousel-section .container {
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+    padding: 0 24px !important;
+    padding-left: 24px !important;
+    padding-right: 24px !important;
+    text-align: left !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Remove all margins and padding from nested flex containers */
+  .brands-carousel-header {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    gap: 40px; /* Keep gap but ensure no left offset */
+    justify-content: flex-start !important;
+    align-items: flex-start !important;
+  }
+
+  .brands-carousel-header > .brands-carousel-text:first-child {
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+    flex: 1;
+    min-width: 0; /* Prevent flex from adding implicit spacing */
+  }
+
+  .brands-carousel-text {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    flex: 1;
+    min-width: 0; /* Prevent flex from adding implicit spacing */
+  }
+
+  /* Force tag to align exactly with container padding-left */
+  .brands-carousel-tag {
+    margin-left: 0 !important;
+    margin-right: auto !important;
+    margin-top: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    box-sizing: border-box !important;
+    display: inline-flex !important;
+    position: relative !important;
+    left: 0 !important;
+  }
+}
+
+.brands-carousel-controls{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-bottom: 24px;
+  position: relative;
+  width: 100vw;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  padding-right: max(24px, calc(50vw - 600px));
+  box-sizing: border-box;
 }
 
 .brands-carousel-arrows {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background: #F5F5F5; /* Light gray with 100% opacity */
+  background: #FFFFFF; /* White background */
   border-radius: 999px; /* Pill-shaped */
-  width: 104px;
-  height: 56px;
+  width: 96px;
+  height: 48px;
   padding: 0;
   gap: 0;
   overflow: hidden;
@@ -38,7 +120,7 @@
   height: 48px;
   border-radius: 0;
   background: transparent;
-  color: #0f172a;
+  color: #000000;
   border: none;
   display: flex;
   align-items: center;
@@ -47,6 +129,10 @@
   transition: background 0.2s ease;
   flex: 1;
   font-size: 20px;
+  font-weight: 400;
+  line-height: 1;
+  padding: 0;
+  margin: 0;
 }
 
 .brands-carousel-arrows .icon-btn:hover {
@@ -54,15 +140,17 @@
 }
 
 .brands-carousel-arrows .icon-btn:first-child {
-  color: #111827; /* Darker for left arrow */
+  color: #000000; /* Black for left arrow */
 }
 
 .brands-carousel-arrows .icon-btn:last-child {
-  color: #6B7280; /* Lighter gray for right arrow */
+  color: #6B7280; /* Gray for right arrow */
 }
 
 .brands-carousel-text{
   flex: 1;
+  margin-left: 0;
+  padding-left: 0;
 }
 
 .brands-carousel-tag{
@@ -83,6 +171,8 @@
   line-height: 21px;
   letter-spacing: 0.4em; /* Increased gap between alphabets to match reference */
   margin-bottom: 28px;
+  margin-left: 0;
+  margin-right: auto;
   border: none;
   box-sizing: border-box;
   text-align: center;
@@ -181,9 +271,9 @@
 
 .brands-carousel-cards{
   display: flex;
-  gap: 32px;
+  gap: 10px;
   width: fit-content;
-  min-width: calc(1484px + 32px + 80px); /* 2 cards (742px each) + gap + padding */
+  min-width: calc(736px + 742px + 10px + 80px); /* First card (736px) + Second card (742px) + gap (10px) + padding */
   padding-right: 80px;
 }
 
@@ -199,6 +289,18 @@
   min-width: 742px;
   height: 358px;
   flex-shrink: 0;
+}
+
+/* First card (SOIL KING) - 736px width */
+.brand-carousel-card:first-child{
+  width: 736px;
+  min-width: 736px;
+}
+
+/* Second card (SUN DROP) - 742px width (default) */
+.brand-carousel-card:nth-child(2){
+  width: 742px;
+  min-width: 742px;
 }
 
 .brand-carousel-logo-area{
@@ -246,17 +348,21 @@
 .brand-carousel-content{
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  max-width: 100%;
+  gap: 20px;
+  max-width: 377px;
+  width: 377px;
   overflow-wrap: break-word;
   justify-content: flex-start;
   align-items: flex-start;
+  align-self: flex-start;
   text-align: left;
+  margin: 0;
+  padding: 0;
 }
 
 .brand-carousel-content p + .brand-carousel-btn[data-button-color="#008562"],
 .brand-carousel-content p + .brand-carousel-btn[data-button-color="#FFC107"]{
-  margin-top: 12px;
+  margin-top: 0;
 }
 
 .brand-carousel-content .brand-carousel-tag{
@@ -269,9 +375,15 @@
   font-weight: 500;
   line-height: 21px;
   letter-spacing: 0.27em;
-  margin-bottom: 0;
+  margin: 0;
+  margin-top: 35px; /* Half inch gap (0.5in = 48px) */
   text-align: left;
   align-self: flex-start;
+  white-space: nowrap;
+}
+
+.brand-carousel-content .brand-carousel-tag .brand-carousel-slash{
+  color: #008562;
 }
 
 .brand-carousel-content h3{
@@ -282,6 +394,7 @@
   line-height: 100%;
   letter-spacing: -0.06em;
   margin: 0;
+  padding: 0;
   text-align: left;
   align-self: flex-start;
   width: 100%;
@@ -295,11 +408,13 @@
   line-height: 140%;
   letter-spacing: -0.02em;
   margin: 0;
+  padding: 0;
   word-wrap: break-word;
   overflow-wrap: break-word;
   text-align: left;
   align-self: flex-start;
   width: 100%;
+  text-align-last: left;
 }
 
 .brand-carousel-btn{
@@ -313,19 +428,25 @@
   letter-spacing: -0.19px;
   cursor: pointer;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
-  width: fit-content;
-  margin-top: 12px;
+  width: 118px;
+  height: 47px;
+  margin: 0;
   margin-left: 0;
+  margin-right: auto;
   text-decoration: none;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   align-self: flex-start;
   text-align: center;
+  box-sizing: border-box;
+  white-space: nowrap;
 }
 
 /* Green button - white text */
 .brand-carousel-btn[data-button-color="#008562"]{
   color: #FFFFFF;
-  margin-top: 12px;
+  margin-top: 0;
 }
 
 /* Yellow button - neutral/900 text */
@@ -343,9 +464,14 @@
   .brands-carousel-section{
     padding: 72px 0;
   }
+  .brands-carousel-section .container {
+    padding: 0 24px;
+  }
   .brands-carousel-header{
     flex-direction: column;
     gap: 32px;
+    margin-left: 0;
+    padding-left: 0;
   }
   .brands-carousel-nav{
     align-self: flex-end;
@@ -435,9 +561,29 @@
     overflow-x: hidden;
     overflow-y: visible;
   }
+  .brands-carousel-section .container {
+    padding: 0 20px;
+  }
   .brands-carousel-header{
     margin-bottom: 36px;
     gap: 24px;
+    margin-left: 0;
+    padding-left: 0;
+  }
+  .brands-carousel-text{
+    margin-left: 0;
+    padding-left: 0;
+  }
+  .brands-carousel-controls{
+    width: 100%;
+    position: relative;
+    left: auto;
+    right: auto;
+    margin-left: 0;
+    margin-right: 0;
+    padding-right: 20px;
+    padding-left: 20px;
+    justify-content: flex-end;
   }
   .brands-carousel-tag{
     width: 160px;
@@ -490,9 +636,9 @@
     min-width: max-content; /* Compatible alternative to fit-content */
   }
   .brand-carousel-card{
-    width: calc(100vw - 60px);
-    min-width: calc(100vw - 60px);
-    max-width: 500px;
+    width: calc(100vw - 100px);
+    min-width: calc(100vw - 100px);
+    max-width: 360px;
     height: auto;
     min-height: 180px;
     grid-template-columns: 140px 1fr;
@@ -500,6 +646,13 @@
     gap: 14px;
     flex-shrink: 0;
     overflow: visible;
+    align-items: flex-start;
+  }
+  .brand-carousel-card:first-child,
+  .brand-carousel-card:nth-child(2){
+    width: calc(100vw - 100px);
+    min-width: calc(100vw - 100px);
+    max-width: 360px;
   }
   .brand-carousel-logo-area{
     flex-direction: column;
@@ -507,15 +660,19 @@
     align-self: flex-start;
     gap: 10px;
     padding-top: 0;
+    width: 100%;
+    display: flex;
   }
   .brand-carousel-logo{
     width: 140px;
     height: 140px;
     flex-shrink: 0;
     background: #F3F4F6;
-    align-items: flex-start;
+    align-items: center;
+    justify-content: center;
     padding: 10px 12px 12px 12px;
     margin-top: 0;
+    display: flex;
   }
   .brand-carousel-name{
     text-align: center;
@@ -525,12 +682,17 @@
   .brand-carousel-content{
     align-items: flex-start;
     text-align: left;
-    gap: 8px;
+    gap: 12px;
     overflow: visible;
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
   }
   .brand-carousel-content p + .brand-carousel-btn[data-button-color="#008562"],
   .brand-carousel-content p + .brand-carousel-btn[data-button-color="#FFC107"]{
-    margin-top: 8px;
+    margin-top: 0;
   }
   .brand-carousel-content .brand-carousel-tag{
     font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
@@ -542,6 +704,8 @@
     text-align: left;
     align-self: flex-start;
     margin-bottom: 4px;
+    margin-top: 0;
+    width: auto;
   }
   .brand-carousel-content h3{
     font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
@@ -554,6 +718,7 @@
     align-self: flex-start;
     width: 100%;
     margin: 0;
+    padding: 0;
   }
   .brand-carousel-content p{
     font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
@@ -566,6 +731,7 @@
     align-self: flex-start;
     width: 100%;
     margin: 0;
+    padding: 0;
   }
   .brand-carousel-btn{
     font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
@@ -575,13 +741,15 @@
     letter-spacing: -0.19px;
     align-self: flex-start;
     margin-left: 0;
+    margin-top: 0;
     padding: 8px 16px;
+    width: auto;
   }
   
   /* Green button - white text */
   .brand-carousel-btn[data-button-color="#008562"]{
     color: #FFFFFF;
-    margin-top: 8px;
+    margin-top: 0;
   }
   
   /* Yellow button - neutral/900 text */
@@ -608,6 +776,10 @@
   .brands-carousel-header{
     margin-bottom: 32px;
   }
+  .brands-carousel-controls{
+    padding-right: 20px;
+    padding-left: 20px;
+  }
   .brands-carousel-text h2{
     font-size: 30px;
   }
@@ -633,11 +805,17 @@
     padding: 16px;
     gap: 14px;
     overflow: visible;
+    align-items: flex-start;
   }
   .brand-carousel-logo{
     width: 130px;
     height: 130px;
     padding: 10px 12px 12px 12px;
+    align-items: center;
+    justify-content: center;
+  }
+  .brand-carousel-content{
+    gap: 12px;
   }
   .brand-carousel-content h3{
     font-size: 22px;
@@ -688,6 +866,10 @@
   .brands-carousel-header{
     margin-bottom: 32px;
   }
+  .brands-carousel-controls{
+    padding-right: 20px;
+    padding-left: 20px;
+  }
   .brands-carousel-cards-wrapper{
     width: 100%;
     position: relative;
@@ -706,9 +888,9 @@
     min-width: max-content; /* Compatible alternative to fit-content */
   }
   .brand-carousel-card{
-    width: calc(100vw - 60px);
-    min-width: calc(100vw - 60px);
-    max-width: 450px;
+    width: calc(100vw - 100px);
+    min-width: calc(100vw - 100px);
+    max-width: 320px;
     height: auto;
     min-height: 160px;
     padding: 16px;
@@ -716,20 +898,31 @@
     grid-template-columns: 120px 1fr;
     flex-shrink: 0;
     overflow: visible;
+    align-items: flex-start;
+  }
+  .brand-carousel-card:first-child,
+  .brand-carousel-card:nth-child(2){
+    width: calc(100vw - 100px);
+    min-width: calc(100vw - 100px);
+    max-width: 320px;
   }
   .brand-carousel-logo-area{
     justify-content: flex-start;
     align-self: flex-start;
     padding-top: 0;
     gap: 10px;
+    width: 100%;
+    display: flex;
   }
   .brand-carousel-logo{
     width: 120px;
     height: 120px;
     background: #F3F4F6;
-    align-items: flex-start;
+    align-items: center;
+    justify-content: center;
     padding: 10px 12px 12px 12px;
     margin-top: 0;
+    display: flex;
   }
   .brand-carousel-name{
     font-size: 15px;
@@ -742,20 +935,25 @@
     letter-spacing: 0.27em;
     color: #171717;
     margin-bottom: 4px;
+    margin-top: 0;
+    text-align: left;
+    align-self: flex-start;
+    width: auto;
   }
   .brand-carousel-content{
     align-items: flex-start;
     text-align: left;
-    gap: 8px;
+    gap: 12px;
     overflow: visible;
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
   }
   .brand-carousel-content p + .brand-carousel-btn[data-button-color="#008562"],
   .brand-carousel-content p + .brand-carousel-btn[data-button-color="#FFC107"]{
-    margin-top: 8px;
-  }
-  .brand-carousel-content .brand-carousel-tag{
-    text-align: left;
-    align-self: flex-start;
+    margin-top: 0;
   }
   .brand-carousel-content h3{
     font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
@@ -768,6 +966,7 @@
     align-self: flex-start;
     width: 100%;
     margin: 0;
+    padding: 0;
   }
   .brand-carousel-content p{
     font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
@@ -780,6 +979,7 @@
     align-self: flex-start;
     width: 100%;
     margin: 0;
+    padding: 0;
   }
   .brand-carousel-btn{
     padding: 8px 16px;
@@ -790,12 +990,14 @@
     letter-spacing: -0.19px;
     align-self: flex-start;
     margin-left: 0;
+    margin-top: 0;
+    width: auto;
   }
   
   /* Green button - white text */
   .brand-carousel-btn[data-button-color="#008562"]{
     color: #FFFFFF;
-    margin-top: 8px;
+    margin-top: 0;
   }
   
   /* Yellow button - neutral/900 text */
@@ -841,6 +1043,10 @@
   .brands-carousel-header{
     margin-bottom: 28px;
   }
+  .brands-carousel-controls{
+    padding-right: 16px;
+    padding-left: 16px;
+  }
   .brands-carousel-cards-wrapper{
     width: 100%;
     position: relative;
@@ -858,45 +1064,75 @@
     min-width: max-content; /* Compatible alternative to fit-content */
   }
   .brand-carousel-card{
-    width: calc(100vw - 48px);
-    min-width: calc(100vw - 48px);
-    max-width: 400px;
+    width: calc(100vw - 80px);
+    min-width: calc(100vw - 80px);
+    max-width: 280px;
     padding: 14px;
     gap: 12px;
     grid-template-columns: 100px 1fr;
     min-height: 150px;
     flex-shrink: 0;
     overflow: visible;
+    align-items: flex-start;
+  }
+  .brand-carousel-card:first-child,
+  .brand-carousel-card:nth-child(2){
+    width: calc(100vw - 80px);
+    min-width: calc(100vw - 80px);
+    max-width: 280px;
   }
   .brand-carousel-logo{
     width: 100px;
     height: 100px;
     padding: 8px 10px 10px 10px;
+    align-items: center;
+    justify-content: center;
+  }
+  .brand-carousel-logo-area{
+    width: 100%;
+    display: flex;
   }
   .brand-carousel-name{
     font-size: 14px;
+  }
+  .brand-carousel-content{
+    gap: 12px;
+    overflow: visible;
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
   }
   .brand-carousel-content .brand-carousel-tag{
     font-size: 8.5px;
     line-height: 16px;
     margin-bottom: 4px;
-  }
-  .brand-carousel-content{
-    gap: 6px;
-    overflow: visible;
+    margin-top: 0;
+    text-align: left;
+    align-self: flex-start;
+    width: auto;
   }
   .brand-carousel-content h3{
     font-size: 16px;
     line-height: 110%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
   }
   .brand-carousel-content p{
     font-size: 11px;
     line-height: 130%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
   }
   .brand-carousel-btn{
     padding: 7px 14px;
     font-size: 11px;
     line-height: 18px;
+    margin-top: 0;
+    width: auto;
   }
   .nav-arrow{
     width: 36px;

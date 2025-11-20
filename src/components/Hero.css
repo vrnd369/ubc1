@@ -125,6 +125,7 @@ main,
   height: 764px !important;
   margin: 0 !important;
   margin-right: auto !important;
+  margin-left: 0 !important;
   text-align: left;
   z-index: 2;
   background: transparent !important;
@@ -140,6 +141,7 @@ main,
   height: 764px !important;
   margin: 0 !important;
   margin-right: auto !important;
+  margin-left: 0 !important;
   padding: 50px 0 50px 163px !important;
   padding-left: 163px !important;
   padding-right: 0 !important;
@@ -154,9 +156,27 @@ main,
   height: 764px !important;
   margin: 0 !important;
   margin-right: auto !important;
+  margin-left: 0 !important;
   padding: 50px 0 50px 163px !important;
   padding-left: 163px !important;
   padding-right: 0 !important;
+}
+
+/* Desktop only: Move content 11% to the right - MUST come after base rules */
+@media (min-width: 769px) {
+  .hero-inner {
+    margin-left: 11% !important;
+  }
+  
+  .hero-inner.container,
+  .container.hero-inner {
+    margin-left: 11% !important;
+  }
+  
+  .hero .container.hero-inner,
+  .hero .hero-inner.container {
+    margin-left: 11% !important;
+  }
 }
 
 .hero .container {
@@ -297,6 +317,23 @@ main,
     font-weight: 400;
     line-height: 22.5px;
     letter-spacing: -0.19px;
+  }
+}
+
+/* Desktop only: Move content 11% to the right - MUST come after all max-width queries */
+@media (min-width: 769px) {
+  .hero-inner {
+    margin-left: 11% !important;
+  }
+  
+  .hero-inner.container,
+  .container.hero-inner {
+    margin-left: 11% !important;
+  }
+  
+  .hero .container.hero-inner,
+  .hero .hero-inner.container {
+    margin-left: 11% !important;
   }
 }
 

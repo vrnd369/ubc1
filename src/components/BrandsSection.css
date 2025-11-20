@@ -25,6 +25,17 @@
   margin-right: 0 !important;
   position: relative;
   z-index: 1;
+  width: 100%;
+  max-width: 100vw;
+}
+
+/* Container to match Figma dimensions */
+.promise-section .container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 24px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .promise-content{
@@ -32,11 +43,16 @@
   grid-template-columns:1fr 1fr;
   gap:67px;
   align-items:start;
+  width: 100%;
 }
 
 .promise-left{
   display:flex;
   flex-direction:column;
+  align-items:flex-start;
+  text-align:left;
+  width: 100%;
+  max-width: 100%;
 }
 
 /* Tag pill - All styling self-contained in BrandsSection.css */
@@ -59,12 +75,15 @@
   line-height: 21px !important;
   letter-spacing: 0.27em !important; /* 27% letter spacing - space between alphabets */
   margin-bottom: var(--tag-mb) !important;
+  margin-left: 0 !important;
+  margin-right: auto !important;
   box-sizing: border-box !important;
   text-align: center !important;
   white-space: nowrap !important;
   opacity: 100% !important;
   border: none !important;
   cursor: default !important;
+  align-self: flex-start !important;
 }
 
 /* Heading */
@@ -77,6 +96,9 @@
   margin:0;
   letter-spacing:-0.02em;
   text-align:left;
+  align-self:flex-start;
+  width: 100%;
+  max-width: 100%;
 }
 
 /* Right column starts exactly at the first heading line */
@@ -91,7 +113,7 @@
 .promise-right .promise-p1{
   color:#000000;
   font-size:18px;
-  line-height:1.7;
+  line-height:1.65;
   margin:0;
   max-width:100%;
   text-align:left;
@@ -102,25 +124,120 @@
   color:#000000;
 }
 .promise-right .promise-p2{
-  color:#555555;
+  color:#616161;
   font-size:18px;
-  line-height:1.7;
+  line-height:1.65;
   margin:0;
   max-width:100%;
   text-align:left;
   font-weight:400;
 }
 
+/* ---------- Desktop: Match Figma exactly (1440px) ---------- */
+@media (min-width: 1440px) {
+  .promise-section.section {
+    height: 590px;
+    min-height: 590px;
+    overflow: hidden;
+  }
+  
+  .promise-section .container {
+    max-width: 1440px;
+  }
+  
+  .promise-content {
+    height: 100%;
+    align-items: center;
+  }
+  
+  /* Match Figma dimensions for left column */
+  .promise-left {
+    width: 515px;
+    max-width: 515px;
+    height: 198px;
+  }
+  
+  /* Match Figma dimensions for heading */
+  .promise-left h2,
+  .promise-heading {
+    width: 515px;
+    max-width: 515px;
+    height: auto;
+    min-height: 132px; /* Approximate height for 3 lines */
+  }
+  
+  /* Match Figma dimensions for right column */
+  .promise-right {
+    width: 539px;
+    max-width: 539px;
+    height: 205px;
+    align-items: flex-start;
+    text-align: left;
+  }
+  
+  .promise-right .promise-p1,
+  .promise-right .promise-p2 {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
 /* ---------- Responsive - Desktop & Tablet ---------- */
+@media (max-width: 1439px) {
+  .promise-section.section {
+    height: auto;
+    min-height: auto;
+  }
+  
+  .promise-section .container {
+    max-width: 100%;
+  }
+  
+  /* Reset to responsive dimensions */
+  .promise-left {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .promise-left h2,
+  .promise-heading {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    min-height: auto;
+  }
+  
+  /* Reset right column to responsive */
+  .promise-right {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .promise-right .promise-p1,
+  .promise-right .promise-p2 {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
 @media (max-width: 1200px){
   .promise-content{ 
     gap: 60px; 
+  }
+  
+  .promise-section .container {
+    max-width: 100%;
+    padding: 0 24px;
   }
 }
 
 @media (max-width: 1024px){
   .promise-section{ 
     padding: 80px 0 !important; 
+    height: auto !important;
+    min-height: auto !important;
   }
   .promise-content{
     grid-template-columns: 1fr;
@@ -144,6 +261,8 @@
 @media (max-width: 900px){
   .promise-section{ 
     padding: 72px 0 !important; 
+    height: auto !important;
+    min-height: auto !important;
   }
   .promise-content{
     gap: 36px;
@@ -164,6 +283,9 @@
   .promise-section{ 
     padding-top: 0 !important; /* Top padding removed because it comes after hero */
     padding-bottom: 64px !important; /* Bottom padding for spacing */
+    margin-top: 48px !important; /* Add space above Our Brands section */
+    height: auto !important;
+    min-height: auto !important;
   }
   .promise-section .container{
     padding-left: 20px !important;
@@ -194,7 +316,7 @@
   .promise-right .promise-p1,
   .promise-right .promise-p2{ 
     font-size: 17px; 
-    line-height: 1.7;
+    line-height: 1.65;
     max-width: 100%;
   }
 }
@@ -203,6 +325,9 @@
   .promise-section{ 
     padding-top: 0 !important; /* Top padding removed because it comes after hero */
     padding-bottom: 56px !important; /* Bottom padding for spacing */
+    margin-top: 40px !important; /* Add space above Our Brands section */
+    height: auto !important;
+    min-height: auto !important;
   }
   .promise-section .container{
     padding-left: 20px !important;
@@ -241,6 +366,9 @@
   .promise-section{ 
     padding-top: 0 !important; /* Top padding removed because it comes after hero */
     padding-bottom: 48px !important; /* Bottom padding for spacing */
+    margin-top: 36px !important; /* Add space above Our Brands section */
+    height: auto !important;
+    min-height: auto !important;
   }
   .promise-section .container{
     padding-left: 20px !important;
@@ -271,7 +399,7 @@
   .promise-right .promise-p1,
   .promise-right .promise-p2{
     font-size: 15px;
-    line-height: 1.7;
+    line-height: 1.65;
     max-width: 100%;
   }
   .promise-right .promise-p1 strong{
@@ -283,6 +411,9 @@
   .promise-section{ 
     padding-top: 0 !important; /* Top padding removed because it comes after hero */
     padding-bottom: 40px !important; /* Bottom padding for spacing */
+    margin-top: 32px !important; /* Add space above Our Brands section */
+    height: auto !important;
+    min-height: auto !important;
   }
   .promise-section .container{
     padding-left: 16px !important;
@@ -312,7 +443,7 @@
   .promise-right .promise-p1,
   .promise-right .promise-p2{
     font-size: 14.5px;
-    line-height: 1.7;
+    line-height: 1.65;
     max-width: 100%;
   }
   .promise-right .promise-p1 strong{

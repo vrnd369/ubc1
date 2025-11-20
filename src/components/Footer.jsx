@@ -213,10 +213,17 @@ export default function Footer() {
 
         {/* Bottom Bar */}
         <div className="footer-bottom">
-          <span className="footer-copyright">All Rights Reserved.</span>
-          <div className="footer-legal">
-            <a href="/privacy">Privacy policy</a>
-            <a href="/cookies">Cookies</a>
+          <div className="footer-bottom-left">
+            {/* Empty - aligns with slogan column */}
+          </div>
+          <div className="footer-bottom-middle">
+            <span className="footer-copyright">All Rights Reserved.</span>
+          </div>
+          <div className="footer-bottom-right">
+            <div className="footer-legal">
+              <a href="/privacy" className="footer-legal-link">Privacy policy</a>
+              <a href="/cookies" className="footer-legal-link">Cookies</a>
+            </div>
           </div>
         </div>
       </div>

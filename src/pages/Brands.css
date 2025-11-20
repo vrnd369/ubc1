@@ -18,15 +18,17 @@
 .brand-hero {
   position: relative;
   width: 100%;
-  max-width: 100vw;
-  min-height: 100vh;
+  max-width: 100%;
+  height: 1077px;
+  min-height: 1077px;
   display: grid;
   align-items: flex-start;
-  padding-top: clamp(96px, 16vh, 140px);
+  padding-top: clamp(240px, 28vh, 320px);
   overflow: hidden;
   margin: 0;
   background-color: #f5f6f8;
   z-index: 1;
+  box-sizing: border-box;
 }
 
 /* Background image br1 - full cover */
@@ -74,7 +76,7 @@
   z-index: 3;
   text-align: center;
   color: #0f172a;
-  margin-top: 40px;
+  margin-top: 120px;
 }
 
 .brand-hero__title {
@@ -454,6 +456,7 @@
 
 @media (max-width: 1024px) {
   .brand-hero {
+    height: auto;
     min-height: 90vh;
   }
 
@@ -498,7 +501,7 @@
 /* Tablets */
 @media (max-width: 768px) {
   .brand-hero {
-    padding-top: 96px;
+    padding-top: 180px;
     min-height: 90vh;
   }
 
@@ -508,7 +511,7 @@
   }
 
   .brand-hero__inner {
-    margin-top: 0;
+    margin-top: 60px;
   }
 
   .eyebrow {
@@ -572,7 +575,7 @@
 @media (max-width: 640px) {
   .brand-hero {
     min-height: 85vh;
-    padding-top: 80px;
+    padding-top: 160px;
   }
 
   .brand-hero__fg-image {
@@ -664,7 +667,7 @@
 @media (max-width: 480px) {
   .brand-hero {
     min-height: 80vh;
-    padding-top: 72px;
+    padding-top: 140px;
   }
 
   .brand-hero__fg-image {

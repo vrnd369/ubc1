@@ -1,46 +1,15 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React from 'react';
 import './Overview.css';
-import logo from '../assets/Logo.png';
+import logo from '../assets/Logo1.png';
 import bgImage from '../assets/ov.png';
 
 export default function Overview() {
-  const [scrollY, setScrollY] = useState(0);
-  const overviewRef = useRef(null);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const overviewElement = overviewRef.current;
-      if (overviewElement) {
-        const rect = overviewElement.getBoundingClientRect();
-        const windowHeight = window.innerHeight;
-
-        // Only apply parallax when Overview section is in viewport
-        if (rect.top <= windowHeight && rect.bottom >= 0) {
-          const scrollOffset = Math.max(0, windowHeight - rect.top);
-          const maxScroll = windowHeight * 1.5;
-          setScrollY(Math.min(scrollOffset, maxScroll));
-        } else {
-          setScrollY(0);
-        }
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    handleScroll(); // Initial call
-
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
   return (
-    <section
-      className="overview section"
-      ref={overviewRef}
-    >
+    <section className="overview section">
       <div
         className="overview-bg"
         style={{
-          backgroundImage: `url(${bgImage})`,
-          backgroundPosition: `center ${-scrollY * 0.5}px`
+          backgroundImage: `url(${bgImage})`
         }}
       ></div>
       <div className="container">

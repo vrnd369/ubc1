@@ -115,10 +115,17 @@ a{color:inherit;text-decoration:none}
   }
   
   /* Remove top padding/margin from section immediately after hero */
-  .hero + .section,
-  .hero + section {
+  .hero + .section:not(.promise-section),
+  .hero + section:not(.promise-section) {
     padding-top: 0 !important;
     margin-top: 0 !important;
+  }
+  
+  /* Allow margin-top for promise-section (Our Brands) */
+  .hero + .promise-section,
+  .hero + section.promise-section {
+    margin-top: 48px !important;
+    padding-top: 0 !important;
   }
 }
 .card{background:var(--ubc-card);border-radius:var(--radius-lg);box-shadow:var(--shadow-sm)}

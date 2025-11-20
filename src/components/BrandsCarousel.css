@@ -431,6 +431,7 @@
 @media (max-width: 768px){
   .brands-carousel-section{
     padding: 56px 0;
+    margin-top: 48px;
     overflow-x: hidden;
     overflow-y: visible;
   }
@@ -647,6 +648,7 @@
 @media (max-width: 480px){
   .brands-carousel-section{
     padding: 48px 0;
+    margin-top: 40px;
     overflow-x: hidden;
     overflow-y: visible;
   }

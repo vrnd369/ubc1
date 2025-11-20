@@ -220,11 +220,31 @@
   border-top: 1px solid rgba(255, 255, 255, 0.25);
   padding-top: 24px;
   margin-top: auto;
-  display: flex;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: 520px 260px 320px; /* Matches footer-middle grid */
+  column-gap: 64px;
   align-items: center;
-  gap: 24px;
   flex-shrink: 0;
+  width: 100%;
+  max-width: 1228px; /* Matches footer-top grid width: 520 + 64 + 260 + 64 + 320 */
+}
+
+.footer-bottom-left {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.footer-bottom-middle {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.footer-bottom-right {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
 }
 
 .footer-copyright {
@@ -233,15 +253,23 @@
   font-size: 10.6px;
   font-weight: 400;
   line-height: 17.5px;
+  margin: 0;
+  padding: 0;
+  flex-shrink: 0;
+  display: inline-block;
+  vertical-align: baseline;
 }
 
 .footer-legal {
   display: flex;
   gap: 24px;
   align-items: center;
+  margin: 0;
+  padding: 0;
+  flex-shrink: 0;
 }
 
-.footer-legal a {
+.footer-legal-link {
   font-family: 'Inter', sans-serif;
   color: rgba(255, 255, 255, 0.6);
   font-size: 10.6px;
@@ -249,9 +277,10 @@
   line-height: 17.5px;
   text-decoration: none;
   transition: opacity 0.2s ease;
+  white-space: nowrap;
 }
 
-.footer-legal a:hover {
+.footer-legal-link:hover {
   opacity: 1;
   color: #FFFFFF;
 }
@@ -260,7 +289,8 @@
 
 @media (max-width: 1200px) {
   .footer-top,
-  .footer-middle {
+  .footer-middle,
+  .footer-bottom {
     grid-template-columns: 1.2fr 1fr 1fr;
     column-gap: 48px;
   }
@@ -272,7 +302,8 @@
 
 @media (max-width: 1024px) {
   .footer-top,
-  .footer-middle {
+  .footer-middle,
+  .footer-bottom {
     grid-template-columns: 1fr 1fr;
     row-gap: 40px;
   }
@@ -285,7 +316,7 @@
 
   .footer-logo-section {
     grid-area: logo;
-    margin-top: 0;           /* reset on tablet so it doesn’t jump too high */
+    margin-top: 0;           /* reset on tablet so it doesn't jump too high */
     align-items: center;
     margin-top: -12px;   /* 👈 add this line here */
   }
@@ -300,6 +331,19 @@
 
   .footer-slogan {
     font-size: 36px;
+  }
+
+  .footer-bottom {
+    grid-template-areas:
+      "copyright legal";
+  }
+
+  .footer-bottom-left {
+    grid-area: copyright;
+  }
+
+  .footer-bottom-right {
+    grid-area: legal;
   }
 }
 
@@ -332,9 +376,14 @@
   }
 
   .footer-bottom {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 16px;
+    grid-template-columns: 1fr;
+    column-gap: 0;
+    row-gap: 16px;
+  }
+
+  .footer-bottom-left,
+  .footer-bottom-right {
+    grid-column: 1;
   }
 }
 

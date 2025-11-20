@@ -17,6 +17,7 @@
 .categories-section{
   background: #FFFFFF;
   padding: 24px 0 80px;
+  margin-bottom: 0;
   font-family: var(--gs);
 }
 
@@ -331,7 +332,10 @@
 }
 
 @media (max-width: 768px){
-  .categories-section{ padding: 56px 0; }
+  .categories-section{ 
+    padding: 56px 0;
+    margin-bottom: 48px;
+  }
   .categories-section .tag{ 
     width: 158px;
     height: 33px;
@@ -402,7 +406,10 @@
 }
 
 @media (max-width: 480px){
-  .categories-section{ padding: 48px 0; }
+  .categories-section{ 
+    padding: 48px 0;
+    margin-bottom: 40px;
+  }
   .categories-section .tag{ 
     width: 158px;
     height: 33px;

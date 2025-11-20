@@ -1,8 +1,13 @@
 .overview{
-  padding: 80px 0;
+  padding: 0;
   position: relative;
   overflow: hidden;
-  min-height: 100vh;
+  width: 100%;
+  max-width: 100%;
+  height: 1261px;
+  min-height: 1261px;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 .overview-bg{
@@ -13,25 +18,39 @@
   height: 100%;
   min-height: 100%;
   background-size: cover;
-  background-position: center;
+  background-position: center center;
   background-repeat: no-repeat;
+
+  /* ✨ this gives the parallax effect */
+  background-attachment: fixed;
   z-index: 0;
-  will-change: transform;
+  margin: 0;
+  padding: 0;
 }
+
 
 .overview .container{
   position: relative;
   text-align: left;
   z-index: 1;
   display: flex;
+  flex-direction: row;
   justify-content: flex-start;
-  align-items: flex-start;
+  align-items: center;
+  gap: 95px;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0;
+  box-sizing: border-box;
+  width: 1036px;
+  height: auto;
+  min-height: 256px;
 }
 
 .overview-content{
   width: 606.4px;
   min-height: 529px;
-  background: #FFFFFF;
+  background: rgba(255, 255, 255, 0.8);
   border-radius: 24px;
   padding: 48px;
   display: flex;
@@ -39,6 +58,8 @@
   gap: 20px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   margin: 0;
+  align-items: flex-start;
+  text-align: left;
 }
 
 /* ================= TAG & SMALL STAR ================= */
@@ -59,9 +80,11 @@
   margin-bottom: 0;
   margin-left: 0;
   margin-right: auto;
+  margin-top: 0;
   width: fit-content;
   border: none;
   text-transform: uppercase;
+  align-self: flex-start;
 }
 
 .overview-tag .tell-us-star{
@@ -89,6 +112,7 @@
 
 .overview-logo{
   margin: 0 0 20px 0;
+  align-self: flex-start;
 }
 
 .overview-logo img{
@@ -106,6 +130,8 @@
   letter-spacing: -0.02em;
   margin: 0;
   text-align: left;
+  align-self: flex-start;
+  width: 100%;
 }
 
 /* ================= BUTTON & STAR (MATCHES IMAGE) ================= */
@@ -153,13 +179,27 @@
 
 /* ================= RESPONSIVE ================= */
 
+@media (max-width: 1440px){
+  .overview .container{
+    max-width: 100%;
+    width: auto;
+    padding: 0 24px;
+  }
+}
+
 @media (max-width: 1024px){
   .overview{
+    height: auto;
+    min-height: 100vh;
     padding: 72px 0;
   }
   .overview .container{
+    flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
+    width: 100%;
+    gap: 0;
+    padding: 0 24px;
   }
   .overview-content{
     width: 90%;
@@ -193,11 +233,17 @@
 
 @media (max-width: 900px){
   .overview{
+    height: auto;
+    min-height: 100vh;
     padding: 64px 0;
   }
   .overview .container{
+    flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
+    width: 100%;
+    gap: 0;
+    padding: 0 24px;
   }
   .overview-content{
     width: 85%;
@@ -231,13 +277,18 @@
 
 @media (max-width: 768px){
   .overview{
+    height: auto;
+    min-height: 100vh;
     padding: 56px 0;
+    margin-top: 48px;
   }
   .overview .container{
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding-left: 20px;
-    padding-right: 20px;
+    width: 100%;
+    gap: 0;
+    padding: 0 20px;
   }
   .overview-content{
     width: 90%;
@@ -284,13 +335,18 @@
 
 @media (max-width: 480px){
   .overview{
+    height: auto;
+    min-height: 100vh;
     padding: 48px 0;
+    margin-top: 40px;
   }
   .overview .container{
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding-left: 20px;
-    padding-right: 20px;
+    width: 100%;
+    gap: 0;
+    padding: 0 20px;
   }
   .overview-content{
     width: 85%;
@@ -338,6 +394,8 @@
 
 @media (max-width: 375px){
   .overview{
+    height: auto;
+    min-height: 100vh;
     padding: 40px 0;
   }
   .overview .container{

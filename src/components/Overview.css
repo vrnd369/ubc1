@@ -1,7 +1,7 @@
 .overview{
   padding: 0;
   position: relative;
-  overflow: hidden;
+  overflow: visible;
   width: 100%;
   max-width: 100%;
   height: 1261px;
@@ -48,9 +48,9 @@
 }
 
 .overview-content{
-  width: 511px; /* Changed from 606.4px to 511px (Hug) */
-  min-height: 602.4px; /* Changed from 529px to 602.4px (Hug) */
-  background: rgba(255, 255, 255, 0.8);
+  width: 511px;
+  height: 602.4px;
+  background: rgba(255, 255, 255, 0.95);
   border-radius: 25.04px; /* Changed from 24px to 25.04px */
   padding: 35px 52px; /* Changed from 48px to vertical: 35px, horizontal: 52px */
   display: flex;
@@ -60,6 +60,7 @@
   margin: 0;
   align-items: flex-start;
   text-align: left;
+  box-sizing: border-box;
 }
 
 /* ================= TAG & SMALL STAR ================= */
@@ -106,19 +107,23 @@
   font-size: 45.91px;
   line-height: 100%;
   letter-spacing: -0.04em;
-  margin: 0 0 20px 0;
+  margin: 0 0 0 0;
   text-align: left;
 }
 
+.overview-heading-nowrap{
+  white-space: nowrap;
+}
+
 .overview-logo{
-  margin: 0 0 20px 0;
+  margin: 0 0 0 0;
   align-self: flex-start;
 }
 
 .overview-logo img{
   height: 44px;
   width: auto;
-  filter: brightness(0) saturate(100%) invert(15%) sepia(95%) saturate(3000%) hue-rotate(210deg) brightness(0.85) contrast(1.1);
+  filter: brightness(0) saturate(100%) invert(20%) sepia(95%) saturate(3000%) hue-rotate(240deg) brightness(0.85) contrast(1.1);
 }
 
 .overview-text{
@@ -156,7 +161,7 @@
   transition: all 0.2s ease;
   box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
   box-sizing: border-box;
-  margin: 8px 0 0 0;
+  margin: -20px 0 0 0;
   align-self: flex-start;
 }
 

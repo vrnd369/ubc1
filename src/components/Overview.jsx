@@ -21,7 +21,7 @@ export default function Overview() {
           </span>
 
           <h2 className="overview-heading">
-            Where Tradition<br />Meets Modern Taste
+            Where Tradition <span className="overview-heading-nowrap">Meets Modern Taste</span>
           </h2>
 
           <div className="overview-logo">

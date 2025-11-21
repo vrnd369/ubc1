@@ -95,15 +95,15 @@
   object-fit: contain;
   transition: height .25s ease, filter .25s ease;
   display: block;
-  /* Convert dark parts to Blue/900 (#1E3A8A) while preserving white star */
-  filter: brightness(0) saturate(100%) invert(12%) sepia(94%) saturate(2878%) hue-rotate(212deg) brightness(95%) contrast(90%);
+  /* Convert dark parts to #323790 while preserving white star */
+  filter: brightness(0) saturate(100%) invert(20%) sepia(95%) saturate(3000%) hue-rotate(240deg) brightness(0.85) contrast(1.1);
 }
 .navbar.scrolled .brand img{ 
   height: 36px;
   min-height: 36px;
   max-height: 36px;
-  /* Keep Blue/900 when scrolled, preserve white star */
-  filter: brightness(0) saturate(100%) invert(12%) sepia(94%) saturate(2878%) hue-rotate(212deg) brightness(95%) contrast(90%);
+  /* Keep #323790 when scrolled, preserve white star */
+  filter: brightness(0) saturate(100%) invert(20%) sepia(95%) saturate(3000%) hue-rotate(240deg) brightness(0.85) contrast(1.1);
 }
 
 /* Centered links */
@@ -202,7 +202,7 @@
 /* CTA (single) */
 .btn.cta,
 .cta{
-  background:#1E3A8A !important; /* Blue/900 */
+  background:#323790 !important; /* Blue/900 */
   color:#FFFFFF !important; 
   white-space:nowrap;
   width: 154px;
@@ -233,9 +233,9 @@
 }
 .btn.cta:hover,
 .cta:hover{ 
-  background:#1E40AF !important; /* Darker blue for hover */
-  transform: translateY(-1px); 
-  box-shadow: 0 4px 12px rgba(30,58,138,.3) !important; 
+  background:#323790 !important;
+  transform: none; 
+  box-shadow: none !important; 
 }
 
 /* Hamburger */
@@ -384,13 +384,13 @@
     height:32px;
     min-height: 32px;
     max-height: 32px;
-    filter: brightness(0) saturate(100%) invert(12%) sepia(94%) saturate(2878%) hue-rotate(212deg) brightness(95%) contrast(90%);
+    filter: brightness(0) saturate(100%) invert(20%) sepia(95%) saturate(3000%) hue-rotate(240deg) brightness(0.85) contrast(1.1);
   }
   .navbar.scrolled .brand img{ 
     height:32px;
     min-height: 32px;
     max-height: 32px;
-    filter: brightness(0) saturate(100%) invert(12%) sepia(94%) saturate(2878%) hue-rotate(212deg) brightness(95%) contrast(90%);
+    filter: brightness(0) saturate(100%) invert(20%) sepia(95%) saturate(3000%) hue-rotate(240deg) brightness(0.85) contrast(1.1);
   }
 
   .hamburger{ display:flex; }
@@ -498,13 +498,13 @@
     height:28px;
     min-height: 28px;
     max-height: 28px;
-    filter: brightness(0) saturate(100%) invert(12%) sepia(94%) saturate(2878%) hue-rotate(212deg) brightness(95%) contrast(90%);
+    filter: brightness(0) saturate(100%) invert(20%) sepia(95%) saturate(3000%) hue-rotate(240deg) brightness(0.85) contrast(1.1);
   }
   .navbar.scrolled .brand img{ 
     height:28px;
     min-height: 28px;
     max-height: 28px;
-    filter: brightness(0) saturate(100%) invert(12%) sepia(94%) saturate(2878%) hue-rotate(212deg) brightness(95%) contrast(90%);
+    filter: brightness(0) saturate(100%) invert(20%) sepia(95%) saturate(3000%) hue-rotate(240deg) brightness(0.85) contrast(1.1);
   }
 
   .nav-links{ padding: 60px 16px 16px 16px; }

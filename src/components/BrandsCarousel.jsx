@@ -74,12 +74,12 @@ export default function BrandsCarousel(){
           <div className="brands-carousel-text">
             <span className="brands-carousel-tag">★ OUR BRANDS</span>
             <h2>Brands that Carry<br/><span className="our-word">our</span> Promise</h2>
-            <p className="brands-carousel-description">
-              Rooted in authenticity, our brands deliver<br/>taste, tradition, and trust to millions
-            </p>
+            <div className="brands-carousel-description-wrapper">
+              <p className="brands-carousel-description">
+                Rooted in authenticity, our brands deliver<br/>taste, tradition, and trust to millions
+              </p>
+            </div>
           </div>
-        </div>
-        <div className="brands-carousel-controls">
           <div className="brands-carousel-arrows">
             <button
               aria-label="Previous"

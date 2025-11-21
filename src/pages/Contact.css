@@ -85,7 +85,7 @@
 }
 
 .contact-info-panel {
-  background: #1F2A6B;
+  background: #323790;
   padding: 48px 40px;
   display: flex;
   flex-direction: column;
@@ -162,7 +162,7 @@
   position: absolute;
   bottom: 24px;
   right: 24px;
-  background: #1E3A8A; /* Blue/900 */
+  background: #323790; /* Blue/900 */
   color: #FFFFFF;
   padding: 12px 24px;
   border-radius: 999px;
@@ -179,7 +179,7 @@
 }
 
 .get-directions-btn:hover {
-  background: #1E40AF; /* Slightly lighter Blue/800 */
+  background: #323790; /* Slightly lighter Blue/800 */
   transform: translateY(-1px);
   box-shadow: 0 6px 16px rgba(30, 58, 138, 0.4);
 }

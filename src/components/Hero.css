@@ -352,7 +352,6 @@ main,
   }
 
   .hero {
-    min-height: auto !important;
     height: auto !important;
     max-height: none !important;
     width: 100vw !important;
@@ -473,7 +472,6 @@ main,
     width: 100% !important;
     max-width: 100% !important;
     min-width: 100% !important;
-    min-height: auto !important;
     height: auto !important;
   }
 
